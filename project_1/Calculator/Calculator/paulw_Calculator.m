@@ -19,6 +19,7 @@
 {
     self.currentValue = self.currentValue - ro;
 }
+
 - (void) MultipleByCurrentValue:(double)ro
 {
     self.currentValue = self.currentValue * ro;
@@ -47,6 +48,7 @@
         self.currentValue = 0;
     }
 }
+
 - (void) Inverse
 {
     if(self.currentValue != 0)
@@ -74,10 +76,12 @@
 {
     self.storedValue = v;
 }
+
 - (double) RecallValue
 {
     return self.storedValue;
 }
+
 - (void) ClearValue
 {
     self.storedValue = 0;

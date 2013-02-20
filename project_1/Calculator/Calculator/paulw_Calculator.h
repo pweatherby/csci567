@@ -10,9 +10,9 @@
 
 @interface paulw_Calculator : NSObject
 
-@property double currentValue;
+@property (nonatomic) double currentValue;
 
-@property double storedValue;
+@property (nonatomic) double storedValue;
 
 
 - (void) AddToCurrentValue:(double)ro;
