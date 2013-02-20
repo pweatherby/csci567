@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "paulw_Calculator.h"
+
 @interface paulw_ViewController : UIViewController
+
+@property (nonatomic) paulw_Calculator *calc;
 
 @end
