@@ -16,13 +16,21 @@
 
 
 - (void) AddToCurrentValue:(double)ro;
-- (double) SubtractFromCurrentValue:(double)ro;
-- (double) MultipleByCurrentValue:(double)ro;
-- (double) DivideFromCurrentValue:(double)ro;
+- (void) SubtractFromCurrentValue:(double)ro;
+- (void) MultipleByCurrentValue:(double)ro;
+- (void) DivideFromCurrentValue:(double)ro;
 
-- (double) SquareRoot;
-- (double) Inverse:(double)o;
+- (void) SquareRoot;
+- (void) Inverse;
 
 - (double) Negate:(double)o;
+
+- (void) Reset;
+
+
+- (void) StoreValue:(double)v;
+- (double) RecallValue;
+- (void) ClearValue;
+
 
 @end
