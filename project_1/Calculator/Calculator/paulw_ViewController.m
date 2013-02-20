@@ -14,6 +14,16 @@
 
 @implementation paulw_ViewController
 
+
+@synthesize calc = _calc;
+
+- (paulw_Calculator*) calc{
+    if(!_calc){
+        _calc = [[paulw_Calculator alloc] init];
+    }
+    return _calc;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
