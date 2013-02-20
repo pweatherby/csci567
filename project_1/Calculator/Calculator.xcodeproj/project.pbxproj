@@ -7,115 +7,115 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F0A216E16D4650900DCBDA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0A216D16D4650900DCBDA8 /* UIKit.framework */; };
-		3F0A217016D4650900DCBDA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0A216F16D4650900DCBDA8 /* Foundation.framework */; };
-		3F0A217216D4650900DCBDA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0A217116D4650900DCBDA8 /* CoreGraphics.framework */; };
-		3F0A217816D4650900DCBDA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A217616D4650900DCBDA8 /* InfoPlist.strings */; };
-		3F0A217A16D4650900DCBDA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A217916D4650900DCBDA8 /* main.m */; };
-		3F0A217E16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A217D16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.m */; };
-		3F0A218016D4650900DCBDA8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A217F16D4650900DCBDA8 /* Default.png */; };
-		3F0A218216D4650900DCBDA8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A218116D4650900DCBDA8 /* Default@2x.png */; };
-		3F0A218416D4650900DCBDA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A218316D4650900DCBDA8 /* Default-568h@2x.png */; };
-		3F0A218716D4650900DCBDA8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A218516D4650900DCBDA8 /* MainStoryboard.storyboard */; };
-		3F0A218A16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A218916D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m */; };
-		3F0A219216D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A219116D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator */; };
+		3FAD457D16D4738600B8B797 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAD457C16D4738600B8B797 /* UIKit.framework */; };
+		3FAD457F16D4738600B8B797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAD457E16D4738600B8B797 /* Foundation.framework */; };
+		3FAD458116D4738600B8B797 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAD458016D4738600B8B797 /* CoreGraphics.framework */; };
+		3FAD458716D4738600B8B797 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FAD458516D4738600B8B797 /* InfoPlist.strings */; };
+		3FAD458916D4738600B8B797 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD458816D4738600B8B797 /* main.m */; };
+		3FAD458D16D4738600B8B797 /* paulw_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD458C16D4738600B8B797 /* paulw_AppDelegate.m */; };
+		3FAD458F16D4738600B8B797 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAD458E16D4738600B8B797 /* Default.png */; };
+		3FAD459116D4738600B8B797 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAD459016D4738600B8B797 /* Default@2x.png */; };
+		3FAD459316D4738600B8B797 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FAD459216D4738600B8B797 /* Default-568h@2x.png */; };
+		3FAD459616D4738600B8B797 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FAD459416D4738600B8B797 /* MainStoryboard.storyboard */; };
+		3FAD459916D4738600B8B797 /* paulw_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD459816D4738600B8B797 /* paulw_ViewController.m */; };
+		3FAD45A216D473CC00B8B797 /* paulw_Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45A116D473CC00B8B797 /* paulw_Calculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F0A216A16D4650900DCBDA8 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F0A216D16D4650900DCBDA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3F0A216F16D4650900DCBDA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3F0A217116D4650900DCBDA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3F0A217516D4650900DCBDA8 /* Calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Calculator-Info.plist"; sourceTree = "<group>"; };
-		3F0A217716D4650900DCBDA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3F0A217916D4650900DCBDA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3F0A217B16D4650900DCBDA8 /* Calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculator-Prefix.pch"; sourceTree = "<group>"; };
-		3F0A217C16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = edu_csu_chico_csci_567_paulw_AppDelegate.h; sourceTree = "<group>"; };
-		3F0A217D16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = edu_csu_chico_csci_567_paulw_AppDelegate.m; sourceTree = "<group>"; };
-		3F0A217F16D4650900DCBDA8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3F0A218116D4650900DCBDA8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3F0A218316D4650900DCBDA8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3F0A218616D4650900DCBDA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3F0A218816D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = edu_csu_chico_csci_567_paulw_ViewController.h; sourceTree = "<group>"; };
-		3F0A218916D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = edu_csu_chico_csci_567_paulw_ViewController.m; sourceTree = "<group>"; };
-		3F0A219016D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = edu.csu.chico.csci.567.paulw.Model.h; path = Model/edu.csu.chico.csci.567.paulw.Model.h; sourceTree = "<group>"; };
-		3F0A219116D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = edu.csu.chico.csci.567.paulw.Model.Calculator; path = Model/edu.csu.chico.csci.567.paulw.Model.Calculator; sourceTree = "<group>"; };
+		3FAD457916D4738600B8B797 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAD457C16D4738600B8B797 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3FAD457E16D4738600B8B797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FAD458016D4738600B8B797 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3FAD458416D4738600B8B797 /* Calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Calculator-Info.plist"; sourceTree = "<group>"; };
+		3FAD458616D4738600B8B797 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FAD458816D4738600B8B797 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FAD458A16D4738600B8B797 /* Calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculator-Prefix.pch"; sourceTree = "<group>"; };
+		3FAD458B16D4738600B8B797 /* paulw_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paulw_AppDelegate.h; sourceTree = "<group>"; };
+		3FAD458C16D4738600B8B797 /* paulw_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = paulw_AppDelegate.m; sourceTree = "<group>"; };
+		3FAD458E16D4738600B8B797 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3FAD459016D4738600B8B797 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3FAD459216D4738600B8B797 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3FAD459516D4738600B8B797 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3FAD459716D4738600B8B797 /* paulw_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paulw_ViewController.h; sourceTree = "<group>"; };
+		3FAD459816D4738600B8B797 /* paulw_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = paulw_ViewController.m; sourceTree = "<group>"; };
+		3FAD45A016D473CC00B8B797 /* paulw_Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_Calculator.h; sourceTree = "<group>"; };
+		3FAD45A116D473CC00B8B797 /* paulw_Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_Calculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3F0A216716D4650900DCBDA8 /* Frameworks */ = {
+		3FAD457616D4738600B8B797 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0A216E16D4650900DCBDA8 /* UIKit.framework in Frameworks */,
-				3F0A217016D4650900DCBDA8 /* Foundation.framework in Frameworks */,
-				3F0A217216D4650900DCBDA8 /* CoreGraphics.framework in Frameworks */,
+				3FAD457D16D4738600B8B797 /* UIKit.framework in Frameworks */,
+				3FAD457F16D4738600B8B797 /* Foundation.framework in Frameworks */,
+				3FAD458116D4738600B8B797 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F0A216116D4650900DCBDA8 = {
+		3FAD457016D4738600B8B797 = {
 			isa = PBXGroup;
 			children = (
-				3F0A217316D4650900DCBDA8 /* Calculator */,
-				3F0A216C16D4650900DCBDA8 /* Frameworks */,
-				3F0A216B16D4650900DCBDA8 /* Products */,
+				3FAD458216D4738600B8B797 /* Calculator */,
+				3FAD457B16D4738600B8B797 /* Frameworks */,
+				3FAD457A16D4738600B8B797 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3F0A216B16D4650900DCBDA8 /* Products */ = {
+		3FAD457A16D4738600B8B797 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F0A216A16D4650900DCBDA8 /* Calculator.app */,
+				3FAD457916D4738600B8B797 /* Calculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F0A216C16D4650900DCBDA8 /* Frameworks */ = {
+		3FAD457B16D4738600B8B797 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3F0A216D16D4650900DCBDA8 /* UIKit.framework */,
-				3F0A216F16D4650900DCBDA8 /* Foundation.framework */,
-				3F0A217116D4650900DCBDA8 /* CoreGraphics.framework */,
+				3FAD457C16D4738600B8B797 /* UIKit.framework */,
+				3FAD457E16D4738600B8B797 /* Foundation.framework */,
+				3FAD458016D4738600B8B797 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F0A217316D4650900DCBDA8 /* Calculator */ = {
+		3FAD458216D4738600B8B797 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				3F0A219316D4679800DCBDA8 /* Model */,
-				3F0A217C16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.h */,
-				3F0A217D16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.m */,
-				3F0A218516D4650900DCBDA8 /* MainStoryboard.storyboard */,
-				3F0A218816D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.h */,
-				3F0A218916D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m */,
-				3F0A217416D4650900DCBDA8 /* Supporting Files */,
+				3FAD459F16D473B000B8B797 /* Model */,
+				3FAD458B16D4738600B8B797 /* paulw_AppDelegate.h */,
+				3FAD458C16D4738600B8B797 /* paulw_AppDelegate.m */,
+				3FAD459416D4738600B8B797 /* MainStoryboard.storyboard */,
+				3FAD459716D4738600B8B797 /* paulw_ViewController.h */,
+				3FAD459816D4738600B8B797 /* paulw_ViewController.m */,
+				3FAD458316D4738600B8B797 /* Supporting Files */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
 		};
-		3F0A217416D4650900DCBDA8 /* Supporting Files */ = {
+		3FAD458316D4738600B8B797 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3F0A217516D4650900DCBDA8 /* Calculator-Info.plist */,
-				3F0A217616D4650900DCBDA8 /* InfoPlist.strings */,
-				3F0A217916D4650900DCBDA8 /* main.m */,
-				3F0A217B16D4650900DCBDA8 /* Calculator-Prefix.pch */,
-				3F0A217F16D4650900DCBDA8 /* Default.png */,
-				3F0A218116D4650900DCBDA8 /* Default@2x.png */,
-				3F0A218316D4650900DCBDA8 /* Default-568h@2x.png */,
+				3FAD458416D4738600B8B797 /* Calculator-Info.plist */,
+				3FAD458516D4738600B8B797 /* InfoPlist.strings */,
+				3FAD458816D4738600B8B797 /* main.m */,
+				3FAD458A16D4738600B8B797 /* Calculator-Prefix.pch */,
+				3FAD458E16D4738600B8B797 /* Default.png */,
+				3FAD459016D4738600B8B797 /* Default@2x.png */,
+				3FAD459216D4738600B8B797 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3F0A219316D4679800DCBDA8 /* Model */ = {
+		3FAD459F16D473B000B8B797 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F0A219016D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.h */,
-				3F0A219116D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator */,
+				3FAD45A016D473CC00B8B797 /* paulw_Calculator.h */,
+				3FAD45A116D473CC00B8B797 /* paulw_Calculator.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -123,13 +123,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F0A216916D4650900DCBDA8 /* Calculator */ = {
+		3FAD457816D4738600B8B797 /* Calculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F0A218D16D4650A00DCBDA8 /* Build configuration list for PBXNativeTarget "Calculator" */;
+			buildConfigurationList = 3FAD459C16D4738600B8B797 /* Build configuration list for PBXNativeTarget "Calculator" */;
 			buildPhases = (
-				3F0A216616D4650900DCBDA8 /* Sources */,
-				3F0A216716D4650900DCBDA8 /* Frameworks */,
-				3F0A216816D4650900DCBDA8 /* Resources */,
+				3FAD457516D4738600B8B797 /* Sources */,
+				3FAD457616D4738600B8B797 /* Frameworks */,
+				3FAD457716D4738600B8B797 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -137,78 +137,78 @@
 			);
 			name = Calculator;
 			productName = Calculator;
-			productReference = 3F0A216A16D4650900DCBDA8 /* Calculator.app */;
+			productReference = 3FAD457916D4738600B8B797 /* Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3F0A216216D4650900DCBDA8 /* Project object */ = {
+		3FAD457116D4738600B8B797 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = edu.csu.chico.csci.567.paulw.;
+				CLASSPREFIX = paulw_;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Generic Login";
+				ORGANIZATIONNAME = "Paul Weatherby";
 			};
-			buildConfigurationList = 3F0A216516D4650900DCBDA8 /* Build configuration list for PBXProject "Calculator" */;
+			buildConfigurationList = 3FAD457416D4738600B8B797 /* Build configuration list for PBXProject "Calculator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 3F0A216116D4650900DCBDA8;
-			productRefGroup = 3F0A216B16D4650900DCBDA8 /* Products */;
+			mainGroup = 3FAD457016D4738600B8B797;
+			productRefGroup = 3FAD457A16D4738600B8B797 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F0A216916D4650900DCBDA8 /* Calculator */,
+				3FAD457816D4738600B8B797 /* Calculator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3F0A216816D4650900DCBDA8 /* Resources */ = {
+		3FAD457716D4738600B8B797 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0A217816D4650900DCBDA8 /* InfoPlist.strings in Resources */,
-				3F0A218016D4650900DCBDA8 /* Default.png in Resources */,
-				3F0A218216D4650900DCBDA8 /* Default@2x.png in Resources */,
-				3F0A218416D4650900DCBDA8 /* Default-568h@2x.png in Resources */,
-				3F0A218716D4650900DCBDA8 /* MainStoryboard.storyboard in Resources */,
-				3F0A219216D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator in Resources */,
+				3FAD458716D4738600B8B797 /* InfoPlist.strings in Resources */,
+				3FAD458F16D4738600B8B797 /* Default.png in Resources */,
+				3FAD459116D4738600B8B797 /* Default@2x.png in Resources */,
+				3FAD459316D4738600B8B797 /* Default-568h@2x.png in Resources */,
+				3FAD459616D4738600B8B797 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F0A216616D4650900DCBDA8 /* Sources */ = {
+		3FAD457516D4738600B8B797 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0A217A16D4650900DCBDA8 /* main.m in Sources */,
-				3F0A217E16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.m in Sources */,
-				3F0A218A16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m in Sources */,
+				3FAD458916D4738600B8B797 /* main.m in Sources */,
+				3FAD458D16D4738600B8B797 /* paulw_AppDelegate.m in Sources */,
+				3FAD459916D4738600B8B797 /* paulw_ViewController.m in Sources */,
+				3FAD45A216D473CC00B8B797 /* paulw_Calculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3F0A217616D4650900DCBDA8 /* InfoPlist.strings */ = {
+		3FAD458516D4738600B8B797 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3F0A217716D4650900DCBDA8 /* en */,
+				3FAD458616D4738600B8B797 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3F0A218516D4650900DCBDA8 /* MainStoryboard.storyboard */ = {
+		3FAD459416D4738600B8B797 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3F0A218616D4650900DCBDA8 /* en */,
+				3FAD459516D4738600B8B797 /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3F0A218B16D4650900DCBDA8 /* Debug */ = {
+		3FAD459A16D4738600B8B797 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +247,7 @@
 			};
 			name = Debug;
 		};
-		3F0A218C16D4650A00DCBDA8 /* Release */ = {
+		3FAD459B16D4738600B8B797 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,7 +272,7 @@
 			};
 			name = Release;
 		};
-		3F0A218E16D4650A00DCBDA8 /* Debug */ = {
+		3FAD459D16D4738600B8B797 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -283,7 +283,7 @@
 			};
 			name = Debug;
 		};
-		3F0A218F16D4650A00DCBDA8 /* Release */ = {
+		3FAD459E16D4738600B8B797 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -297,24 +297,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F0A216516D4650900DCBDA8 /* Build configuration list for PBXProject "Calculator" */ = {
+		3FAD457416D4738600B8B797 /* Build configuration list for PBXProject "Calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F0A218B16D4650900DCBDA8 /* Debug */,
-				3F0A218C16D4650A00DCBDA8 /* Release */,
+				3FAD459A16D4738600B8B797 /* Debug */,
+				3FAD459B16D4738600B8B797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F0A218D16D4650A00DCBDA8 /* Build configuration list for PBXNativeTarget "Calculator" */ = {
+		3FAD459C16D4738600B8B797 /* Build configuration list for PBXNativeTarget "Calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F0A218E16D4650A00DCBDA8 /* Debug */,
-				3F0A218F16D4650A00DCBDA8 /* Release */,
+				3FAD459D16D4738600B8B797 /* Debug */,
+				3FAD459E16D4738600B8B797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3F0A216216D4650900DCBDA8 /* Project object */;
+	rootObject = 3FAD457116D4738600B8B797 /* Project object */;
 }
