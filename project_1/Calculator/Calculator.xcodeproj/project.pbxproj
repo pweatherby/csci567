@@ -18,6 +18,7 @@
 		3F0A218416D4650900DCBDA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A218316D4650900DCBDA8 /* Default-568h@2x.png */; };
 		3F0A218716D4650900DCBDA8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A218516D4650900DCBDA8 /* MainStoryboard.storyboard */; };
 		3F0A218A16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A218916D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m */; };
+		3F0A219216D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator in Resources */ = {isa = PBXBuildFile; fileRef = 3F0A219116D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		3F0A218616D4650900DCBDA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3F0A218816D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = edu_csu_chico_csci_567_paulw_ViewController.h; sourceTree = "<group>"; };
 		3F0A218916D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = edu_csu_chico_csci_567_paulw_ViewController.m; sourceTree = "<group>"; };
+		3F0A219016D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = edu.csu.chico.csci.567.paulw.Model.h; path = Model/edu.csu.chico.csci.567.paulw.Model.h; sourceTree = "<group>"; };
+		3F0A219116D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = edu.csu.chico.csci.567.paulw.Model.Calculator; path = Model/edu.csu.chico.csci.567.paulw.Model.Calculator; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		3F0A217316D4650900DCBDA8 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				3F0A219316D4679800DCBDA8 /* Model */,
 				3F0A217C16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.h */,
 				3F0A217D16D4650900DCBDA8 /* edu_csu_chico_csci_567_paulw_AppDelegate.m */,
 				3F0A218516D4650900DCBDA8 /* MainStoryboard.storyboard */,
@@ -105,6 +109,15 @@
 				3F0A218316D4650900DCBDA8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F0A219316D4679800DCBDA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F0A219016D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.h */,
+				3F0A219116D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +177,7 @@
 				3F0A218216D4650900DCBDA8 /* Default@2x.png in Resources */,
 				3F0A218416D4650900DCBDA8 /* Default-568h@2x.png in Resources */,
 				3F0A218716D4650900DCBDA8 /* MainStoryboard.storyboard in Resources */,
+				3F0A219216D4677E00DCBDA8 /* edu.csu.chico.csci.567.paulw.Model.Calculator in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
