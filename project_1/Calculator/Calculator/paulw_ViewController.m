@@ -9,6 +9,7 @@
 #import "paulw_ViewController.h"
 
 @interface paulw_ViewController ()
+- (IBAction)ButtonTapped:(UIButton *)sender;
 
 @end
 
@@ -42,55 +43,96 @@
 {
     switch(sender.tag)
     {
+        // Numbers
         case 0:
+            [self.calc AppendToCurrentValue:@"0"];
             break;
         case 1:
+            [self.calc AppendToCurrentValue:@"1"];
             break;
         case 2:
+            [self.calc AppendToCurrentValue:@"2"];
             break;
         case 3:
+            [self.calc AppendToCurrentValue:@"3"];
             break;
         case 4:
+            [self.calc AppendToCurrentValue:@"4"];
             break;
         case 5:
+            [self.calc AppendToCurrentValue:@"5"];
             break;
         case 6:
+            [self.calc AppendToCurrentValue:@"6"];
             break;
         case 7:
+            [self.calc AppendToCurrentValue:@"7"];
             break;
         case 8:
+            [self.calc AppendToCurrentValue:@"8"];
             break;
         case 9:
+            [self.calc AppendToCurrentValue:@"9"];
             break;
+        // Dot
         case 10:
+            [self.calc AppendToCurrentValue:@"."];
             break;
+        // Negate
         case 11:
             break;
+        // Equals
         case 12:
+            [self.calc Evaluate];
             break;
+        // Plus
         case 13:
+            [self.calc RegisterOperator:@"+"];
             break;
+        // Subtract
         case 14:
+            [self.calc AppendToCurrentValue:@"0"];
             break;
+        // Multiple
         case 15:
+            [self.calc AppendToCurrentValue:@"0"];
             break;
+        // Divide
         case 16:
+            [self.calc AppendToCurrentValue:@"0"];
             break;
+        // Sqrt
         case 17:
             break;
+        // Inverse
         case 18:
             break;
+        // Memory Store
         case 19:
+            [self.calc StoreValue: [self.calc.currentValue doubleValue]];
             break;
+        // Memory Retrieve
         case 20:
-            break;
+            self.resultLbl.text = [NSString stringWithFormat:@"%f", [self.calc RecallValue]];
+            return;
+        // Memory Clear
         case 21:
+            [self.calc ClearValue];
             break;
+        // Constant: Pi
         case 22:
+            break;
+        // Constant: e
+        case 23:
+            break;
+        // Clear
+        case 24:
+            [self.calc Reset];
             break;
         default:
             break;
     }
+    self.resultLbl.text = self.calc.currentValue;
 }
 
 @end
