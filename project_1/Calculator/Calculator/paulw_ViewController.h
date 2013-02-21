@@ -14,4 +14,6 @@
 
 @property (nonatomic) paulw_Calculator *calc;
 
+@property (weak, nonatomic) IBOutlet UILabel *resultLbl;
+
 @end

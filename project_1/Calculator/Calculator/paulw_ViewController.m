@@ -14,6 +14,8 @@
 
 @implementation paulw_ViewController
 
+@synthesize resultLbl;
+
 
 @synthesize calc = _calc;
 
