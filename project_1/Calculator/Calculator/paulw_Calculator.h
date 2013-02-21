@@ -10,20 +10,25 @@
 
 @interface paulw_Calculator : NSObject
 
-@property (nonatomic) double currentValue;
+
+
+@property (nonatomic) double left_operand;
+
+@property (nonatomic) NSString *oper;
+
+@property (nonatomic)  double right_operand;
+
+
+@property (nonatomic) NSString *currentValue;
 
 @property (nonatomic) double storedValue;
 
 
-- (void) AddToCurrentValue:(double)ro;
-- (void) SubtractFromCurrentValue:(double)ro;
-- (void) MultipleByCurrentValue:(double)ro;
-- (void) DivideFromCurrentValue:(double)ro;
+- (void) Evaluate;
 
-- (void) SquareRoot;
-- (void) Inverse;
+- (void) AppendToCurrentValue:(NSString*)digit;
 
-- (double) Negate:(double)o;
+- (void) RegisterOperator:(NSString*)oper;
 
 - (void) Reset;
 

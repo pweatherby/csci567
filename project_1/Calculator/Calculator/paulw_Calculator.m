@@ -10,65 +10,80 @@
 
 @implementation paulw_Calculator
 
-- (void) AddToCurrentValue:(double)ro
-{
-    self.currentValue = self.currentValue + ro;
+
+@synthesize oper = _oper;
+
+- (NSString*) oper{
+    if(!_oper){
+        _oper = [[NSString alloc] init];
+    }
+    return _oper;
 }
 
-- (void) SubtractFromCurrentValue:(double)ro
-{
-    self.currentValue = self.currentValue - ro;
+@synthesize currentValue = _currentValue;
+
+- (NSString*) currentValue{
+    if(!_currentValue){
+        _currentValue = [[NSString alloc] init];
+    }
+    return _currentValue;
 }
 
-- (void) MultipleByCurrentValue:(double)ro
+- (void) AppendToCurrentValue:(NSString*)digit
 {
-    self.currentValue = self.currentValue * ro;
+    if([digit isEqual: @"."])
+    {
+       if([self.currentValue rangeOfString: digit].location != 0)
+       {
+           return;
+       }
+    }
+    self.currentValue = [self.currentValue stringByAppendingString: digit];
 }
 
-- (void) DivideFromCurrentValue:(double)ro
+- (void) RegisterOperator:(NSString*)oper
 {
-    if( ro != 0)
+    
+    if(![self.oper isEqualToString: @""])
     {
-        self.currentValue = self.currentValue / ro;
+        [self Evaluate];
     }
-    else
-    {
-        self.currentValue = 0;
-    }
+    
+    self.left_operand = [self.currentValue doubleValue];
+    self.oper = oper;
 }
 
-- (void) SquareRoot
+-(void) Evaluate
 {
-    if( self.currentValue > 0)
+    self.right_operand = [self.currentValue doubleValue];
+    double d = 0.0;
+    if([self.oper isEqual: @"+"])
     {
-        self.currentValue =  sqrt(self.currentValue);
+        d = (self.left_operand + self.right_operand);
     }
-    else
+    else if([self.oper isEqual: @"-"])
     {
-        self.currentValue = 0;
+        d = (self.left_operand - self.right_operand);
     }
+    else if([self.oper isEqual: @"*"])
+    {
+        d = (self.left_operand * self.right_operand);
+    }
+    
+    self.left_operand = d;
+    self.oper = [[NSString alloc] init];
+    self.right_operand = 0.0;
+    self.currentValue = [NSString stringWithFormat:@"%f",d];
+    
 }
 
-- (void) Inverse
-{
-    if(self.currentValue != 0)
-    {
-       self.currentValue = 1/self.currentValue;
-    }
-    else
-    {
-        self.currentValue = 0;
-    }
-}
-
-- (double) Negate:(double)o
-{
-    return 0 - o;
-}
 
 - (void) Reset
 {
-    self.currentValue = 0;
+    self.currentValue = [[NSString alloc] init];
+    self.oper = [[NSString alloc] init];
+    self.left_operand = 0.0;
+    self.right_operand = 0.0;
 }
 
 
