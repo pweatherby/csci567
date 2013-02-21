@@ -313,6 +313,7 @@
 				3FAD459E16D4738600B8B797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
