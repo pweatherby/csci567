@@ -46,14 +46,14 @@
 }
 
 
-- (void) StoreValue
+- (void) StoreValue:(NSDouble)d
 {
-    self.storedValue = self.currentValue;
+    self.storedValue = d;
 }
 
 - (NSDouble) RecallValue
 {
-    self.currentValue = self.storedValue;
+    return self.storedValue;
 }
 
 - (void) ClearValue
