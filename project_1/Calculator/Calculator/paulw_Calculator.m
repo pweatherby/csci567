@@ -10,89 +10,39 @@
 
 @implementation paulw_Calculator
 
-
-@synthesize oper = _oper;
-
-- (NSString*) oper{
-    if(!_oper){
-        _oper = [[NSString alloc] init];
-    }
-    return _oper;
-}
-
-@synthesize currentValue = _currentValue;
-
-- (NSString*) currentValue{
-    if(!_currentValue){
-        _currentValue = [[NSString alloc] init];
-    }
-    return _currentValue;
-}
-
-@synthesize storedValue = _storedValue;
-
-- (NSString*) storedValue{
-    if(!_storedValue){
-        _storedValue = [[NSString alloc] init];
-    }
-    return _storedValue;
-}
-
-- (void) AppendToCurrentValue:(NSString*)digit
+- (NSDouble) Add:(NSDouble)d
 {
-    if([digit isEqual: @"."])
-    {
-       if([self.currentValue rangeOfString: digit].location != 0)
-       {
-           return;
-       }
-    }
-    self.currentValue = [self.currentValue stringByAppendingString: digit];
+   self.currentValue = self.currentValue + d;
+   return self.currentValue;
 }
 
-- (void) RegisterBinaryOperator:(NSString*)oper
+- (NSDouble) Subtract:(NSDouble)d
 {
-    
-    if(![self.oper isEqualToString: @""])
-    {
-        [self EvaluateBinaryExpression];
-    }
-    
-    self.left_operand = [self.currentValue doubleValue];
-    self.oper = oper;
+   self.currentValue = self.currentValue - d;
+   return self.currentValue;
 }
 
--(void) EvaluateBinaryExpression
+- (NSDouble) Multiply:(NSDouble)d
 {
-    self.right_operand = [self.currentValue doubleValue];
-    double d = 0.0;
-    if([self.oper isEqual: @"+"])
-    {
-        d = (self.left_operand + self.right_operand);
-    }
-    else if([self.oper isEqual: @"-"])
-    {
-        d = (self.left_operand - self.right_operand);
-    }
-    else if([self.oper isEqual: @"*"])
-    {
-        d = (self.left_operand * self.right_operand);
-    }
-    
-    self.left_operand = d;
-    self.oper = [[NSString alloc] init];
-    self.right_operand = 0.0;
-    self.currentValue = [NSString stringWithFormat:@"%f",d];
-    
+   self.currentValue = self.currentValue * d;
+   return self.currentValue;
+}
+- (NSDouble) Divide:(NSDouble)d
+{
+   if(d == 0)
+   { return self.currentValue; }
+   self.currentValue = self.currentValue / d;
+   return self.currentValue;
 }
 
+- (NSDouble) Negate:(NSDouble)d
+{
+   return 0 - d;
+}
 
 - (void) Reset
 {
-    self.currentValue = [[NSString alloc] init];
-    self.oper = [[NSString alloc] init];
     self.left_operand = 0.0;
-    self.right_operand = 0.0;
 }
 
 
@@ -101,14 +51,14 @@
     self.storedValue = self.currentValue;
 }
 
-- (void) RecallValue
+- (NSDouble) RecallValue
 {
     self.currentValue = self.storedValue;
 }
 
 - (void) ClearValue
 {
-    self.storedValue = 0;
+    self.storedValue = 0.0;
 }
 
 
