@@ -10,31 +10,19 @@
 
 @interface paulw_Calculator : NSObject
 
+@property (nonatomic) NSDouble currentValue;
 
+@property (nonatomic) NSDouble storedValue;
 
-@property (strong, nonatomic) double left_operand;
-
-@property (strong, nonatomic) NSString *oper;
-
-@property (strong, nonatomic)  double right_operand;
-
-
-@property (strong, nonatomic) NSString *currentValue;
-
-@property (strong, nonatomic) NSString *storedValue;
-
-
-- (void) EvaluateBinaryExpression;
-
-- (void) AppendToCurrentValue:(NSString*)digit;
-
-- (void) RegisterBinaryOperator:(NSString*)oper;
+- (NSDouble) Add:(NSDouble)d;
+- (NSDouble) Subtract:(NSDouble)d;
+- (NSDouble) Multiply:(NSDouble)d;
+- (NSDouble) Divide:(NSDouble)d;
 
 - (void) Reset;
 
-
-- (void) StoreValue;
-- (void) RecallValue;
+- (void) StoreValue: (NSDouble)d;
+- (NSDouble) RecallValue;
 - (void) ClearValue;
 
 
