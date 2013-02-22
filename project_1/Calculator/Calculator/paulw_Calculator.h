@@ -12,16 +12,16 @@
 
 
 
-@property (nonatomic) double left_operand;
+@property (strong, nonatomic) double left_operand;
 
-@property (nonatomic) NSString *oper;
+@property (strong, nonatomic) NSString *oper;
 
-@property (nonatomic)  double right_operand;
+@property (string, nonatomic)  double right_operand;
 
 
-@property (nonatomic) NSString *currentValue;
+@property (string, nonatomic) NSString *currentValue;
 
-@property (nonatomic) double storedValue;
+@property (string, nonatomic) double storedValue;
 
 
 - (void) EvaluateBinaryExpression;
