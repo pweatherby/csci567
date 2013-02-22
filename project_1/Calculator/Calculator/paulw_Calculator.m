@@ -41,19 +41,19 @@
     self.currentValue = [self.currentValue stringByAppendingString: digit];
 }
 
-- (void) RegisterOperator:(NSString*)oper
+- (void) RegisterBinaryOperator:(NSString*)oper
 {
     
     if(![self.oper isEqualToString: @""])
     {
-        [self Evaluate];
+        [self EvaluateBinaryExpression];
     }
     
     self.left_operand = [self.currentValue doubleValue];
     self.oper = oper;
 }
 
--(void) Evaluate
+-(void) EvaluateBinaryExpression
 {
     self.right_operand = [self.currentValue doubleValue];
     double d = 0.0;
