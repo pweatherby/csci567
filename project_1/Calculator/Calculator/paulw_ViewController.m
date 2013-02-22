@@ -83,23 +83,23 @@
             break;
         // Equals
         case 12:
-            [self.calc Evaluate];
+            [self.calc EvaluateBinaryExpression];
             break;
         // Plus
         case 13:
-            [self.calc RegisterOperator:@"+"];
+            [self.calc RegisterBinaryOperator:@"+"];
             break;
         // Subtract
         case 14:
-            [self.calc AppendToCurrentValue:@"0"];
+            [self.calc RegisterBinaryOperator:@"-"];
             break;
         // Multiple
         case 15:
-            [self.calc AppendToCurrentValue:@"0"];
+            [self.calc RegisterBinaryOperator:@"*"];
             break;
         // Divide
         case 16:
-            [self.calc AppendToCurrentValue:@"0"];
+            [self.calc RegisterBinaryOperator:@"/"];
             break;
         // Sqrt
         case 17:
@@ -109,12 +109,12 @@
             break;
         // Memory Store
         case 19:
-            [self.calc StoreValue: [self.calc.currentValue doubleValue]];
+            [self.calc StoreValue];
             break;
         // Memory Retrieve
         case 20:
-            self.resultLbl.text = [NSString stringWithFormat:@"%f", [self.calc RecallValue]];
-            return;
+            [self.calc RecallValue];
+            break;
         // Memory Clear
         case 21:
             [self.calc ClearValue];
