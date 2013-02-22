@@ -45,6 +45,18 @@
     return _currentInput;
 }
 
+- (void) AppendToCurrentInput:(NSString*)digit
+{
+    if([digit isEqual: @"."])
+    {
+       if([self.currentInput rangeOfString: digit].location != 0)
+       {
+           return;
+       }
+    }
+    self.currentInput = [self.currentInput stringByAppendingString: digit];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -63,38 +75,38 @@
     {
         // Numbers
         case 0:
-            self.currentInput = [self.currentInput Append:@"0"];
+            [self AppendToCurrentInput:@"0"];
             break;
         case 1:
-            [self.calc AppendToCurrentValue:@"1"];
+            [self AppendToCurrentInput:@"1"];
             break;
         case 2:
-            [self.calc AppendToCurrentValue:@"2"];
+            [self AppendToCurrentInput:@"2"];
             break;
         case 3:
-            [self.calc AppendToCurrentValue:@"3"];
+            [self AppendToCurrentInput:@"3"];
             break;
         case 4:
-            [self.calc AppendToCurrentValue:@"4"];
+            [self AppendToCurrentInput:@"4"];
             break;
         case 5:
-            [self.calc AppendToCurrentValue:@"5"];
+            [self AppendToCurrentInput:@"5"];
             break;
         case 6:
-            [self.calc AppendToCurrentValue:@"6"];
+            [self AppendToCurrentInput:@"6"];
             break;
         case 7:
-            [self.calc AppendToCurrentValue:@"7"];
+            [self AppendToCurrentInput:@"7"];
             break;
         case 8:
-            [self.calc AppendToCurrentValue:@"8"];
+            [self AppendToCurrentInput:@"8"];
             break;
         case 9:
-            [self.calc AppendToCurrentValue:@"9"];
+            [self AppendToCurrentInput:@"9"];
             break;
         // Dot
         case 10:
-            [self.calc AppendToCurrentValue:@"."];
+            [self AppendToCurrentInput:@"."];
             break;
         // Negate
         case 11:
