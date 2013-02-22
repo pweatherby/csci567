@@ -17,6 +17,7 @@
 @property (nonatomic) NSString *oper;
 
 @property (nonatomic) NSString *currentInput;
+@property (nonatomic) bool continueCurrentInput;
 
 @property (weak, nonatomic) IBOutlet UILabel *resultLbl;
 

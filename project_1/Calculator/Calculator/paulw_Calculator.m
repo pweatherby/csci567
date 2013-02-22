@@ -35,6 +35,12 @@
    return self.currentValue;
 }
 
+- (double) Power:(double)d
+{
+    self.currentValue = pow(self.currentValue, d);
+    return self.currentValue;
+}
+
 - (double) Negate:(double)d
 {
    return 0 - d;
@@ -48,7 +54,7 @@
 {
     if(d == 0)
     {
-        return 1.0;
+        return 1;
     }
     return 1/d;
 }

@@ -18,6 +18,8 @@
 - (double) Subtract:(double)d;
 - (double) Multiply:(double)d;
 - (double) Divide:(double)d;
+- (double) Power:(double)d;
+
 
 - (double) Negate:(double)d;
 - (double) Sqrt:(double)d;

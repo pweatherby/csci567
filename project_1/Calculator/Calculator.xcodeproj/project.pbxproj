@@ -36,10 +36,10 @@
 		3FAD459016D4738600B8B797 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3FAD459216D4738600B8B797 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3FAD459516D4738600B8B797 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3FAD459716D4738600B8B797 /* paulw_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paulw_ViewController.h; sourceTree = "<group>"; };
 		3FAD459816D4738600B8B797 /* paulw_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = paulw_ViewController.m; sourceTree = "<group>"; };
 		3FAD45A016D473CC00B8B797 /* paulw_Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_Calculator.h; sourceTree = "<group>"; };
 		3FAD45A116D473CC00B8B797 /* paulw_Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_Calculator.m; sourceTree = "<group>"; };
+		FDC8032816D82E550081F2BF /* paulw_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_ViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 				3FAD458B16D4738600B8B797 /* paulw_AppDelegate.h */,
 				3FAD458C16D4738600B8B797 /* paulw_AppDelegate.m */,
 				3FAD459416D4738600B8B797 /* MainStoryboard.storyboard */,
-				3FAD459716D4738600B8B797 /* paulw_ViewController.h */,
+				FDC8032816D82E550081F2BF /* paulw_ViewController.h */,
 				3FAD459816D4738600B8B797 /* paulw_ViewController.m */,
 				3FAD458316D4738600B8B797 /* Supporting Files */,
 			);
