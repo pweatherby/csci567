@@ -29,6 +29,15 @@
     return _currentValue;
 }
 
+@synthesize storedValue = _storedValue;
+
+- (NSString*) storedValue{
+    if(!_storedValue){
+        _storedValue = [[NSString alloc] init];
+    }
+    return _storedValue;
+}
+
 - (void) AppendToCurrentValue:(NSString*)digit
 {
     if([digit isEqual: @"."])
@@ -87,14 +96,14 @@
 }
 
 
-- (void) StoreValue:(double)v
+- (void) StoreValue
 {
-    self.storedValue = v;
+    self.storedValue = self.currentValue;
 }
 
-- (double) RecallValue
+- (void) RecallValue
 {
-    return self.storedValue;
+    self.currentValue = self.storedValue;
 }
 
 - (void) ClearValue
