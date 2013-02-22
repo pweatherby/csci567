@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) NSString *currentValue;
 
-@property (strong, nonatomic) double storedValue;
+@property (strong, nonatomic) NSString *storedValue;
 
 
 - (void) EvaluateBinaryExpression;
@@ -33,8 +33,8 @@
 - (void) Reset;
 
 
-- (void) StoreValue:(double)v;
-- (double) RecallValue;
+- (void) StoreValue;
+- (void) RecallValue;
 - (void) ClearValue;
 
 
