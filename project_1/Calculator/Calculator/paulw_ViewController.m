@@ -27,6 +27,24 @@
     return _calc;
 }
 
+@synthesize oper = _oper;
+
+- (NSString*) oper{
+    if(!_oper){
+        _oper = [[NSString alloc] init];
+    }
+    return _oper;
+}
+
+@synthesize currentInput = _currentInput;
+
+- (NSString*) currentInput{
+    if(!_currentInput){
+        _currentInput = [[NSString alloc] init];
+    }
+    return _currentInput;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,7 +63,7 @@
     {
         // Numbers
         case 0:
-            [self.calc AppendToCurrentValue:@"0"];
+            self.currentInput = [self.currentInput Append:@"0"];
             break;
         case 1:
             [self.calc AppendToCurrentValue:@"1"];
