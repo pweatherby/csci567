@@ -40,7 +40,7 @@
 
 - (NSString*) currentInput{
     if(!_currentInput){
-        _currentInput = [[NSString alloc] init];
+        _currentInput = @"";
     }
     return _currentInput;
 }
@@ -134,7 +134,7 @@
             break;
         case 7:
             [self AppendToCurrentInput:@"7"];
-            self.resultLbl.text = self.currentInput;
+            [self.resultLbl setText: self.currentInput];
             break;
         case 8:
             [self AppendToCurrentInput:@"8"];
