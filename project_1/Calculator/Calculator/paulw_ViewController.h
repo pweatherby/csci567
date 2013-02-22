@@ -12,11 +12,11 @@
 
 @interface paulw_ViewController : UIViewController
 
-@property (strong, nonatomic) paulw_Calculator *calc;
+@property (nonatomic) paulw_Calculator *calc;
 
-@property (strong, nonatomic) NSString *oper;
+@property (nonatomic) NSString *oper;
 
-@property (strong, nonatomic) NSString *currentInput;
+@property (nonatomic) NSString *currentInput;
 
 @property (weak, nonatomic) IBOutlet UILabel *resultLbl;
 

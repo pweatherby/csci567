@@ -10,20 +10,26 @@
 
 @interface paulw_Calculator : NSObject
 
-@property (nonatomic) NSDouble currentValue;
+@property (nonatomic) double currentValue;
 
-@property (nonatomic) NSDouble storedValue;
+@property (nonatomic) double storedValue;
 
-- (NSDouble) Add:(NSDouble)d;
-- (NSDouble) Subtract:(NSDouble)d;
-- (NSDouble) Multiply:(NSDouble)d;
-- (NSDouble) Divide:(NSDouble)d;
+- (double) Add:(double)d;
+- (double) Subtract:(double)d;
+- (double) Multiply:(double)d;
+- (double) Divide:(double)d;
+
+- (double) Negate:(double)d;
+- (double) Sqrt:(double)d;
+- (double) Inverse:(double)d;
 
 - (void) Reset;
 
-- (void) StoreValue: (NSDouble)d;
-- (NSDouble) RecallValue;
+- (void) StoreValue:(double)d;
+- (double) RecallValue;
 - (void) ClearValue;
 
+- (double) PI;
+- (double) E;
 
 @end

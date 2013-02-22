@@ -10,24 +10,24 @@
 
 @implementation paulw_Calculator
 
-- (NSDouble) Add:(NSDouble)d
+- (double) Add:(double)d
 {
    self.currentValue = self.currentValue + d;
    return self.currentValue;
 }
 
-- (NSDouble) Subtract:(NSDouble)d
+- (double) Subtract:(double)d
 {
    self.currentValue = self.currentValue - d;
    return self.currentValue;
 }
 
-- (NSDouble) Multiply:(NSDouble)d
+- (double) Multiply:(double)d
 {
    self.currentValue = self.currentValue * d;
    return self.currentValue;
 }
-- (NSDouble) Divide:(NSDouble)d
+- (double) Divide:(double)d
 {
    if(d == 0)
    { return self.currentValue; }
@@ -35,23 +35,36 @@
    return self.currentValue;
 }
 
-- (NSDouble) Negate:(NSDouble)d
+- (double) Negate:(double)d
 {
    return 0 - d;
 }
 
+- (double) Sqrt:(double)d
+{
+    return sqrt(d);
+}
+- (double) Inverse:(double)d
+{
+    if(d == 0)
+    {
+        return 1.0;
+    }
+    return 1/d;
+}
+
 - (void) Reset
 {
-    self.left_operand = 0.0;
+    self.currentValue = 0.0;
 }
 
 
-- (void) StoreValue:(NSDouble)d
+- (void) StoreValue:(double)d
 {
     self.storedValue = d;
 }
 
-- (NSDouble) RecallValue
+- (double) RecallValue
 {
     return self.storedValue;
 }
@@ -61,6 +74,14 @@
     self.storedValue = 0.0;
 }
 
+- (double)PI
+{
+    return M_PI;
+}
 
+- (double) E
+{
+    return M_E;
+}
 
 @end
