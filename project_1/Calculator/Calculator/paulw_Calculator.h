@@ -24,11 +24,11 @@
 @property (nonatomic) double storedValue;
 
 
-- (void) Evaluate;
+- (void) EvaluateBinaryExpression;
 
 - (void) AppendToCurrentValue:(NSString*)digit;
 
-- (void) RegisterOperator:(NSString*)oper;
+- (void) RegisterBinaryOperator:(NSString*)oper;
 
 - (void) Reset;
 
