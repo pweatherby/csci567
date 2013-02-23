@@ -16,8 +16,9 @@
 
 @property (nonatomic) NSString *oper;
 
-@property (nonatomic) NSString *currentInput;
+@property (nonatomic) double currentInput;
 @property (nonatomic) bool continueCurrentInput;
+@property (nonatomic) int currentDecimalCount;
 
 @property (weak, nonatomic) IBOutlet UILabel *resultLbl;
 
