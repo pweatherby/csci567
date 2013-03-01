@@ -2,7 +2,7 @@
 //  paulw_PhotoLibrary.h
 //  PhotoPicker
 //
-//  Created by Generic Login on 2/28/13.
+//  Created by Paul Weatherby on 2/28/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
@@ -10,4 +10,11 @@
 
 @interface paulw_PhotoLibrary : NSObject
 
+- (NSUInteger)numberOfCategories;
+- (NSString *)nameForCategory:(NSUInteger)category;
+- (NSUInteger)numberOfPhotosInCategory:(NSUInteger)category;
+- (NSString *)nameForPhotoInCategory:(NSUInteger)category
+                          atPosition:(NSUInteger)position;
+- (UIImage *)imageForPhotoInCategory:(NSUInteger)category
+                          atPosition:(NSUInteger)position;
 @end
