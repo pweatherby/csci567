@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface paulw_PhotoGridViewController : NSObject
+@interface paulw_PhotoGridViewController : UIViewController
 
 @end

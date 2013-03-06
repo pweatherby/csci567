@@ -55,8 +55,7 @@
     NSString *imgTitle = [self nameForPhotoInCategory:category atPosition:position];
     NSString *imgFileName = [categoryPhotos objectForKey: imgTitle];
     
-    return [[UIImage alloc] initWithContentsOfFile:imgFileName];
-    
+    return [UIImage imageNamed:imgFileName];
 }
 
 @end
