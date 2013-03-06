@@ -12,29 +12,50 @@
 
 - (NSUInteger)numberOfCategories
 {
-    return 0;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
+    NSDictionary *photoList = [NSDictionary dictionaryWithContentsOfFile:path];
+    return photoList.count;
 }
 
 - (NSString *)nameForCategory:(NSUInteger)category
 {
-    return @"none";
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
+    NSDictionary *photoList = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSArray* allCategories = [photoList allKeys];
+    return [allCategories objectAtIndex:category];
 }
 
 - (NSUInteger)numberOfPhotosInCategory:(NSUInteger)category
 {
-    return 0;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
+    NSDictionary *photoList = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *categoryTitle = [self nameForCategory: category];
+    NSDictionary *categoryPhotos = [photoList objectForKey: categoryTitle];
+    return categoryPhotos.count;
 }
 
 - (NSString *)nameForPhotoInCategory:(NSUInteger)category
                           atPosition:(NSUInteger)position
 {
-    return @"nane";
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
+    NSDictionary *photoList = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *categoryTitle = [self nameForCategory: category];
+    NSDictionary *categoryPhotos = [photoList objectForKey: categoryTitle];
+    NSArray *allPhotoTitlesInCategory = [categoryPhotos allKeys];
+    return [allPhotoTitlesInCategory objectAtIndex: position];
 }
 
 - (UIImage *)imageForPhotoInCategory:(NSUInteger)category
                           atPosition:(NSUInteger)position
 {
-    return [[UIImage alloc] init];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
+    NSDictionary *photoList = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *categoryTitle = [self nameForCategory: category];
+    NSDictionary *categoryPhotos = [photoList objectForKey: categoryTitle];
+    NSString *imgTitle = [self nameForPhotoInCategory:category atPosition:position];
+    NSString *imgFileName = [categoryPhotos objectForKey: imgTitle];
+    
+    return [[UIImage alloc] initWithContentsOfFile:imgFileName];
     
 }
 

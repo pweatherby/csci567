@@ -10,6 +10,7 @@
 
 @interface paulw_PhotoLibrary : NSObject
 
+
 - (NSUInteger)numberOfCategories;
 - (NSString *)nameForCategory:(NSUInteger)category;
 - (NSUInteger)numberOfPhotosInCategory:(NSUInteger)category;
