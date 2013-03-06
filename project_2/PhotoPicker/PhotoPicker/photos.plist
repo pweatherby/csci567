@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Browsers</key>
+	<dict>
+		<key>Chrome</key>
+		<string>browser1.png</string>
+		<key>Firefox</key>
+		<string>browser2.png</string>
+		<key>Internet Explorer</key>
+		<string>browser3.png</string>
+		<key>Opera</key>
+		<string>browser4.png</string>
+		<key>Safari</key>
+		<string>browser5.png</string>
+	</dict>
+	<key>FastFood</key>
+	<dict>
+		<key>Taco Bell</key>
+		<string>fastfood1.png</string>
+		<key>Subway</key>
+		<string>fastfood2.png</string>
+		<key>McDonalds</key>
+		<string>fastfood3.png</string>
+		<key>KFC</key>
+		<string>fastfood4.png</string>
+	</dict>
+	<key>Sports</key>
+	<dict>
+		<key>Baseball</key>
+		<string>sports1.png</string>
+		<key>Football</key>
+		<string>sports2.png</string>
+		<key>Soccer</key>
+		<string>sports3.png</string>
+	</dict>
+</dict>
+</plist>
