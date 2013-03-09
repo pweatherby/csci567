@@ -15,7 +15,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n94-Tx-iXM">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="259" id="Mwp-Cx-moC"/>
-                                    <constraint firstAttribute="width" constant="275" id="R5o-LI-0g4"/>
                                 </constraints>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FP-dT-Gu1">
@@ -29,7 +28,7 @@
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-Ff-Xwq">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="ChJ-MS-QQ7"/>
+                                    <constraint firstAttribute="width" constant="275" id="Cwe-Kg-jIv"/>
                                 </constraints>
                                 <connections>
                                     <action selector="valueChanged:" destination="8wA-XY-RSB" eventType="valueChanged" id="fre-Wh-0Ng"/>
@@ -38,18 +37,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gtM-Ff-Xwq" firstAttribute="top" secondItem="h20-FV-SS5" secondAttribute="top" constant="239" id="92D-Y9-WYO"/>
+                            <constraint firstItem="gtM-Ff-Xwq" firstAttribute="trailing" secondItem="n94-Tx-iXM" secondAttribute="trailing" type="default" id="6eg-XM-uyX"/>
+                            <constraint firstItem="gtM-Ff-Xwq" firstAttribute="leading" secondItem="n94-Tx-iXM" secondAttribute="leading" type="default" id="COy-Bp-ZWY"/>
                             <constraint firstItem="3FP-dT-Gu1" firstAttribute="bottom" secondItem="h20-FV-SS5" secondAttribute="bottom" type="default" id="Otb-4E-Ebh"/>
                             <constraint firstItem="n94-Tx-iXM" firstAttribute="top" secondItem="h20-FV-SS5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RWp-K1-gPK"/>
                             <constraint firstItem="3FP-dT-Gu1" firstAttribute="leading" secondItem="h20-FV-SS5" secondAttribute="leading" type="default" id="aZI-5W-QR2"/>
-                            <constraint firstItem="gtM-Ff-Xwq" firstAttribute="leading" secondItem="h20-FV-SS5" secondAttribute="leading" constant="111" id="gBg-C9-I4p"/>
+                            <constraint firstItem="gtM-Ff-Xwq" firstAttribute="top" secondItem="h20-FV-SS5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="adE-YN-0tN"/>
                             <constraint firstItem="3FP-dT-Gu1" firstAttribute="trailing" secondItem="h20-FV-SS5" secondAttribute="trailing" type="default" id="o1b-yv-owi"/>
                             <constraint firstItem="n94-Tx-iXM" firstAttribute="centerX" secondItem="3FP-dT-Gu1" secondAttribute="centerX" type="default" id="vMo-GI-07G"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="44J-gq-BJW"/>
+                    <tabBarItem key="tabBarItem" title="Picker" image="picker_icon.png" id="44J-gq-BJW"/>
                     <connections>
                         <outlet property="displayImg" destination="n94-Tx-iXM" id="CTD-gh-VLc"/>
+                        <outlet property="opacitySlider" destination="gtM-Ff-Xwq" id="aKE-NM-23K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqo-29-Jfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,6 +92,22 @@
             <point key="canvasLocation" x="-632" y="-33"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="picker_icon.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotoPickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoPickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="valueChanged:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="displayImg" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="opacitySlider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

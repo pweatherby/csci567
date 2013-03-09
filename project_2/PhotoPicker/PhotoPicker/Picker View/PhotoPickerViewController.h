@@ -8,13 +8,6 @@
 
 #import "PhotoLibrary.h"
 
-@interface PhotoPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UIImageView *displayImg;
-
-- (IBAction)valueChanged:(UISlider *)sender;
-
-@property (nonatomic) PhotoLibrary *lib;
-
+@interface PhotoPickerViewController : UIViewController 
 
 @end

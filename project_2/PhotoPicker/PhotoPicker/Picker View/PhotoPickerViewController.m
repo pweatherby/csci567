@@ -8,66 +8,76 @@
 
 #import "PhotoPickerViewController.h"
 
-@interface PhotoPickerViewController()
+@interface PhotoPickerViewController() <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView* displayImg;
+@property (weak, nonatomic) IBOutlet UISlider* opacitySlider;
+
+- (IBAction)valueChanged:(UISlider*)sender;
+
+@property (strong, nonatomic) PhotoLibrary* photoLib;
 @property NSInteger currentCategory;
+
 @end
 
 @implementation PhotoPickerViewController
 
-- (IBAction)valueChanged:(UISlider *)sender {
+- (IBAction)valueChanged:(UISlider*)sender {
     [self.displayImg setAlpha: sender.value];
 }
 
-- (PhotoLibrary*) lib{
-    if(!_lib)
+- (PhotoLibrary*) photoLib{
+    if(!_photoLib)
     {
-        _lib = [[PhotoLibrary alloc] init];
+        _photoLib = [[PhotoLibrary alloc] init];
     }
-    return _lib;
+    return _photoLib;
 }
 
 // DataSource Functions
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView{
     return 2;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+- (NSInteger)pickerView:(UIPickerView*)pickerView numberOfRowsInComponent:(NSInteger)component{
     if(component == 0)
     {
-        return [self.lib numberOfCategories];
-    }else{
-        return [self.lib numberOfPhotosInCategory:self.currentCategory];
-    }
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    if(component == 0)
-    {
-        return [self.lib nameForCategory:row];
+        return [self.photoLib numberOfCategories];
     }
     else
     {
-        return [self.lib nameForPhotoInCategory:self.currentCategory atPosition:row];
+        return [self.photoLib numberOfPhotosInCategory:self.currentCategory];
+    }
+}
+
+- (NSString*)pickerView:(UIPickerView*)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if(component == 0)
+    {
+        return [self.photoLib nameForCategory:row];
+    }
+    else
+    {
+        return [self.photoLib nameForPhotoInCategory:self.currentCategory atPosition:row];
     }
 }
 
 
 // Delegate Functions
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSLog(@"selecting: row[%@] component[%@]", [NSString stringWithFormat:@"%d", row], [NSString stringWithFormat:@"%d", component]);
+- (void)pickerView:(UIPickerView*)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
     if( component == 0)
     {
         self.currentCategory = row;
-        self.displayImg.image = [self.lib imageForPhotoInCategory:self.currentCategory atPosition:0];
+        self.displayImg.image = [self.photoLib imageForPhotoInCategory:self.currentCategory atPosition:0];
         [pickerView reloadComponent:1];
         [pickerView selectRow:0 inComponent:1 animated:true];
-    }else
+    }
+    else
     {
-        self.displayImg.image = [self.lib imageForPhotoInCategory:self.currentCategory atPosition:row];
+        self.displayImg.image = [self.photoLib imageForPhotoInCategory:self.currentCategory atPosition:row];
     }
 }
 
@@ -75,8 +85,15 @@
 // ViewController Functions
 
 - (void) viewDidLoad{
-    self.displayImg.image = [self.lib imageForPhotoInCategory:0 atPosition:0];
+    if(self.displayImg)
+    {
+      self.displayImg.image = [self.photoLib imageForPhotoInCategory:0 atPosition:0];
+    }
     self.currentCategory = 0;
+    if(self.opacitySlider)
+    {
+        self.opacitySlider.value = 1.0;
+    }
     [super viewDidLoad];
 }
 
