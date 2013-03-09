@@ -1,5 +1,5 @@
 //
-//  paulw_PhotoLibrary.h
+//  PhotoLibrary.h
 //  PhotoPicker
 //
 //  Created by Paul Weatherby on 2/28/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface paulw_PhotoLibrary : NSObject
+@interface PhotoLibrary : NSObject
 
 
 - (NSUInteger)numberOfCategories;

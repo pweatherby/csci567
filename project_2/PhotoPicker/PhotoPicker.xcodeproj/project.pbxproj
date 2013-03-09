@@ -24,16 +24,16 @@
 		3FF3F35516E04C7600D5366E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF3F35416E04C7600D5366E /* CoreGraphics.framework */; };
 		3FF3F35B16E04C7600D5366E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F35916E04C7600D5366E /* InfoPlist.strings */; };
 		3FF3F35D16E04C7600D5366E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F35C16E04C7600D5366E /* main.m */; };
-		3FF3F36116E04C7600D5366E /* paulw_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F36016E04C7600D5366E /* paulw_AppDelegate.m */; };
+		3FF3F36116E04C7600D5366E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F36016E04C7600D5366E /* AppDelegate.m */; };
 		3FF3F36316E04C7600D5366E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F36216E04C7600D5366E /* Default.png */; };
 		3FF3F36516E04C7600D5366E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F36416E04C7600D5366E /* Default@2x.png */; };
 		3FF3F36716E04C7600D5366E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F36616E04C7600D5366E /* Default-568h@2x.png */; };
 		3FF3F36A16E04C7600D5366E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F36816E04C7600D5366E /* MainStoryboard.storyboard */; };
-		3FF3F38016E04D4300D5366E /* paulw_PhotoCategoryReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37516E04D4300D5366E /* paulw_PhotoCategoryReusableView.m */; };
-		3FF3F38116E04D4300D5366E /* paulw_PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37716E04D4300D5366E /* paulw_PhotoCollectionViewCell.m */; };
-		3FF3F38216E04D4300D5366E /* paulw_PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37916E04D4300D5366E /* paulw_PhotoGridViewController.m */; };
-		3FF3F38316E04D4300D5366E /* paulw_PhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37C16E04D4300D5366E /* paulw_PhotoLibrary.m */; };
-		3FF3F38416E04D4300D5366E /* paulw_PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37F16E04D4300D5366E /* paulw_PhotoPickerViewController.m */; };
+		3FF3F38016E04D4300D5366E /* PhotoCategoryReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37516E04D4300D5366E /* PhotoCategoryReusableView.m */; };
+		3FF3F38116E04D4300D5366E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37716E04D4300D5366E /* PhotoCollectionViewCell.m */; };
+		3FF3F38216E04D4300D5366E /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37916E04D4300D5366E /* PhotoGridViewController.m */; };
+		3FF3F38316E04D4300D5366E /* PhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37C16E04D4300D5366E /* PhotoLibrary.m */; };
+		3FF3F38416E04D4300D5366E /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3F37F16E04D4300D5366E /* PhotoPickerViewController.m */; };
 		3FF3F38716E04D6B00D5366E /* sports1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F38616E04D6B00D5366E /* sports1.png */; };
 		3FF3F38916E04F8100D5366E /* picker_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F38816E04F8100D5366E /* picker_icon.png */; };
 		3FF3F38B16E04F8B00D5366E /* grid_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3F38A16E04F8B00D5366E /* grid_icon.png */; };
@@ -60,22 +60,22 @@
 		3FF3F35A16E04C7600D5366E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3FF3F35C16E04C7600D5366E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FF3F35E16E04C7600D5366E /* PhotoPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoPicker-Prefix.pch"; sourceTree = "<group>"; };
-		3FF3F35F16E04C7600D5366E /* paulw_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paulw_AppDelegate.h; sourceTree = "<group>"; };
-		3FF3F36016E04C7600D5366E /* paulw_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = paulw_AppDelegate.m; sourceTree = "<group>"; };
+		3FF3F35F16E04C7600D5366E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3FF3F36016E04C7600D5366E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3FF3F36216E04C7600D5366E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3FF3F36416E04C7600D5366E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3FF3F36616E04C7600D5366E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3FF3F36916E04C7600D5366E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3FF3F37416E04D4300D5366E /* paulw_PhotoCategoryReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_PhotoCategoryReusableView.h; sourceTree = "<group>"; };
-		3FF3F37516E04D4300D5366E /* paulw_PhotoCategoryReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_PhotoCategoryReusableView.m; sourceTree = "<group>"; };
-		3FF3F37616E04D4300D5366E /* paulw_PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_PhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		3FF3F37716E04D4300D5366E /* paulw_PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_PhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		3FF3F37816E04D4300D5366E /* paulw_PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_PhotoGridViewController.h; sourceTree = "<group>"; };
-		3FF3F37916E04D4300D5366E /* paulw_PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_PhotoGridViewController.m; sourceTree = "<group>"; };
-		3FF3F37B16E04D4300D5366E /* paulw_PhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_PhotoLibrary.h; sourceTree = "<group>"; };
-		3FF3F37C16E04D4300D5366E /* paulw_PhotoLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_PhotoLibrary.m; sourceTree = "<group>"; };
-		3FF3F37E16E04D4300D5366E /* paulw_PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paulw_PhotoPickerViewController.h; sourceTree = "<group>"; };
-		3FF3F37F16E04D4300D5366E /* paulw_PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = paulw_PhotoPickerViewController.m; sourceTree = "<group>"; };
+		3FF3F37416E04D4300D5366E /* PhotoCategoryReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCategoryReusableView.h; sourceTree = "<group>"; };
+		3FF3F37516E04D4300D5366E /* PhotoCategoryReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCategoryReusableView.m; sourceTree = "<group>"; };
+		3FF3F37616E04D4300D5366E /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		3FF3F37716E04D4300D5366E /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		3FF3F37816E04D4300D5366E /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
+		3FF3F37916E04D4300D5366E /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
+		3FF3F37B16E04D4300D5366E /* PhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoLibrary.h; sourceTree = "<group>"; };
+		3FF3F37C16E04D4300D5366E /* PhotoLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoLibrary.m; sourceTree = "<group>"; };
+		3FF3F37E16E04D4300D5366E /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
+		3FF3F37F16E04D4300D5366E /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
 		3FF3F38616E04D6B00D5366E /* sports1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports1.png; sourceTree = "<group>"; };
 		3FF3F38816E04F8100D5366E /* picker_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picker_icon.png; sourceTree = "<group>"; };
 		3FF3F38A16E04F8B00D5366E /* grid_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_icon.png; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 				3FF3F37316E04D4300D5366E /* Grid View */,
 				3FF3F37A16E04D4300D5366E /* Model */,
 				3FF3F37D16E04D4300D5366E /* Picker View */,
-				3FF3F35F16E04C7600D5366E /* paulw_AppDelegate.h */,
-				3FF3F36016E04C7600D5366E /* paulw_AppDelegate.m */,
+				3FF3F35F16E04C7600D5366E /* AppDelegate.h */,
+				3FF3F36016E04C7600D5366E /* AppDelegate.m */,
 				3FF3F36816E04C7600D5366E /* MainStoryboard.storyboard */,
 				3FF3F35716E04C7600D5366E /* Supporting Files */,
 			);
@@ -157,12 +157,12 @@
 		3FF3F37316E04D4300D5366E /* Grid View */ = {
 			isa = PBXGroup;
 			children = (
-				3FF3F37416E04D4300D5366E /* paulw_PhotoCategoryReusableView.h */,
-				3FF3F37516E04D4300D5366E /* paulw_PhotoCategoryReusableView.m */,
-				3FF3F37616E04D4300D5366E /* paulw_PhotoCollectionViewCell.h */,
-				3FF3F37716E04D4300D5366E /* paulw_PhotoCollectionViewCell.m */,
-				3FF3F37816E04D4300D5366E /* paulw_PhotoGridViewController.h */,
-				3FF3F37916E04D4300D5366E /* paulw_PhotoGridViewController.m */,
+				3FF3F37416E04D4300D5366E /* PhotoCategoryReusableView.h */,
+				3FF3F37516E04D4300D5366E /* PhotoCategoryReusableView.m */,
+				3FF3F37616E04D4300D5366E /* PhotoCollectionViewCell.h */,
+				3FF3F37716E04D4300D5366E /* PhotoCollectionViewCell.m */,
+				3FF3F37816E04D4300D5366E /* PhotoGridViewController.h */,
+				3FF3F37916E04D4300D5366E /* PhotoGridViewController.m */,
 			);
 			path = "Grid View";
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 		3FF3F37A16E04D4300D5366E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3FF3F37B16E04D4300D5366E /* paulw_PhotoLibrary.h */,
-				3FF3F37C16E04D4300D5366E /* paulw_PhotoLibrary.m */,
+				3FF3F37B16E04D4300D5366E /* PhotoLibrary.h */,
+				3FF3F37C16E04D4300D5366E /* PhotoLibrary.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,8 +179,8 @@
 		3FF3F37D16E04D4300D5366E /* Picker View */ = {
 			isa = PBXGroup;
 			children = (
-				3FF3F37E16E04D4300D5366E /* paulw_PhotoPickerViewController.h */,
-				3FF3F37F16E04D4300D5366E /* paulw_PhotoPickerViewController.m */,
+				3FF3F37E16E04D4300D5366E /* PhotoPickerViewController.h */,
+				3FF3F37F16E04D4300D5366E /* PhotoPickerViewController.m */,
 			);
 			path = "Picker View";
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 		3FF3F34516E04C7600D5366E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = paulw_;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Paul Weatherby";
 			};
@@ -287,12 +287,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF3F35D16E04C7600D5366E /* main.m in Sources */,
-				3FF3F36116E04C7600D5366E /* paulw_AppDelegate.m in Sources */,
-				3FF3F38016E04D4300D5366E /* paulw_PhotoCategoryReusableView.m in Sources */,
-				3FF3F38116E04D4300D5366E /* paulw_PhotoCollectionViewCell.m in Sources */,
-				3FF3F38216E04D4300D5366E /* paulw_PhotoGridViewController.m in Sources */,
-				3FF3F38316E04D4300D5366E /* paulw_PhotoLibrary.m in Sources */,
-				3FF3F38416E04D4300D5366E /* paulw_PhotoPickerViewController.m in Sources */,
+				3FF3F36116E04C7600D5366E /* AppDelegate.m in Sources */,
+				3FF3F38016E04D4300D5366E /* PhotoCategoryReusableView.m in Sources */,
+				3FF3F38116E04D4300D5366E /* PhotoCollectionViewCell.m in Sources */,
+				3FF3F38216E04D4300D5366E /* PhotoGridViewController.m in Sources */,
+				3FF3F38316E04D4300D5366E /* PhotoLibrary.m in Sources */,
+				3FF3F38416E04D4300D5366E /* PhotoPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

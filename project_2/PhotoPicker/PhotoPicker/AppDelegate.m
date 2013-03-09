@@ -1,14 +1,14 @@
 //
-//  paulw_AppDelegate.m
+//  AppDelegate.m
 //  PhotoPicker
 //
 //  Created by Generic Login on 2/28/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "paulw_AppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation paulw_AppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

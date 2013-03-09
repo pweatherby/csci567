@@ -1,5 +1,5 @@
 //
-//  paulw_AppDelegate.h
+//  AppDelegate.h
 //  PhotoPicker
 //
 //  Created by Generic Login on 2/28/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface paulw_AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
