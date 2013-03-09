@@ -21,8 +21,9 @@
 @implementation PhotoGridViewController
 
 #pragma mark - ViewController Setup
-- (void) viewDidLoad{
-
+- (void) viewDidLoad
+{
+    self.photoTitleLabel.text = @"Tap an Image";
     [super viewDidLoad];
 }
 
@@ -49,7 +50,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellForItemAtIndexPath called!");
     PhotoCollectionViewCell* newCell = [self.photoCollection dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell"
                                                                                         forIndexPath:indexPath];
     newCell.displayImg.image = [self.photoLib imageForPhotoInCategory:indexPath.section
