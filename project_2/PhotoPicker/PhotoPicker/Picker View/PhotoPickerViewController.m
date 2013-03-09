@@ -26,6 +26,20 @@
     [self.displayImg setAlpha: sender.value];
 }
 
+#pragma mark - ViewController Setup
+- (void) viewDidLoad{
+    if(self.displayImg)
+    {
+        self.displayImg.image = [self.photoLib imageForPhotoInCategory:0 atPosition:0];
+    }
+    self.currentCategory = 0;
+    if(self.opacitySlider)
+    {
+        self.opacitySlider.value = 1.0;
+    }
+    [super viewDidLoad];
+}
+
 - (PhotoLibrary*) photoLib{
     if(!_photoLib)
     {
@@ -34,8 +48,8 @@
     return _photoLib;
 }
 
-// DataSource Functions
 
+#pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView{
     return 2;
 }
@@ -64,8 +78,7 @@
 }
 
 
-// Delegate Functions
-
+#pragma mark - UIPickerViewDelegate
 - (void)pickerView:(UIPickerView*)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     if( component == 0)
@@ -79,22 +92,6 @@
     {
         self.displayImg.image = [self.photoLib imageForPhotoInCategory:self.currentCategory atPosition:row];
     }
-}
-
-
-// ViewController Functions
-
-- (void) viewDidLoad{
-    if(self.displayImg)
-    {
-      self.displayImg.image = [self.photoLib imageForPhotoInCategory:0 atPosition:0];
-    }
-    self.currentCategory = 0;
-    if(self.opacitySlider)
-    {
-        self.opacitySlider.value = 1.0;
-    }
-    [super viewDidLoad];
 }
 
 @end

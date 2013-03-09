@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PhotoCategoryReusableView : NSObject
-
+@interface PhotoCategoryReusableView : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet UILabel* CategoryTitle;
 @end

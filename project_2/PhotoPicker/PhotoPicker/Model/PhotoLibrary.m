@@ -12,6 +12,7 @@
 
 - (NSUInteger)numberOfCategories
 {
+    NSLog(@"numberofCategories Called!");
     NSString* path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
     if(![path isEqualToString:@""])
     {

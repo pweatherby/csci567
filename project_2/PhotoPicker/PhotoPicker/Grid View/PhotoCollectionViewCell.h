@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PhotoCollectionViewCell : NSObject
-
+@interface PhotoCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView* displayImg;
 @end

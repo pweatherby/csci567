@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "PhotoLibrary.h"
+#import "PhotoCollectionViewCell.h"
+#import "PhotoCategoryReusableView.h"
 
 @interface PhotoGridViewController : UIViewController
 
