@@ -1,28 +1,28 @@
 //
-//  paulw_PhotoPickerViewController.m
+//  PhotoPickerViewController.m
 //  PhotoPicker
 //
 //  Created by Paul Weatherby on 2/28/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "paulw_PhotoPickerViewController.h"
+#import "PhotoPickerViewController.h"
 
-@interface paulw_PhotoPickerViewController()
+@interface PhotoPickerViewController()
 
-
+@property NSInteger currentCategory;
 @end
 
-@implementation paulw_PhotoPickerViewController
+@implementation PhotoPickerViewController
 
 - (IBAction)valueChanged:(UISlider *)sender {
     [self.displayImg setAlpha: sender.value];
 }
 
-- (paulw_PhotoLibrary*) lib{
+- (PhotoLibrary*) lib{
     if(!_lib)
     {
-        _lib = [[paulw_PhotoLibrary alloc] init];
+        _lib = [[PhotoLibrary alloc] init];
     }
     return _lib;
 }
@@ -38,7 +38,7 @@
     {
         return [self.lib numberOfCategories];
     }else{
-        return [self.lib numberOfPhotosInCategory:component];
+        return [self.lib numberOfPhotosInCategory:self.currentCategory];
     }
 }
 
@@ -50,7 +50,7 @@
     }
     else
     {
-        return [self.lib nameForPhotoInCategory:component atPosition:row];
+        return [self.lib nameForPhotoInCategory:self.currentCategory atPosition:row];
     }
 }
 
@@ -58,20 +58,25 @@
 // Delegate Functions
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSLog(@"selecting: row[", row, @"]com[", component, @"]");
+    NSLog(@"selecting: row[%@] component[%@]", [NSString stringWithFormat:@"%d", row], [NSString stringWithFormat:@"%d", component]);
     if( component == 0)
     {
-        self.displayImg.image = [self.lib imageForPhotoInCategory:row atPosition:0];
+        self.currentCategory = row;
+        self.displayImg.image = [self.lib imageForPhotoInCategory:self.currentCategory atPosition:0];
+        [pickerView reloadComponent:1];
+        [pickerView selectRow:0 inComponent:1 animated:true];
     }else
     {
-        self.displayImg.image = [self.lib imageForPhotoInCategory:component atPosition:row];
+        self.displayImg.image = [self.lib imageForPhotoInCategory:self.currentCategory atPosition:row];
     }
 }
 
 
+// ViewController Functions
+
 - (void) viewDidLoad{
     self.displayImg.image = [self.lib imageForPhotoInCategory:0 atPosition:0];
-    
+    self.currentCategory = 0;
     [super viewDidLoad];
 }
 

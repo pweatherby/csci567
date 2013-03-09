@@ -1,14 +1,14 @@
 //
-//  paulw_PhotoLibrary.m
+//  PhotoLibrary.m
 //  PhotoPicker
 //
 //  Created by Paul Weatherby on 2/28/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "paulw_PhotoLibrary.h"
+#import "PhotoLibrary.h"
 
-@implementation paulw_PhotoLibrary
+@implementation PhotoLibrary
 
 - (NSUInteger)numberOfCategories
 {
@@ -39,10 +39,23 @@
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"plist"];
     NSDictionary *photoList = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSString *categoryTitle = [self nameForCategory: category];
-    NSDictionary *categoryPhotos = [photoList objectForKey: categoryTitle];
-    NSArray *allPhotoTitlesInCategory = [categoryPhotos allKeys];
-    return [allPhotoTitlesInCategory objectAtIndex: position];
+    if(photoList)
+    {
+        NSString *categoryTitle = [self nameForCategory: category];
+        if(categoryTitle)
+        {
+            NSDictionary *categoryPhotos = [photoList objectForKey: categoryTitle];
+            if(categoryPhotos)
+            {
+                NSArray *allPhotoTitlesInCategory = [categoryPhotos allKeys];
+                if(allPhotoTitlesInCategory && allPhotoTitlesInCategory.count > 0)
+                {
+                    return [allPhotoTitlesInCategory objectAtIndex: position];
+                }
+            }
+        }
+    }
+    return @"";
 }
 
 - (UIImage *)imageForPhotoInCategory:(NSUInteger)category
