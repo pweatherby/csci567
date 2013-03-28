@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ITunesMediaItemTableViewCell.h
 //  ChartToppers
 //
 //  Created by Paul Weatherby on 3/28/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface ITunesMediaItemTableViewCell : UITableViewCell
 
 @end

@@ -17,7 +17,17 @@
 		3F2AB0641705097C00821C4B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB0631705097C00821C4B /* Default@2x.png */; };
 		3F2AB0661705097C00821C4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB0651705097C00821C4B /* Default-568h@2x.png */; };
 		3F2AB0691705097C00821C4B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AB0671705097C00821C4B /* MainStoryboard.storyboard */; };
-		3F2AB06C1705097D00821C4B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB06B1705097D00821C4B /* ViewController.m */; };
+		3F2AB07517050A3800821C4B /* ITunesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB07417050A3800821C4B /* ITunesFetcher.m */; };
+		3F2AB07817050A4D00821C4B /* ITunesMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB07717050A4D00821C4B /* ITunesMediaItem.m */; };
+		3F2AB07C17050B8200821C4B /* ITunesMediaItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB07B17050B8200821C4B /* ITunesMediaItemsTableViewController.m */; };
+		3F2AB07F17050BC300821C4B /* ITunesMediaItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB07E17050BC300821C4B /* ITunesMediaItemDetailViewController.m */; };
+		3F2AB08217050BED00821C4B /* IOSAppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB08117050BED00821C4B /* IOSAppsTableViewController.m */; };
+		3F2AB08517050BFF00821C4B /* AlbumsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB08417050BFF00821C4B /* AlbumsTableViewController.m */; };
+		3F2AB08817050C1500821C4B /* MoviesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB08717050C1500821C4B /* MoviesTableViewController.m */; };
+		3F2AB08B17050C2A00821C4B /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB08A17050C2A00821C4B /* BooksTableViewController.m */; };
+		3F2AB08E17050C3F00821C4B /* TVEpisodesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB08D17050C3F00821C4B /* TVEpisodesTableViewController.m */; };
+		3F2AB09117050C5300821C4B /* ITunesUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB09017050C5300821C4B /* ITunesUTableViewController.m */; };
+		3F2AB09517050CB100821C4B /* ITunesMediaItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB09417050CB100821C4B /* ITunesMediaItemTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +45,28 @@
 		3F2AB0631705097C00821C4B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3F2AB0651705097C00821C4B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3F2AB0681705097C00821C4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		3F2AB06A1705097C00821C4B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3F2AB06B1705097D00821C4B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3F2AB07317050A3800821C4B /* ITunesFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesFetcher.h; sourceTree = "<group>"; };
+		3F2AB07417050A3800821C4B /* ITunesFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesFetcher.m; sourceTree = "<group>"; };
+		3F2AB07617050A4D00821C4B /* ITunesMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesMediaItem.h; sourceTree = "<group>"; };
+		3F2AB07717050A4D00821C4B /* ITunesMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesMediaItem.m; sourceTree = "<group>"; };
+		3F2AB07A17050B8200821C4B /* ITunesMediaItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesMediaItemsTableViewController.h; sourceTree = "<group>"; };
+		3F2AB07B17050B8200821C4B /* ITunesMediaItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesMediaItemsTableViewController.m; sourceTree = "<group>"; };
+		3F2AB07D17050BC300821C4B /* ITunesMediaItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesMediaItemDetailViewController.h; sourceTree = "<group>"; };
+		3F2AB07E17050BC300821C4B /* ITunesMediaItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesMediaItemDetailViewController.m; sourceTree = "<group>"; };
+		3F2AB08017050BED00821C4B /* IOSAppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSAppsTableViewController.h; sourceTree = "<group>"; };
+		3F2AB08117050BED00821C4B /* IOSAppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSAppsTableViewController.m; sourceTree = "<group>"; };
+		3F2AB08317050BFF00821C4B /* AlbumsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsTableViewController.h; sourceTree = "<group>"; };
+		3F2AB08417050BFF00821C4B /* AlbumsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsTableViewController.m; sourceTree = "<group>"; };
+		3F2AB08617050C1500821C4B /* MoviesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesTableViewController.h; sourceTree = "<group>"; };
+		3F2AB08717050C1500821C4B /* MoviesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesTableViewController.m; sourceTree = "<group>"; };
+		3F2AB08917050C2A00821C4B /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewController.h; sourceTree = "<group>"; };
+		3F2AB08A17050C2A00821C4B /* BooksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksTableViewController.m; sourceTree = "<group>"; };
+		3F2AB08C17050C3F00821C4B /* TVEpisodesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVEpisodesTableViewController.h; sourceTree = "<group>"; };
+		3F2AB08D17050C3F00821C4B /* TVEpisodesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVEpisodesTableViewController.m; sourceTree = "<group>"; };
+		3F2AB08F17050C5300821C4B /* ITunesUTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesUTableViewController.h; sourceTree = "<group>"; };
+		3F2AB09017050C5300821C4B /* ITunesUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesUTableViewController.m; sourceTree = "<group>"; };
+		3F2AB09317050CB100821C4B /* ITunesMediaItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesMediaItemTableViewCell.h; sourceTree = "<group>"; };
+		3F2AB09417050CB100821C4B /* ITunesMediaItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesMediaItemTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +113,11 @@
 		3F2AB0551705097C00821C4B /* ChartToppers */ = {
 			isa = PBXGroup;
 			children = (
+				3F2AB07217050A0D00821C4B /* models */,
+				3F2AB09217050C6200821C4B /* views */,
+				3F2AB07917050B4B00821C4B /* controllers */,
 				3F2AB05E1705097C00821C4B /* AppDelegate.h */,
 				3F2AB05F1705097C00821C4B /* AppDelegate.m */,
-				3F2AB0671705097C00821C4B /* MainStoryboard.storyboard */,
-				3F2AB06A1705097C00821C4B /* ViewController.h */,
-				3F2AB06B1705097D00821C4B /* ViewController.m */,
 				3F2AB0561705097C00821C4B /* Supporting Files */,
 			);
 			path = ChartToppers;
@@ -105,6 +135,50 @@
 				3F2AB0651705097C00821C4B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F2AB07217050A0D00821C4B /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3F2AB07317050A3800821C4B /* ITunesFetcher.h */,
+				3F2AB07417050A3800821C4B /* ITunesFetcher.m */,
+				3F2AB07617050A4D00821C4B /* ITunesMediaItem.h */,
+				3F2AB07717050A4D00821C4B /* ITunesMediaItem.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		3F2AB07917050B4B00821C4B /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F2AB07A17050B8200821C4B /* ITunesMediaItemsTableViewController.h */,
+				3F2AB07B17050B8200821C4B /* ITunesMediaItemsTableViewController.m */,
+				3F2AB07D17050BC300821C4B /* ITunesMediaItemDetailViewController.h */,
+				3F2AB07E17050BC300821C4B /* ITunesMediaItemDetailViewController.m */,
+				3F2AB08017050BED00821C4B /* IOSAppsTableViewController.h */,
+				3F2AB08117050BED00821C4B /* IOSAppsTableViewController.m */,
+				3F2AB08317050BFF00821C4B /* AlbumsTableViewController.h */,
+				3F2AB08417050BFF00821C4B /* AlbumsTableViewController.m */,
+				3F2AB08617050C1500821C4B /* MoviesTableViewController.h */,
+				3F2AB08717050C1500821C4B /* MoviesTableViewController.m */,
+				3F2AB08917050C2A00821C4B /* BooksTableViewController.h */,
+				3F2AB08A17050C2A00821C4B /* BooksTableViewController.m */,
+				3F2AB08C17050C3F00821C4B /* TVEpisodesTableViewController.h */,
+				3F2AB08D17050C3F00821C4B /* TVEpisodesTableViewController.m */,
+				3F2AB08F17050C5300821C4B /* ITunesUTableViewController.h */,
+				3F2AB09017050C5300821C4B /* ITunesUTableViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		3F2AB09217050C6200821C4B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3F2AB0671705097C00821C4B /* MainStoryboard.storyboard */,
+				3F2AB09317050CB100821C4B /* ITunesMediaItemTableViewCell.h */,
+				3F2AB09417050CB100821C4B /* ITunesMediaItemTableViewCell.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +249,17 @@
 			files = (
 				3F2AB05C1705097C00821C4B /* main.m in Sources */,
 				3F2AB0601705097C00821C4B /* AppDelegate.m in Sources */,
-				3F2AB06C1705097D00821C4B /* ViewController.m in Sources */,
+				3F2AB07517050A3800821C4B /* ITunesFetcher.m in Sources */,
+				3F2AB07817050A4D00821C4B /* ITunesMediaItem.m in Sources */,
+				3F2AB07C17050B8200821C4B /* ITunesMediaItemsTableViewController.m in Sources */,
+				3F2AB07F17050BC300821C4B /* ITunesMediaItemDetailViewController.m in Sources */,
+				3F2AB08217050BED00821C4B /* IOSAppsTableViewController.m in Sources */,
+				3F2AB08517050BFF00821C4B /* AlbumsTableViewController.m in Sources */,
+				3F2AB08817050C1500821C4B /* MoviesTableViewController.m in Sources */,
+				3F2AB08B17050C2A00821C4B /* BooksTableViewController.m in Sources */,
+				3F2AB08E17050C3F00821C4B /* TVEpisodesTableViewController.m in Sources */,
+				3F2AB09117050C5300821C4B /* ITunesUTableViewController.m in Sources */,
+				3F2AB09517050CB100821C4B /* ITunesMediaItemTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
