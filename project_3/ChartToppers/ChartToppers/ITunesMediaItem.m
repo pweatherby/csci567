@@ -10,4 +10,25 @@
 
 @implementation ITunesMediaItem
 
+
+- (id)initWithJSONAttributes:(NSDictionary *)jsonAttributes
+                        rank:(int)rank
+{
+    self = [super init];
+    if (self) {
+        title;
+        category;
+        artist;
+        releaseDate;
+        price;
+        artworkURL;
+        artworkImage;
+        self.storeURL = jsonAttributes[@"im:artist"][@"label"];
+        self.rank = rank;
+        
+    }
+    return self;
+}
+
 @end
+

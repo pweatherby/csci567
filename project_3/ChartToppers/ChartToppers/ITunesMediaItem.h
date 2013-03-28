@@ -10,4 +10,17 @@
 
 @interface ITunesMediaItem : NSObject
 
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *category;
+@property (nonatomic, readonly) NSString *artist;
+@property (nonatomic, readonly) NSString *releaseDate;
+@property (nonatomic, readonly) NSString *price;
+@property (nonatomic, readonly) NSURL    *artworkURL;
+@property (nonatomic, readonly) UIImage  *artworkImage;
+@property (nonatomic, readonly) NSURL    *storeURL;
+@property (nonatomic, readonly) int       rank;
+
+- (id)initWithJSONAttributes:(NSDictionary *)jsonAttributes
+                        rank:(int)rank;
+
 @end
