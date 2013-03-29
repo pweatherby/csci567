@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITunesMediaItemsTableViewController.h"
 
-@interface MoviesTableViewController : UITableViewController
+@interface MoviesTableViewController : ITunesMediaItemsTableViewController
 
 @end
