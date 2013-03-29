@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ITunesMediaItem.h"
 
 @interface ITunesFetcher : NSObject
 
-+ (NSArray *)topFreeApps;
-+ (NSArray *)topAlbums;
-+ (NSArray *)topPaidBooks;
-+ (NSArray *)topMovies;
-+ (NSArray *)topTVEpisodes;
-+ (NSArray *)topITunesUCourses;
++ (NSArray*)topFreeApps;
++ (NSArray*)topAlbums;
++ (NSArray*)topPaidBooks;
++ (NSArray*)topMovies;
++ (NSArray*)topTVEpisodes;
++ (NSArray*)topITunesUCourses;
 
 @end
