@@ -8,7 +8,8 @@
 
 #import "ITunesFetcher.h"
 
-@interface ITunesFetcher
+
+@implementation ITunesFetcher
 
 NSString* const topFreeAppsURL = @"http://itunes.apple.com/us/rss/topfreeapplications/limit=50/json";
 NSString* const topAlbumsURL = @"http://itunes.apple.com/us/rss/topAlbums/limit=50/json";
@@ -17,67 +18,63 @@ NSString* const topMoviesURL = @"http://itunes.apple.com/us/rss/topMovies/limit=
 NSString* const topTVEpisodesURL = @"http://itunes.apple.com/us/rss/topTVEpisodes/limit=50/json";
 NSString* const topITunesUCoursesURL = @"http://itunes.apple.com/us/rss/topITunesUCourses/limit=50/json";
 
-+ (NSArray*)topFeedFor:(NSURL) url;
-
-@end
-
-@implementation ITunesFetcher
-
 + (NSArray *)topFreeApps
 {
-   return [self topFeedFor: topFreeAppsURL];
+    return [self topFeedFor: [NSURL fileURLWithPath: topFreeAppsURL] ];
 }
 
 + (NSArray*)topAlbums
 {
-   return [self topFeedFrom: topAlbumsURL];
+    return [self topFeedFor: [NSURL fileURLWithPath: topAlbumsURL] ];
 }
 
 + (NSArray*)topPaidBooks
 {
-   return [self topFeedFrom: topPaidBooksURL];
+    return [self topFeedFor: [NSURL fileURLWithPath: topPaidBooksURL] ];
 }
 
 + (NSArray*)topMovies
 {
-   return [self topFeedFrom: topMoviesURL];
+    return [self topFeedFor: [NSURL fileURLWithPath: topMoviesURL] ];
 }
 
 + (NSArray*)topTVEpisodes
 {
-   return [self topFeedFrom: topTVEpisodesURL];
+    return [self topFeedFor: [NSURL fileURLWithPath: topTVEpisodesURL] ];
 }
 
 + (NSArray*)topITunesUCourses
 {
-   return [self topFeedFrom: topITunesUCoursesURL];
+    return [self topFeedFor: [NSURL fileURLWithPath: topITunesUCoursesURL] ];
 }
 
-+ (NSArray*)topFeedFor:(NSURL) url
++ (NSArray*)topFeedFor:(NSURL*) url
 {
-   NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
-   NSError* error;
-   NSDictionary* parsedJSON = [NSJSONSerialization JSONObjectWithData:rawContents
-                                                              options:0
-                                                                error:&error];
-   if (error)
-   {
-      NSLog(@"JSON Parsing Error: %@", error);
-   }
+    NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
+    NSError* error;
+    NSDictionary* parsedJSON = [NSJSONSerialization JSONObjectWithData:rawContents
+                                                               options:0
+                                                                 error:&error];
+    if (error)
+    {
+        NSLog(@"JSON Parsing Error: %@", error);
+    }
 	
-   if(parsedJSON)
-   {
-      NSMutableArray* topItems = [[MSMutableArray alloc] initWithCapacity: 50];
-      for (int i = 1; i <= [parsedJSON Count]; i++)
-      {
-         NSDictionary* curItemProperties = [parsedJSON objectForIndex: i];
-         ITunesMediaItem* item = [[ITunesMediaItem alloc] initWithJSONAttributes: curItemProperties
-                                                                                : i ];
-         [topItems addObject: item];
-      }
-      return [topItems copy];
-   }
-   return nil;
+    if(parsedJSON)
+    {
+        NSMutableArray* topItems = [[NSMutableArray alloc] initWithCapacity: 50];
+        int i = 0;
+        for (id Key in parsedJSON)
+        {
+            i++;
+            NSDictionary* curItemProperties = [parsedJSON  objectForKey: Key];
+            ITunesMediaItem* item = [[ITunesMediaItem alloc] initWithJSONAttributes: curItemProperties
+                                                                               rank: i ];
+            [topItems addObject: item];
+        }
+        return [topItems copy];
+    }
+    return nil;
 }
 
 @end

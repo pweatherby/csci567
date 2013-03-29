@@ -16,16 +16,16 @@
 {
     self = [super init];
     if (self) {
-        self.title = jsonAttributes[@"title"][@"label"];
-        self.category jsonAttributes[@"category"][@"attributes"][@"label"];
-        self.artist = jsonAttributes[@"im:artist"][@"label"];
-        self.releaseDate = jsonAttributes[@"im:releaseDate"][@"label"];
-        self.price = jsonAttributes[@"im:price"][@"label"];
-        self.artworkURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:price"][0][@"label"]];
+        _title = jsonAttributes[@"title"][@"label"];
+        _category = jsonAttributes[@"category"][@"attributes"][@"label"];
+        _artist = jsonAttributes[@"im:artist"][@"label"];
+        _releaseDate = jsonAttributes[@"im:releaseDate"][@"label"];
+        _price = jsonAttributes[@"im:price"][@"label"];
+        _artworkURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:price"][0][@"label"]];
         NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
-        self.artworkImage = [UIImage imageWithData:artworkData];
-        self.storeURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:artist"][@"label"]];
-        self.rank = rank;
+        _artworkImage = [UIImage imageWithData:artworkData];
+        _storeURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:artist"][@"label"]];
+        _rank = rank;
         
     }
     return self;
