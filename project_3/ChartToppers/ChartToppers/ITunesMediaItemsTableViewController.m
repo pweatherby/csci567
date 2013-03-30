@@ -10,57 +10,52 @@
 
 @interface ITunesMediaItemsTableViewController ()
 
+
+
 @end
 
 @implementation ITunesMediaItemsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 50;
+    if(self.currentTopItems)
+    {
+        return self.currentTopItems.count;
+    }
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    ITunesMediaItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"IOSAppsItem" forIndexPath:indexPath];
+    cell.ItemBigDesc.text = @"No Items Found";
+    cell.ItemSmallDesc.text = @"";
+    cell.ItemRank.text = @"";
+    if(self.currentTopItems)
+    {
+        
+        ITunesMediaItem* curItem = [self.currentTopItems objectAtIndex:indexPath.item];
+        cell.ItemBigDesc.text = curItem.title;
+        cell.ItemSmallDesc.text = curItem.artist;
+        cell.ItemRank.text = [NSString stringWithFormat:@"%d", curItem.rank];
+    }
     return cell;
 }
 

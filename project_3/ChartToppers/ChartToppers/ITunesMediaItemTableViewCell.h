@@ -10,4 +10,8 @@
 
 @interface ITunesMediaItemTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel* ItemBigDesc;
+@property (weak, nonatomic) IBOutlet UILabel* ItemSmallDesc;
+@property (weak, nonatomic) IBOutlet UILabel* ItemRank;
+
 @end

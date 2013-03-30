@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITunesMediaItemTableViewCell.h"
+#import "ITunesMediaItem.h"
+#import "ITunesFetcher.h"
 
 @interface ITunesMediaItemsTableViewController : UITableViewController
+
+@property (strong, nonatomic) NSArray* currentTopItems;
 
 @end

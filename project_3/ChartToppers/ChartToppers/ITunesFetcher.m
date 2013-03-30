@@ -11,68 +11,72 @@
 
 @implementation ITunesFetcher
 
-NSString* const topFreeAppsURL = @"http://itunes.apple.com/us/rss/topfreeapplications/limit=50/json";
-NSString* const topAlbumsURL = @"http://itunes.apple.com/us/rss/topAlbums/limit=50/json";
-NSString* const topPaidBooksURL = @"http://itunes.apple.com/us/rss/topPaideBooks/limit=50/json";
-NSString* const topMoviesURL = @"http://itunes.apple.com/us/rss/topMovies/limit=50/json";
-NSString* const topTVEpisodesURL = @"http://itunes.apple.com/us/rss/topTVEpisodes/limit=50/json";
-NSString* const topITunesUCoursesURL = @"http://itunes.apple.com/us/rss/topITunesUCourses/limit=50/json";
+NSString* const topFreeAppsURL = @"https://itunes.apple.com/us/rss/topfreeapplications/limit=50/json";
+NSString* const topAlbumsURL = @"https://itunes.apple.com/us/rss/topAlbums/limit=50/json";
+NSString* const topPaidBooksURL = @"https://itunes.apple.com/us/rss/topPaideBooks/limit=50/json";
+NSString* const topMoviesURL = @"https://itunes.apple.com/us/rss/topMovies/limit=50/json";
+NSString* const topTVEpisodesURL = @"https://itunes.apple.com/us/rss/topTVEpisodes/limit=50/json";
+NSString* const topITunesUCoursesURL = @"https://itunes.apple.com/us/rss/topITunesUCourses/limit=50/json";
 
 + (NSArray *)topFreeApps
 {
-    return [self topFeedFor: [NSURL fileURLWithPath: topFreeAppsURL] ];
+    return [self topFeedFor: [[NSURL alloc] initWithString:topFreeAppsURL] ];
 }
 
 + (NSArray*)topAlbums
 {
-    return [self topFeedFor: [NSURL fileURLWithPath: topAlbumsURL] ];
+    return [self topFeedFor: [[NSURL alloc] initWithString:topAlbumsURL] ];
 }
 
 + (NSArray*)topPaidBooks
 {
-    return [self topFeedFor: [NSURL fileURLWithPath: topPaidBooksURL] ];
+    return [self topFeedFor: [[NSURL alloc] initWithString:topPaidBooksURL] ];
 }
 
 + (NSArray*)topMovies
 {
-    return [self topFeedFor: [NSURL fileURLWithPath: topMoviesURL] ];
+    return [self topFeedFor: [[NSURL alloc] initWithString:topMoviesURL] ];
 }
 
 + (NSArray*)topTVEpisodes
 {
-    return [self topFeedFor: [NSURL fileURLWithPath: topTVEpisodesURL] ];
+    return [self topFeedFor: [[NSURL alloc] initWithString:topTVEpisodesURL] ];
 }
 
 + (NSArray*)topITunesUCourses
 {
-    return [self topFeedFor: [NSURL fileURLWithPath: topITunesUCoursesURL] ];
+    return [self topFeedFor: [[NSURL alloc] initWithString:topITunesUCoursesURL] ];
 }
 
 + (NSArray*)topFeedFor:(NSURL*) url
 {
     NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
-    NSError* error;
-    NSDictionary* parsedJSON = [NSJSONSerialization JSONObjectWithData:rawContents
-                                                               options:0
-                                                                 error:&error];
-    if (error)
+    if(rawContents)
     {
-        NSLog(@"JSON Parsing Error: %@", error);
-    }
-	
-    if(parsedJSON)
-    {
-        NSMutableArray* topItems = [[NSMutableArray alloc] initWithCapacity: 50];
-        int i = 0;
-        for (id Key in parsedJSON)
+        NSError* error;
+        NSDictionary* parsedJSON = [NSJSONSerialization JSONObjectWithData:rawContents
+                                                                   options:0
+                                                                     error:&error];
+        if (error)
         {
-            i++;
-            NSDictionary* curItemProperties = [parsedJSON  objectForKey: Key];
-            ITunesMediaItem* item = [[ITunesMediaItem alloc] initWithJSONAttributes: curItemProperties
-                                                                               rank: i ];
-            [topItems addObject: item];
+            NSLog(@"JSON Parsing Error: %@", error);
         }
-        return [topItems copy];
+        
+        if(parsedJSON)
+        {
+            NSMutableArray* topItems = [[NSMutableArray alloc] initWithCapacity: 50];
+            int i = 0;
+            for (id Key in parsedJSON)
+            {
+                i++;
+                NSArray* entries = [parsedJSON  objectForKey: @"entries"];
+                if(curItemProperties)
+                ITunesMediaItem* item = [[ITunesMediaItem alloc] initWithJSONAttributes: curItemProperties
+                                                                                   rank: i ];
+                [topItems addObject: item];
+            }
+            return [topItems copy];
+        }
     }
     return nil;
 }
