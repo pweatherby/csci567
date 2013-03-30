@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITunesMediaItemDetailViewController.h"
 #import "ITunesMediaItemTableViewCell.h"
 #import "ITunesMediaItem.h"
 #import "ITunesFetcher.h"

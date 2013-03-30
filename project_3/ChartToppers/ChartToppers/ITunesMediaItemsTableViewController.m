@@ -27,13 +27,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     if(self.currentTopItems)
     {
         return self.currentTopItems.count;
@@ -41,7 +39,7 @@
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     
     ITunesMediaItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"IOSAppsItem" forIndexPath:indexPath];
@@ -50,7 +48,6 @@
     cell.ItemRank.text = @"";
     if(self.currentTopItems)
     {
-        
         ITunesMediaItem* curItem = [self.currentTopItems objectAtIndex:indexPath.item];
         cell.ItemBigDesc.text = curItem.title;
         cell.ItemSmallDesc.text = curItem.artist;
@@ -61,15 +58,28 @@
 
 #pragma mark - Table view delegate
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if(self.currentTopItems)
+    {
+        ITunesMediaItem* curItem = [self.currentTopItems objectAtIndex:indexPath.item];
+        if(curItem)
+        {
+            [self performSegueWithIdentifier: @"showDetail"
+                                      sender: curItem];
+            
+        }
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        ITunesMediaItemDetailViewController* detailView = [segue destinationViewController];
+        detailView.detailItem = sender;
+    }
 }
 
 @end

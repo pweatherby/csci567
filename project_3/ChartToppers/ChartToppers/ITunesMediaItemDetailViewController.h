@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITunesMediaItem.h"
 
 @interface ITunesMediaItemDetailViewController : UITableViewController
+
+@property (strong, nonatomic) ITunesMediaItem* detailItem;
 
 @end
