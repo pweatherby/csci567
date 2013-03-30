@@ -42,7 +42,7 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     
-    ITunesMediaItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"IOSAppsItem" forIndexPath:indexPath];
+    ITunesMediaItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
     cell.ItemBigDesc.text = @"No Items Found";
     cell.ItemSmallDesc.text = @"";
     cell.ItemRank.text = @"";
