@@ -17,14 +17,14 @@
     self = [super init];
     if (self) {
         _title = jsonAttributes[@"title"][@"label"];
-        _category = jsonAttributes[@"category"][@"attributes"][@"label"];
+        //_category = jsonAttributes[@"category"][@"attributes"][@"label"];
         _artist = jsonAttributes[@"im:artist"][@"label"];
-        _releaseDate = jsonAttributes[@"im:releaseDate"][@"label"];
-        _price = jsonAttributes[@"im:price"][@"label"];
-        _artworkURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:price"][0][@"label"]];
-        NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
+        //_releaseDate = jsonAttributes[@"im:releaseDate"][@"label"];
+        //_price = jsonAttributes[@"im:price"][@"label"];
+        //_artworkURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:price"][0][@"label"]];
+        //NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
         //_artworkImage = [UIImage imageWithData:artworkData];
-        _storeURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:artist"][@"label"]];
+        //_storeURL = [[NSURL alloc] initWithString:jsonAttributes[@"im:artist"][@"label"]];
         _rank = rank;
         
     }

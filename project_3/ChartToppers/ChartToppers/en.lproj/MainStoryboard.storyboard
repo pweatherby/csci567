@@ -57,7 +57,7 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iW-98-5fu">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="dIS-Z9-emM"/>
-                                                <constraint firstAttribute="width" constant="224" id="iRU-hU-Mwe"/>
+                                                <constraint firstAttribute="width" constant="256" id="pUu-XW-Pkd"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,8 +73,8 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-El-FH0">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="49" id="Oj5-Ey-TfR"/>
                                                 <constraint firstAttribute="height" constant="39" id="RL4-S8-zV9"/>
+                                                <constraint firstAttribute="width" constant="35" id="r04-5I-11t"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -85,10 +85,10 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="RgN-g9-KJt" firstAttribute="bottom" secondItem="7IP-El-FH0" secondAttribute="bottom" type="default" id="5dP-Es-8HU"/>
-                                    <constraint firstAttribute="trailing" secondItem="7IP-El-FH0" secondAttribute="trailing" constant="20" type="default" id="EQF-gq-TYf"/>
-                                    <constraint firstItem="RgN-g9-KJt" firstAttribute="trailing" secondItem="9iW-98-5fu" secondAttribute="trailing" type="default" id="F7J-8B-xuy"/>
                                     <constraint firstItem="RgN-g9-KJt" firstAttribute="top" secondItem="aj0-lD-U0M" secondAttribute="top" constant="20" type="default" id="KG4-wr-dm6"/>
                                     <constraint firstItem="9iW-98-5fu" firstAttribute="leading" secondItem="aj0-lD-U0M" secondAttribute="leading" constant="13" id="XGf-VO-bvA"/>
+                                    <constraint firstItem="7IP-El-FH0" firstAttribute="leading" secondItem="RgN-g9-KJt" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="qc0-MU-vbJ"/>
+                                    <constraint firstItem="7IP-El-FH0" firstAttribute="leading" secondItem="9iW-98-5fu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="sC9-ay-aAb"/>
                                     <constraint firstItem="RgN-g9-KJt" firstAttribute="leading" secondItem="9iW-98-5fu" secondAttribute="leading" type="default" id="suo-Qn-SOS"/>
                                     <constraint firstItem="9iW-98-5fu" firstAttribute="top" secondItem="7IP-El-FH0" secondAttribute="top" type="default" id="xFA-G5-mbP"/>
                                 </constraints>

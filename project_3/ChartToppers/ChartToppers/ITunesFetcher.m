@@ -65,15 +65,19 @@ NSString* const topITunesUCoursesURL = @"https://itunes.apple.com/us/rss/topITun
         if(parsedJSON)
         {
             NSMutableArray* topItems = [[NSMutableArray alloc] initWithCapacity: 50];
-            int i = 0;
-            for (id Key in parsedJSON)
+            NSDictionary* feed = [parsedJSON objectForKey:@"feed"];
+            if(feed)
             {
-                i++;
-                NSArray* entries = [parsedJSON  objectForKey: @"entries"];
-                if(curItemProperties)
-                ITunesMediaItem* item = [[ITunesMediaItem alloc] initWithJSONAttributes: curItemProperties
-                                                                                   rank: i ];
-                [topItems addObject: item];
+                NSArray* entries = [feed objectForKey: @"entry"];
+                if(entries)
+                {
+                    for(int i = 0; i < entries.count; i++)
+                    {
+                        ITunesMediaItem* item = [[ITunesMediaItem alloc] initWithJSONAttributes: [entries objectAtIndex:i]
+                                                                                           rank: i+1 ];
+                        [topItems addObject: item];
+                    }
+                }
             }
             return [topItems copy];
         }
