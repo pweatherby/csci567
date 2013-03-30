@@ -60,10 +60,14 @@
         {
             if([link isKindOfClass: [NSArray class]])
             {
-                NSArray* linkAttr = [link objectAtIndex:1];// objectForKey:@"attributes"];
-                if(linkAttr)
+                NSDictionary* linkAttrholder = [link objectAtIndex:1];// 
+                if(linkAttrholder)
                 {
-                    //_storeURL = [link objectForKey:@"href"];
+                    NSDictionary* linkAttr = [linkAttrholder objectForKey:@"attributes"];
+                    if(linkAttr)
+                    {
+                        _storeURL = [linkAttr objectForKey:@"href"];
+                    }
                 }
             }
             else

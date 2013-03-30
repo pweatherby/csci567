@@ -37,6 +37,6 @@
 
 - (IBAction)detailLinkPressed:(UIButton *)sender
 {
-    [[UIApplication sharedApplication] openURL: self.detailItem.storeURL];
+    //[[UIApplication sharedApplication] openURL: self.detailItem.storeURL];
 }
 @end
