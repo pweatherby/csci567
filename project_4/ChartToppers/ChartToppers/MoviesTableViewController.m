@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad
 {
+    [self.refreshControl addTarget:self
+                            action:@selector(refresh)
+                  forControlEvents:UIControlEventValueChanged];
     [super viewDidLoad];
+}
+
+- (void) RefreshCurrentTopItems
+{
     self.currentTopItems = [ITunesFetcher topMovies];
 }
 

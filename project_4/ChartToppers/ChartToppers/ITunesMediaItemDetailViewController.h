@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ITunesMediaItem.h"
+#import "ImageUtils.h"
 
 @interface ITunesMediaItemDetailViewController : UITableViewController
 

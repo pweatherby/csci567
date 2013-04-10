@@ -28,6 +28,7 @@
 		3F2AB08E17050C3F00821C4B /* TVEpisodesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB08D17050C3F00821C4B /* TVEpisodesTableViewController.m */; };
 		3F2AB09117050C5300821C4B /* ITunesUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB09017050C5300821C4B /* ITunesUTableViewController.m */; };
 		3F2AB09517050CB100821C4B /* ITunesMediaItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AB09417050CB100821C4B /* ITunesMediaItemTableViewCell.m */; };
+		FD602E1417151506008B01F4 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD602E1317151506008B01F4 /* ImageUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		3F2AB09017050C5300821C4B /* ITunesUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesUTableViewController.m; sourceTree = "<group>"; };
 		3F2AB09317050CB100821C4B /* ITunesMediaItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITunesMediaItemTableViewCell.h; sourceTree = "<group>"; };
 		3F2AB09417050CB100821C4B /* ITunesMediaItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesMediaItemTableViewCell.m; sourceTree = "<group>"; };
+		FD602E1217151505008B01F4 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
+		FD602E1317151506008B01F4 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				3F2AB07417050A3800821C4B /* ITunesFetcher.m */,
 				3F2AB07617050A4D00821C4B /* ITunesMediaItem.h */,
 				3F2AB07717050A4D00821C4B /* ITunesMediaItem.m */,
+				FD602E1217151505008B01F4 /* ImageUtils.h */,
+				FD602E1317151506008B01F4 /* ImageUtils.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				3F2AB08E17050C3F00821C4B /* TVEpisodesTableViewController.m in Sources */,
 				3F2AB09117050C5300821C4B /* ITunesUTableViewController.m in Sources */,
 				3F2AB09517050CB100821C4B /* ITunesMediaItemTableViewCell.m in Sources */,
+				FD602E1417151506008B01F4 /* ImageUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +388,7 @@
 				3F2AB0711705097D00821C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

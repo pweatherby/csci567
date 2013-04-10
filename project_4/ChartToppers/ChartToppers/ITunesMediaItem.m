@@ -20,10 +20,11 @@
         _category = jsonAttributes[@"category"][@"attributes"][@"label"];
         _artist = jsonAttributes[@"im:artist"][@"label"];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"YYYY-MM-DD'T'HH:mm:ssZZZ"];//2013-03-19T00:00:00-07:00
-        NSDate *date = [formatter dateFromString:jsonAttributes[@"im:releaseDate"][@"label"]];
+        [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssz"];//2013-03-19T00:00:00-07:00
+        NSString* unformattedDate = jsonAttributes[@"im:releaseDate"][@"label"];
+        NSDate *date = [formatter dateFromString:unformattedDate];
         
-        [formatter setDateFormat:@"MMMM DD, YYYY"];
+        [formatter setDateFormat:@"MMMM dd, yyyy"];
         _releaseDate = [formatter stringFromDate:date];
 
         _price = jsonAttributes[@"im:price"][@"label"];
@@ -83,6 +84,7 @@
     {
         if(self.artworkURL)
         {
+            [NSThread sleepForTimeInterval:drand48() * 3.0];
             NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
             _artworkImage = [UIImage imageWithData:artworkData];
         }
