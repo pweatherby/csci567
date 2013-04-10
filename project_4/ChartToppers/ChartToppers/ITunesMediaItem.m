@@ -40,12 +40,7 @@
                 }
             }
         }
-        //_artworkImage = [UIImage imageWithData:<#(NSData *)#>]
-        if(self.artworkURL)
-        {
-            NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
-            _artworkImage = [UIImage imageWithData:artworkData];
-        }
+        
         NSArray* link = jsonAttributes[@"link"];
         if(!link)
         {
@@ -80,6 +75,21 @@
     }
     return self;
 }
+@synthesize artworkImage = _artworkImage;
+
+- (UIImage*) artworkImage
+{
+    if(!_artworkImage)
+    {
+        if(self.artworkURL)
+        {
+            NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
+            _artworkImage = [UIImage imageWithData:artworkData];
+        }
+    }
+    return _artworkImage;
+}
+
 
 @end
 

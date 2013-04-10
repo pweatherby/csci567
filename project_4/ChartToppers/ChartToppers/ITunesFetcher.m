@@ -50,6 +50,7 @@ NSString* const topITunesUCoursesURL = @"https://itunes.apple.com/us/rss/topITun
 
 + (NSArray*)topFeedFor:(NSURL*) url
 {
+    [NSThread sleepForTimeInterval:drand48() * 3.0];
     NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
     if(rawContents)
     {
