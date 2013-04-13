@@ -35,6 +35,7 @@
 		3F5A60DF1719089C00831EED /* 176-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A60D91719089C00831EED /* 176-ipad.png */; };
 		3F5A60E01719089C00831EED /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A60DA1719089C00831EED /* 190-bank.png */; };
 		3F5A60E11719089C00831EED /* 194-note-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A60DB1719089C00831EED /* 194-note-2.png */; };
+		3F5A60E7171931E600831EED /* 95-equalizer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A60E6171931E600831EED /* 95-equalizer.png */; };
 		FD602E1417151506008B01F4 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD602E1317151506008B01F4 /* ImageUtils.m */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		3F5A60D91719089C00831EED /* 176-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "176-ipad.png"; sourceTree = "<group>"; };
 		3F5A60DA1719089C00831EED /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "190-bank.png"; sourceTree = "<group>"; };
 		3F5A60DB1719089C00831EED /* 194-note-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "194-note-2.png"; sourceTree = "<group>"; };
+		3F5A60E6171931E600831EED /* 95-equalizer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "95-equalizer.png"; sourceTree = "<group>"; };
 		FD602E1217151505008B01F4 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
 		FD602E1317151506008B01F4 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 		3F2AB0561705097C00821C4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F5A60E6171931E600831EED /* 95-equalizer.png */,
 				3F5A60D61719089C00831EED /* 45-movie-1.png */,
 				3F5A60D71719089C00831EED /* 70-tv.png */,
 				3F5A60D81719089C00831EED /* 96-book.png */,
@@ -271,6 +274,7 @@
 				3F5A60DF1719089C00831EED /* 176-ipad.png in Resources */,
 				3F5A60E01719089C00831EED /* 190-bank.png in Resources */,
 				3F5A60E11719089C00831EED /* 194-note-2.png in Resources */,
+				3F5A60E7171931E600831EED /* 95-equalizer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -229,7 +229,7 @@
         <scene sceneID="XvA-FP-xV4">
             <objects>
                 <navigationController definesPresentationContext="YES" id="oAL-mp-cVT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" image="movie@2x.png" id="C3J-Cl-J4c"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="45-movie-1.png" id="C3J-Cl-J4c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rf5-rg-nQv">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -656,7 +656,7 @@
             <objects>
                 <tableViewController id="HBl-53-iKv" customClass="ITunesMediaItemDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="egj-yF-hFy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -915,17 +915,72 @@
         <image name="176-ipad.png" width="22" height="28"/>
         <image name="190-bank.png" width="26" height="22"/>
         <image name="194-note-2.png" width="23" height="23"/>
+        <image name="45-movie-1.png" width="19" height="25"/>
         <image name="70-tv.png" width="24" height="24"/>
         <image name="96-book.png" width="18" height="26"/>
         <image name="Default.png" width="320" height="480"/>
-        <image name="movie@2x.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="AlbumsTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlbumsTableViewController.h"/>
+        </class>
+        <class className="BooksTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BooksTableViewController.h"/>
+        </class>
+        <class className="IOSAppsTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IOSAppsTableViewController.h"/>
+        </class>
+        <class className="ITunesMediaItemDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ITunesMediaItemDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="detailLinkPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="detailArtist" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="detailIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="detailPrice" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="detailRank" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailReleaseDt" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailSummary" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="detailTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ITunesMediaItemTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ITunesMediaItemTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ItemBigDesc" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ItemIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="ItemRank" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ItemSmallDesc" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ItemThumbnail" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ITunesMediaItemsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ITunesMediaItemsTableViewController.h"/>
+        </class>
+        <class className="ITunesUTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ITunesUTableViewController.h"/>
+        </class>
+        <class className="MoviesTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoviesTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TVEpisodesTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TVEpisodesTableViewController.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VtA-Df-V7A"/>
+        <segue reference="dJa-GI-pL1"/>
     </inferredMetricsTieBreakers>
 </document>
