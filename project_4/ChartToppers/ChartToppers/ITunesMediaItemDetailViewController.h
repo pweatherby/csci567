@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ITunesMediaItem.h"
 #import "ImageUtils.h"
+#import <UIKit/UIActivity.h>
 
-@interface ITunesMediaItemDetailViewController : UITableViewController
+@interface ITunesMediaItemDetailViewController : UITableViewController <UITableViewDelegate>
 
 @property (strong, nonatomic) ITunesMediaItem* detailItem;
 

@@ -50,8 +50,10 @@ NSString* const topITunesUCoursesURL = @"https://itunes.apple.com/us/rss/topITun
 
 + (NSArray*)topFeedFor:(NSURL*) url
 {
+    [[NetworkActivityTracker sharedInstance] showActivityIndicator];
     [NSThread sleepForTimeInterval:drand48() * 3.0];
     NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
+    [[NetworkActivityTracker sharedInstance] hideActivityIndicator];
     if(rawContents)
     {
         NSError* error;

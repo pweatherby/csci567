@@ -71,6 +71,9 @@
                 
             }
         }
+        
+        _summary = jsonAttributes[@"summary"][@"label"];
+        
         _rank = rank;
         
     }
@@ -84,8 +87,10 @@
     {
         if(self.artworkURL)
         {
+            [[NetworkActivityTracker sharedInstance] showActivityIndicator];
             [NSThread sleepForTimeInterval:drand48() * 3.0];
             NSData* artworkData = [NSData dataWithContentsOfURL:self.artworkURL];
+            [[NetworkActivityTracker sharedInstance] hideActivityIndicator];
             _artworkImage = [UIImage imageWithData:artworkData];
         }
     }

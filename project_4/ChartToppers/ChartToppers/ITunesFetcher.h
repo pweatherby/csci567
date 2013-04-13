@@ -10,6 +10,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ITunesMediaItem.h"
+#import "NetworkActivityTracker.h"
 
 @interface ITunesFetcher : NSObject
 

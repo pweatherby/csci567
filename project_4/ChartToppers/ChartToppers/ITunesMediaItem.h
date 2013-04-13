@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetworkActivityTracker.h"
 
 @interface ITunesMediaItem : NSObject
 
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) UIImage* artworkImage;
 @property (nonatomic, readonly) NSURL* storeURL;
 @property (nonatomic, readonly) int rank;
+@property (nonatomic, readonly) NSString* summary;
 
 - (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes
                         rank:(int)rank;

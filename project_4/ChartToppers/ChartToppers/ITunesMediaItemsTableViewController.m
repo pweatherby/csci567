@@ -79,7 +79,7 @@
     cell.ItemBigDesc.text = @"No Items Found";
     cell.ItemSmallDesc.text = @"";
     cell.ItemRank.text = @"";
-    cell.ItemThumbnail.image = [[UIImage alloc] init];
+    cell.ItemThumbnail.image = nil;
     if(self.currentTopItems)
     {
         ITunesMediaItem* curItem = [self.currentTopItems objectAtIndex:indexPath.item];
