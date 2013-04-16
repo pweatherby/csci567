@@ -10,7 +10,6 @@
 #import "ITunesMediaItemDetailViewController.h"
 #import "ITunesMediaItemTableViewCell.h"
 #import "ITunesMediaItem.h"
-#import "ITunesFetcher.h"
 
 @interface ITunesMediaItemsTableViewController : UITableViewController
 

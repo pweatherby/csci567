@@ -2,7 +2,7 @@
 //  ImageUtils.h
 //  ChartToppers
 //
-//  Created by iOS Student on 4/9/13.
+//  Created by Paul Weatherby on 4/9/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 

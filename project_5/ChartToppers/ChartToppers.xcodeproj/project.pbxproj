@@ -37,6 +37,8 @@
 		3F5A60E11719089C00831EED /* 194-note-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A60DB1719089C00831EED /* 194-note-2.png */; };
 		3F5A60E7171931E600831EED /* 95-equalizer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A60E6171931E600831EED /* 95-equalizer.png */; };
 		FD602E1417151506008B01F4 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD602E1317151506008B01F4 /* ImageUtils.m */; };
+		FDE0A3A9171CDF5200F227D1 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0A3A8171CDF5200F227D1 /* FavoritesTableViewController.m */; };
+		FDE0A3AC171CE23500F227D1 /* FavoritesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0A3AB171CE23500F227D1 /* FavoritesManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,10 @@
 		3F5A60E6171931E600831EED /* 95-equalizer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "95-equalizer.png"; sourceTree = "<group>"; };
 		FD602E1217151505008B01F4 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
 		FD602E1317151506008B01F4 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
+		FDE0A3A7171CDF5200F227D1 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
+		FDE0A3A8171CDF5200F227D1 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		FDE0A3AA171CE23500F227D1 /* FavoritesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesManager.h; sourceTree = "<group>"; };
+		FDE0A3AB171CE23500F227D1 /* FavoritesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,8 @@
 				FD602E1317151506008B01F4 /* ImageUtils.m */,
 				3F5A60D31718F2B300831EED /* NetworkActivityTracker.h */,
 				3F5A60D41718F2B300831EED /* NetworkActivityTracker.m */,
+				FDE0A3AA171CE23500F227D1 /* FavoritesManager.h */,
+				FDE0A3AB171CE23500F227D1 /* FavoritesManager.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -198,6 +206,8 @@
 				3F2AB08D17050C3F00821C4B /* TVEpisodesTableViewController.m */,
 				3F2AB08F17050C5300821C4B /* ITunesUTableViewController.h */,
 				3F2AB09017050C5300821C4B /* ITunesUTableViewController.m */,
+				FDE0A3A7171CDF5200F227D1 /* FavoritesTableViewController.h */,
+				FDE0A3A8171CDF5200F227D1 /* FavoritesTableViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -300,6 +310,8 @@
 				3F2AB09517050CB100821C4B /* ITunesMediaItemTableViewCell.m in Sources */,
 				FD602E1417151506008B01F4 /* ImageUtils.m in Sources */,
 				3F5A60D51718F2B300831EED /* NetworkActivityTracker.m in Sources */,
+				FDE0A3A9171CDF5200F227D1 /* FavoritesTableViewController.m in Sources */,
+				FDE0A3AC171CE23500F227D1 /* FavoritesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

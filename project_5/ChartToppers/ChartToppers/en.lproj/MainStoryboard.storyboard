@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="try-BM-E3Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="try-BM-E3Z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -15,6 +15,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="uc7-9B-Azo" kind="relationship" relationship="viewControllers" id="mPX-eD-Vm4"/>
                         <segue destination="4bR-xk-QcJ" kind="relationship" relationship="viewControllers" id="ZRP-07-32s"/>
                         <segue destination="TZJ-qd-3hz" kind="relationship" relationship="viewControllers" id="di8-MU-037"/>
                         <segue destination="oAL-mp-cVT" kind="relationship" relationship="viewControllers" id="eTu-xs-60T"/>
@@ -25,7 +26,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMe-Oa-SRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1220" y="-213"/>
+            <point key="canvasLocation" x="-1282" y="439"/>
         </scene>
         <!--Albums Table View Controller - Albums-->
         <scene sceneID="wxl-3t-Mh5">
@@ -546,6 +547,108 @@
             </objects>
             <point key="canvasLocation" x="691" y="1458"/>
         </scene>
+        <!--Favorites Table View Controller - Favorites-->
+        <scene sceneID="LaG-HK-vcg">
+            <objects>
+                <tableViewController id="5GV-9Y-VjY" customClass="FavoritesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tue-qu-W23">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Item" id="8jh-nb-jGJ" customClass="ITunesMediaItemTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9L-75-w39">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="e1e-2f-V4g"/>
+                                                <constraint firstAttribute="width" constant="211" id="vih-xF-4Dq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item subText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o31-2E-eUv">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="CNx-xI-LdD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqz-Di-Bit">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="fc7-3W-Ujy"/>
+                                                <constraint firstAttribute="width" constant="35" id="wrO-dD-vjG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWj-5s-b5A">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="rfl-9C-4gD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ax4-LX-snC">
+                                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Cqz-Di-Bit" firstAttribute="leading" secondItem="o31-2E-eUv" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="2HJ-B7-YsU"/>
+                                    <constraint firstItem="ax4-LX-snC" firstAttribute="centerY" secondItem="mWj-5s-b5A" secondAttribute="centerY" type="default" id="6Ag-fS-1qn"/>
+                                    <constraint firstItem="o31-2E-eUv" firstAttribute="leading" secondItem="ax4-LX-snC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Mhm-hT-jfc"/>
+                                    <constraint firstItem="mWj-5s-b5A" firstAttribute="bottom" secondItem="o31-2E-eUv" secondAttribute="bottom" type="default" id="NVl-R0-yw2"/>
+                                    <constraint firstItem="Cqz-Di-Bit" firstAttribute="bottom" secondItem="o31-2E-eUv" secondAttribute="bottom" type="default" id="VFY-C6-BS8"/>
+                                    <constraint firstItem="ax4-LX-snC" firstAttribute="centerY" secondItem="Cqz-Di-Bit" secondAttribute="centerY" type="default" id="dGd-Of-1c8"/>
+                                    <constraint firstItem="o31-2E-eUv" firstAttribute="top" secondItem="8jh-nb-jGJ" secondAttribute="top" constant="20" type="default" id="heE-Bn-jVs"/>
+                                    <constraint firstItem="mWj-5s-b5A" firstAttribute="leading" secondItem="8jh-nb-jGJ" secondAttribute="leading" constant="10" id="l9U-CL-jdK"/>
+                                    <constraint firstItem="v9L-75-w39" firstAttribute="leading" secondItem="ax4-LX-snC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mpF-gl-eIn"/>
+                                    <constraint firstItem="v9L-75-w39" firstAttribute="top" secondItem="Cqz-Di-Bit" secondAttribute="top" type="default" id="wyE-9S-9U5"/>
+                                    <constraint firstItem="v9L-75-w39" firstAttribute="leading" secondItem="mWj-5s-b5A" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xBi-Iy-2sO"/>
+                                    <constraint firstItem="Cqz-Di-Bit" firstAttribute="leading" secondItem="v9L-75-w39" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zHq-04-KKz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="ItemBigDesc" destination="v9L-75-w39" id="bmr-Iv-SJb"/>
+                                    <outlet property="ItemIndicator" destination="ax4-LX-snC" id="64v-cN-2I7"/>
+                                    <outlet property="ItemRank" destination="Cqz-Di-Bit" id="bAU-PS-tHY"/>
+                                    <outlet property="ItemSmallDesc" destination="o31-2E-eUv" id="bAq-aO-2ia"/>
+                                    <outlet property="ItemThumbnail" destination="mWj-5s-b5A" id="PVb-RZ-vBv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorites" id="B8A-pV-NFw"/>
+                    <connections>
+                        <segue destination="HBl-53-iKv" kind="push" identifier="showDetail" id="29s-Ax-OXU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddS-2K-mPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691" y="2242"/>
+        </scene>
+        <!--Navigation Controller - Favorites-->
+        <scene sceneID="akn-vZ-i67">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="uc7-9B-Azo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="95-equalizer.png" id="J7E-d9-QGN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XC9-0m-REe">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5GV-9Y-VjY" kind="relationship" relationship="rootViewController" id="65Q-8S-1wO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxx-Ee-rJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="2242"/>
+        </scene>
         <!--Navigation Controller - UCourses-->
         <scene sceneID="jqs-jw-rua">
             <objects>
@@ -655,7 +758,7 @@
         <scene sceneID="Duf-kS-QVY">
             <objects>
                 <tableViewController id="HBl-53-iKv" customClass="ITunesMediaItemDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="egj-yF-hFy">
+                    <tableView key="view" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="egj-yF-hFy">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -796,7 +899,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="guf-sY-m9P">
-                                        <rect key="frame" x="0.0" y="199" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="199" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -835,7 +938,7 @@
                             <tableViewSection id="tSm-em-YEa">
                                 <cells>
                                     <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="qfq-Qm-CUt">
-                                        <rect key="frame" x="0.0" y="263" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="263" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -917,6 +1020,7 @@
         <image name="194-note-2.png" width="23" height="23"/>
         <image name="45-movie-1.png" width="19" height="25"/>
         <image name="70-tv.png" width="24" height="24"/>
+        <image name="95-equalizer.png" width="26" height="24"/>
         <image name="96-book.png" width="18" height="26"/>
         <image name="Default.png" width="320" height="480"/>
     </resources>
@@ -926,6 +1030,9 @@
         </class>
         <class className="BooksTableViewController" superclassName="ITunesMediaItemsTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BooksTableViewController.h"/>
+        </class>
+        <class className="FavoritesTableViewController" superclassName="ITunesMediaItemsTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesTableViewController.h"/>
         </class>
         <class className="IOSAppsTableViewController" superclassName="ITunesMediaItemsTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IOSAppsTableViewController.h"/>
@@ -981,6 +1088,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dJa-GI-pL1"/>
+        <segue reference="29s-Ax-OXU"/>
     </inferredMetricsTieBreakers>
 </document>

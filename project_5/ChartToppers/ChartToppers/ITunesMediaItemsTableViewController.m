@@ -16,7 +16,7 @@
 
 - (void) RefreshCurrentTopItems
 {
-   self.currentTopItems = [ITunesFetcher topMovies];
+   self.currentTopItems = nil;
 }
 
 - (void)viewDidLoad

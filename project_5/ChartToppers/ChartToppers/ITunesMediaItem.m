@@ -97,6 +97,21 @@
     return _artworkImage;
 }
 
+- (BOOL) isEqual: (ITunesMediaItem*) other
+{
+    if( self && other)
+    {
+        if( [self.category isEqualToString:[other category]])
+        {
+            if(self.rank == other.rank)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 
 @end
 

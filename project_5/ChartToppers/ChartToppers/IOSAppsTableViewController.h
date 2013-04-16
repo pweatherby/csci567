@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "ITunesMediaItemsTableViewController.h"
+#import "ITunesFetcher.h"
 
 @interface IOSAppsTableViewController : ITunesMediaItemsTableViewController
 

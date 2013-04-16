@@ -2,7 +2,7 @@
 //  ImageUtils.m
 //  ChartToppers
 //
-//  Created by iOS Student on 4/9/13.
+//  Created by Paul Weatherby on 4/9/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 // Retrieved from http://stackoverflow.com/questions/15893056/crop-an-image-to-make-a-process-on-the-result
 
