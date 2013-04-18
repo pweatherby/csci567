@@ -10,12 +10,30 @@
 
 @implementation ITunesMediaItem
 
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if(self)
+    {
+        _title = [aDecoder decodeObjectForKey:@"_title"];
+        _category = [aDecoder decodeObjectForKey:@"_category"];
+        _artist = [aDecoder decodeObjectForKey:@"_artist"];
+        _releaseDate = [aDecoder decodeObjectForKey:@"_releaseDate"];
+        _price = [aDecoder decodeObjectForKey:@"_price"];
+        _artworkURL = [aDecoder decodeObjectForKey:@"_artworkURL"];
+        _storeURL = [aDecoder decodeObjectForKey:@"_storeURL"];
+        _rank = [aDecoder decodeIntForKey:@"_rank"];
+        _summary = [aDecoder decodeObjectForKey:@"_summary"];
+    }
+    return self;
+}
 
 - (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes
                         rank:(int)rank
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _title = jsonAttributes[@"im:name"][@"label"];
         _category = jsonAttributes[@"category"][@"attributes"][@"label"];
         _artist = jsonAttributes[@"im:artist"][@"label"];
@@ -101,15 +119,34 @@
 {
     if( self && other)
     {
-        if( [self.category isEqualToString:[other category]])
+        if(self.storeURL && other.storeURL)
         {
-            if(self.rank == other.rank)
-            {
-                return true;
-            }
+            return [self.storeURL isEqual: other.storeURL];
         }
     }
     return false;
+}
+
+- (NSUInteger) hash
+{
+    NSUInteger hash = 0;
+    if(self && self.storeURL)
+    {
+        hash += [self.storeURL hash];
+    }
+    return hash;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:_title forKey:@"_title"];
+    [encoder encodeObject:_category forKey:@"_category"];
+    [encoder encodeObject:_releaseDate forKey:@"_releaseDate"];
+    [encoder encodeObject:_artworkURL forKey:@"_artworkURL"];
+    [encoder encodeObject:_storeURL forKey:@"_storeURL"];
+    [encoder encodeInt:_rank forKey:@"_rank"];
+    [encoder encodeObject:_summary forKey:@"_summary"];
 }
 
 

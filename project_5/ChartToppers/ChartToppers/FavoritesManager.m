@@ -8,37 +8,80 @@
 
 #import "FavoritesManager.h"
 
+@interface FavoritesManager()
+
+@property (strong, nonatomic) NSMutableSet* favs;
+
+@end
 
 @implementation FavoritesManager
 
+@synthesize favs = _favs;
 
+
+- (NSString*) getArchiveFilePath
+{
+    return nil;
+}
+
+- (BOOL) saveFavsToFile:(NSString*) path
+{
+    if(![[NSFileManager defaultManager] isReadableFileAtPath:path])
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path
+                                  withIntermediateDirectories:TRUE
+                                                   attributes:nil
+                                                        error:nil];
+    }
+    [[NSFileManager defaultManager] createFileAtPath:path
+                                            contents:nil
+                                          attributes:nil];
+    return [NSKeyedArchiver archiveRootObject:_favs toFile:path];
+}
+
+- (NSMutableSet*) favs
+{
+    if(!_favs)
+    {
+        NSString* path = [self getArchiveFilePath];
+        if([[NSFileManager defaultManager] isReadableFileAtPath:path])
+        {
+            _favs = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        }
+    }
+    return _favs;
+}
 
 - (void)addFavorite:(ITunesMediaItem*)mediaItem
 {
-
+    if(![self isFavorite:mediaItem])
+    {
+        [self.favs addObject:mediaItem];
+        [self saveFavsToFile:[self getArchiveFilePath]];
+    }
 }
 
 - (void)removeFavorite:(ITunesMediaItem*)mediaItem
 {
-    
+    if([self isFavorite:mediaItem])
+    {
+        [self.favs removeObject:mediaItem];
+        [self saveFavsToFile:[self getArchiveFilePath]];
+    }
 }
 
 - (BOOL)isFavorite:(ITunesMediaItem*)mediaItem
 {
-    NSArray* favs = [self allFavorites];
-    if(favs)
+    if(self.favs)
     {
-        if([favs indexOfObject:mediaItem] > 0)
-        {
-            return true;
-        }
+        return [self.favs containsObject:mediaItem];
     }
     return false;
 }
 
 - (NSArray*)allFavorites
 {
-    return nil;
+    return [self.favs copy];
 }
 
 + (FavoritesManager*)sharedFavoritesManager

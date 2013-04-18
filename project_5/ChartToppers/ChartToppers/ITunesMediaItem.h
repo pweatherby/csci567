@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NetworkActivityTracker.h"
 
-@interface ITunesMediaItem : NSObject
+@interface ITunesMediaItem : NSObject <NSCoding>
 
 @property (nonatomic, readonly) NSString* title;
 @property (nonatomic, readonly) NSString* category;

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIKit/UIActivity.h>
 #import "ITunesMediaItem.h"
 #import "ImageUtils.h"
-#import <UIKit/UIActivity.h>
+#import "FavoritesManager.h"
 
 @interface ITunesMediaItemDetailViewController : UITableViewController <UITableViewDelegate>
 

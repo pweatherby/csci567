@@ -66,6 +66,15 @@
         frame.size.height = self.detailSummary.contentSize.height;
         [self.detailSummary setFrame:frame];
         [self.detailSummary setNeedsDisplay];
+        bool isFav = [[FavoritesManager sharedFavoritesManager] isFavorite:self.detailItem];
+        if(isFav)
+        {
+            
+        }
+        else
+        {
+            
+        }
     }
 }
 
