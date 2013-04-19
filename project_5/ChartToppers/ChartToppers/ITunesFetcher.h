@@ -14,11 +14,11 @@
 
 @interface ITunesFetcher : NSObject
 
-+ (NSArray*)topFreeApps;
-+ (NSArray*)topAlbums;
-+ (NSArray*)topPaidBooks;
-+ (NSArray*)topMovies;
-+ (NSArray*)topTVEpisodes;
-+ (NSArray*)topITunesUCourses;
++ (NSArray*) topFreeApps;
++ (NSArray*) topAlbums;
++ (NSArray*) topPaidBooks;
++ (NSArray*) topMovies;
++ (NSArray*) topTVEpisodes;
++ (NSArray*) topITunesUCourses;
 
 @end

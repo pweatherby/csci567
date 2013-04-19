@@ -19,18 +19,18 @@
    self.currentTopItems = nil;
 }
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     [self reloadTableViewData];
 }
 
-- (IBAction)refresh
+- (IBAction) refresh
 {
     [self reloadTableViewData];
 }
 
--(void) reloadTableViewData
+- (void) reloadTableViewData
 {
     // show the spinner if it's not already showing
     if( self.refreshControl)
@@ -41,15 +41,36 @@
     dispatch_async(q, ^{
         // do something to get new data for this table view (which presumably takes time)
         [self RefreshCurrentTopItems];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // update the table view's Model to the new data, reloadData if necessary
-            [self.tableView reloadData];
-            // and let the user know the refresh is over (stop spinner)
-            if(self.refreshControl)
-            {
-                [self.refreshControl endRefreshing];
-            }
-        });
+        if(self.currentTopItems)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // update the table view's Model to the new data, reloadData if necessary
+                [self.tableView reloadData];
+                // and let the user know the refresh is over (stop spinner)
+                if(self.refreshControl)
+                {
+                    [self.refreshControl endRefreshing];
+                }
+            });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString* message = @"A network connection cannot be detected. Please confirm that you have an active network connection and try again.";
+                // update the table view's Model to the new data, reloadData if necessary
+                UIAlertView* uav = [[UIAlertView alloc] initWithTitle:@"Network Error"
+                                                              message:message
+                                                             delegate:self
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+                [uav show];
+                // and let the user know the refresh is over (stop spinner)
+                if(self.refreshControl)
+                {
+                    [self.refreshControl endRefreshing];
+                }
+            });
+        }
     });
     
 }
@@ -57,12 +78,12 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
 {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(self.currentTopItems)
     {
@@ -71,7 +92,7 @@
     return 0;
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     
     ITunesMediaItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Item"
@@ -80,7 +101,7 @@
     cell.ItemSmallDesc.text = @"";
     cell.ItemRank.text = @"";
     cell.ItemThumbnail.image = nil;
-    if(self.currentTopItems)
+    if(self.currentTopItems && self.currentTopItems.count > indexPath.item)
     {
         ITunesMediaItem* curItem = [self.currentTopItems objectAtIndex:indexPath.item];
         cell.ItemBigDesc.text = curItem.title;
@@ -105,7 +126,7 @@
 #pragma mark - Table view delegate
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.currentTopItems)
     {

@@ -10,10 +10,10 @@
 
 @interface ITunesMediaItemTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView* ItemThumbnail;
-@property (weak, nonatomic) IBOutlet UILabel* ItemBigDesc;
-@property (weak, nonatomic) IBOutlet UILabel* ItemSmallDesc;
-@property (weak, nonatomic) IBOutlet UILabel* ItemRank;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *ItemIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView*             ItemThumbnail;
+@property (weak, nonatomic) IBOutlet UILabel*                 ItemBigDesc;
+@property (weak, nonatomic) IBOutlet UILabel*                 ItemSmallDesc;
+@property (weak, nonatomic) IBOutlet UILabel*                 ItemRank;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* ItemIndicator;
 
 @end

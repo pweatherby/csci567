@@ -16,61 +16,45 @@
 
 @implementation FavoritesManager
 
-@synthesize favs = _favs;
+NSString* const ArchiveFileName = @"ChartToppers.fav";
 
-
-- (NSString*) getArchiveFilePath
++ (NSString*) getArchiveDirectoryPath
 {
+    NSFileManager* fileManager = [[NSFileManager alloc] init];
+    NSArray* urls = [fileManager URLsForDirectory:NSApplicationDirectory inDomains:NSUserDomainMask];
+    if(urls)
+    {
+        NSURL* path = [urls objectAtIndex:0];
+        if(path)
+        {
+            return [path absoluteString];
+        }
+    }
     return nil;
 }
 
-- (BOOL) saveFavsToFile:(NSString*) path
-{
-    if(![[NSFileManager defaultManager] isReadableFileAtPath:path])
-    {
-        [[NSFileManager defaultManager] createDirectoryAtPath:path
-                                  withIntermediateDirectories:TRUE
-                                                   attributes:nil
-                                                        error:nil];
-    }
-    [[NSFileManager defaultManager] createFileAtPath:path
-                                            contents:nil
-                                          attributes:nil];
-    return [NSKeyedArchiver archiveRootObject:_favs toFile:path];
-}
-
-- (NSMutableSet*) favs
-{
-    if(!_favs)
-    {
-        NSString* path = [self getArchiveFilePath];
-        if([[NSFileManager defaultManager] isReadableFileAtPath:path])
-        {
-            _favs = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-        }
-    }
-    return _favs;
-}
-
-- (void)addFavorite:(ITunesMediaItem*)mediaItem
+- (void) addFavorite:(ITunesMediaItem*)mediaItem
 {
     if(![self isFavorite:mediaItem])
     {
         [self.favs addObject:mediaItem];
-        [self saveFavsToFile:[self getArchiveFilePath]];
+        if([self saveFavsToFile])
+        {
+            NSLog(@"SAVED!");
+        }
     }
 }
 
-- (void)removeFavorite:(ITunesMediaItem*)mediaItem
+- (void) removeFavorite:(ITunesMediaItem*)mediaItem
 {
     if([self isFavorite:mediaItem])
     {
         [self.favs removeObject:mediaItem];
-        [self saveFavsToFile:[self getArchiveFilePath]];
+        [self saveFavsToFile];
     }
 }
 
-- (BOOL)isFavorite:(ITunesMediaItem*)mediaItem
+- (BOOL) isFavorite:(ITunesMediaItem*)mediaItem
 {
     if(self.favs)
     {
@@ -79,21 +63,48 @@
     return false;
 }
 
-- (NSArray*)allFavorites
+- (NSArray*) allFavorites
 {
-    return [self.favs copy];
+    return [[self.favs allObjects] copy];
 }
 
-+ (FavoritesManager*)sharedFavoritesManager
++ (FavoritesManager*) sharedFavoritesManager
 {
     static FavoritesManager* sharedInstance;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[FavoritesManager alloc] init];
+        sharedInstance.favs = [[NSMutableSet alloc] init];
+        
+        NSString* filepath = [[FavoritesManager getArchiveDirectoryPath] stringByAppendingString:ArchiveFileName];
+        if([[NSFileManager defaultManager] isReadableFileAtPath:filepath])
+        {
+            sharedInstance.favs = [NSKeyedUnarchiver unarchiveObjectWithFile:filepath];
+        }
     });
     
     return sharedInstance;
+}
+
+
+- (BOOL) saveFavsToFile
+{
+    NSString* directoryPath = [FavoritesManager getArchiveDirectoryPath];
+    NSString* filePath = [directoryPath stringByAppendingString:ArchiveFileName];
+    if(![[NSFileManager defaultManager] isReadableFileAtPath:filePath])
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath
+                                  withIntermediateDirectories:TRUE
+                                                   attributes:nil
+                                                        error:nil];
+    }
+
+    [[NSFileManager defaultManager] createFileAtPath:filePath
+                                            contents:[[NSData alloc] init]
+                                          attributes:nil];
+    BOOL success = [NSKeyedArchiver archiveRootObject:self.favs toFile:filePath];
+    return success;
 }
 
 @end

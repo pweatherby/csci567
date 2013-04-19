@@ -18,37 +18,37 @@ NSString* const topMoviesURL = @"https://itunes.apple.com/us/rss/topMovies/limit
 NSString* const topTVEpisodesURL = @"https://itunes.apple.com/us/rss/topTVEpisodes/limit=50/json";
 NSString* const topITunesUCoursesURL = @"https://itunes.apple.com/us/rss/topITunesUCourses/limit=50/json";
 
-+ (NSArray *)topFreeApps
++ (NSArray*) topFreeApps
 {
     return [self topFeedFor: [[NSURL alloc] initWithString:topFreeAppsURL] ];
 }
 
-+ (NSArray*)topAlbums
++ (NSArray*) topAlbums
 {
     return [self topFeedFor: [[NSURL alloc] initWithString:topAlbumsURL] ];
 }
 
-+ (NSArray*)topPaidBooks
++ (NSArray*) topPaidBooks
 {
     return [self topFeedFor: [[NSURL alloc] initWithString:topPaidBooksURL] ];
 }
 
-+ (NSArray*)topMovies
++ (NSArray*) topMovies
 {
     return [self topFeedFor: [[NSURL alloc] initWithString:topMoviesURL] ];
 }
 
-+ (NSArray*)topTVEpisodes
++ (NSArray*) topTVEpisodes
 {
     return [self topFeedFor: [[NSURL alloc] initWithString:topTVEpisodesURL] ];
 }
 
-+ (NSArray*)topITunesUCourses
++ (NSArray*) topITunesUCourses
 {
     return [self topFeedFor: [[NSURL alloc] initWithString:topITunesUCoursesURL] ];
 }
 
-+ (NSArray*)topFeedFor:(NSURL*) url
++ (NSArray*) topFeedFor:(NSURL*) url
 {
     [[NetworkActivityTracker sharedInstance] showActivityIndicator];
     [NSThread sleepForTimeInterval:drand48() * 3.0];

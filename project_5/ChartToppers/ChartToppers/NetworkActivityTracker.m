@@ -10,9 +10,9 @@
 
 @implementation NetworkActivityTracker
 
-+ (NetworkActivityTracker *)sharedInstance
++ (NetworkActivityTracker*) sharedInstance
 {
-    static NetworkActivityTracker *sharedInstance;
+    static NetworkActivityTracker* sharedInstance;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -22,7 +22,7 @@
     return sharedInstance;
 }
 
-- (void)showActivityIndicator
+- (void) showActivityIndicator
 {
     self.trackerCount = self.trackerCount + 1;
     if (self.trackerCount == 1)
@@ -35,7 +35,7 @@
     }
 }
 
-- (void)hideActivityIndicator
+- (void) hideActivityIndicator
 {
     self.trackerCount = self.trackerCount - 1;
     if (self.trackerCount == 0)

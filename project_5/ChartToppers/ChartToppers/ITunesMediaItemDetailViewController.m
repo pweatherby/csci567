@@ -9,17 +9,21 @@
 #import "ITunesMediaItemDetailViewController.h"
 
 @interface ITunesMediaItemDetailViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView* detailImage;
-@property (weak, nonatomic) IBOutlet UILabel* detailTitle;
-@property (weak, nonatomic) IBOutlet UILabel* detailArtist;
-@property (weak, nonatomic) IBOutlet UIButton* detailPrice;
-@property (weak, nonatomic) IBOutlet UILabel* detailRank;
-@property (weak, nonatomic) IBOutlet UILabel* detailCategory;
-@property (weak, nonatomic) IBOutlet UILabel* detailReleaseDt;
-- (IBAction)detailLinkPressed:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *detailIndicator;
-- (IBAction)shareButtonPressed:(UIBarButtonItem *)sender;
-@property (weak, nonatomic) IBOutlet UITextView *detailSummary;
+
+@property (weak, nonatomic) IBOutlet UIImageView*             detailImage;
+@property (weak, nonatomic) IBOutlet UILabel*                 detailTitle;
+@property (weak, nonatomic) IBOutlet UILabel*                 detailArtist;
+@property (weak, nonatomic) IBOutlet UIButton*                detailPrice;
+@property (weak, nonatomic) IBOutlet UILabel*                 detailRank;
+@property (weak, nonatomic) IBOutlet UILabel*                 detailCategory;
+@property (weak, nonatomic) IBOutlet UILabel*                 detailReleaseDt;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* detailIndicator;
+@property (weak, nonatomic) IBOutlet UITextView*              detailSummary;
+@property (weak, nonatomic) IBOutlet UIButton*                detailFav;
+
+- (IBAction)shareButtonPressed: (UIBarButtonItem*)sender;
+- (IBAction)detailLinkPressed:  (UIButton*)sender;
+- (IBAction)favButtonPressed:   (UIButton*)sender;
 
 @end
 
@@ -37,9 +41,9 @@
             UIImage* imageData = self.detailItem.artworkImage;
             // do something to get new data for this table view (which presumably takes time)
             dispatch_async(dispatch_get_main_queue(), ^{
-            
-                self.detailImage.image = imageData;
                 // update the view to the new data
+                self.detailImage.image = imageData;
+                
                 /* // This was just not working like i want
                    // but i tried
                 CGRect rect = CGRectMake(0, 0, 100, 100);
@@ -62,38 +66,43 @@
             self.detailSummary.text = @"No Summary Available";
         }
         
-        CGRect frame = self.detailSummary.frame;
-        frame.size.height = self.detailSummary.contentSize.height;
-        [self.detailSummary setFrame:frame];
-        [self.detailSummary setNeedsDisplay];
+        // CGRect frame = self.detailSummary.frame;
+        //[self.detailSummary setContentSize:<#(CGSize)#>.contentSize.height = 200;
+        //frame.size.height = self.detailSummary.contentSize.height;
+        //[self.detailSummary setFrame:frame];
+        //[self.detailSummary setNeedsDisplay];
         bool isFav = [[FavoritesManager sharedFavoritesManager] isFavorite:self.detailItem];
         if(isFav)
         {
-            
+            [self.detailFav setTitle:@"Dismiss Fav" forState:UIControlStateNormal];
         }
         else
         {
-            
+            [self.detailFav setTitle:@"Set as Fav" forState:UIControlStateNormal];
         }
     }
 }
 
-- (float) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (float) tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    float h = 45;   
+    
+    float h = 45;
+    
     if(indexPath.section == 1 && indexPath.row == 0)
     {
-        h = self.detailSummary.frame.size.height;
+        h = 200;//self.detailSummary.frame.size.height;
     }
     NSLog(@"h: %f", h);
+    
     return h;
+    
 }
 
-- (IBAction)detailLinkPressed:(UIButton *)sender
+- (IBAction) detailLinkPressed:(UIButton*)sender
 {
     if(self.detailItem)
     {
-        if( self.detailItem.storeURL)
+        if(self.detailItem.storeURL)
         {
             UIApplication* commonApp = [UIApplication sharedApplication];
             if( commonApp )
@@ -104,9 +113,9 @@
     }
 }
 
-- (IBAction)shareButtonPressed:(UIBarButtonItem *)sender
+- (IBAction) shareButtonPressed:(UIBarButtonItem*) sender
 {
-    NSArray* itemSharableFields = [[NSArray alloc] initWithObjects: self.detailItem.title, nil];//]self.detailItem.artworkImage, nil];
+    NSArray* itemSharableFields = [[NSArray alloc] initWithObjects: self.detailItem.title, self.detailItem.artworkImage, nil];
     NSArray* shareWithApps = [[NSArray alloc] initWithObjects: UIActivityTypeMail, UIActivityTypePostToFacebook, UIActivityTypePostToTwitter, nil];
     UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemSharableFields
                                                                              applicationActivities:shareWithApps];
@@ -114,5 +123,20 @@
     [self presentViewController:activityVC
                        animated:YES
                      completion:nil];
+}
+
+- (IBAction) favButtonPressed:(UIButton*)sender
+{
+    bool isFav = [[FavoritesManager sharedFavoritesManager] isFavorite:self.detailItem];
+    if(isFav)
+    {
+        [[FavoritesManager sharedFavoritesManager] removeFavorite:self.detailItem];
+        [self.detailFav setTitle:@"Set as Fav" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [[FavoritesManager sharedFavoritesManager] addFavorite:self.detailItem];
+        [self.detailFav setTitle:@"Dismiss Fav" forState:UIControlStateNormal];
+    }
 }
 @end

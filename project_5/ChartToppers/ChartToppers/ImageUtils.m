@@ -11,10 +11,8 @@
 
 @implementation ImageUtils
 
-+ (UIImage *)cropImage:(UIImage *)imageToCrop toRect:(CGRect)rect
++ (UIImage*) cropImage:(UIImage*)imageToCrop toRect:(CGRect)rect
 {
-    //CGRect CropRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height+15);
-    
     CGImageRef imageRef = CGImageCreateWithImageInRect([imageToCrop CGImage], rect);
     UIImage *cropped = [UIImage imageWithCGImage:imageRef];
     CGImageRelease(imageRef);
@@ -22,7 +20,7 @@
     return cropped;
 }
 
-+ (UIImage*)resizeImage:(UIImage*)image withWidth:(int)width withHeight:(int)height
++ (UIImage*) resizeImage:(UIImage*)image withWidth:(int)width withHeight:(int)height
 {
     CGSize newSize = CGSizeMake(width, height);
     float widthRatio = newSize.width/image.size.width;

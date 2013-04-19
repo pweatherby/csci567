@@ -12,9 +12,9 @@
 
 @property int trackerCount;
 
-+ (NetworkActivityTracker *)sharedInstance;
++ (NetworkActivityTracker*) sharedInstance;
 
-- (void)showActivityIndicator;
-- (void)hideActivityIndicator;
+- (void) showActivityIndicator;
+- (void) hideActivityIndicator;
 
 @end

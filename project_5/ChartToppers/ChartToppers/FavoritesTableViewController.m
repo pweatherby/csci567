@@ -14,6 +14,10 @@
 
 @implementation FavoritesTableViewController
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super reloadTableViewData];
+}
 
 - (void) RefreshCurrentTopItems
 {

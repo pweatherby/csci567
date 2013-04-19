@@ -10,26 +10,26 @@
 
 @implementation ITunesMediaItem
 
-- (id) initWithCoder:(NSCoder *)aDecoder
+- (id) initWithCoder:(NSCoder*)aDecoder
 {
     self = [super init];
     if(self)
     {
-        _title = [aDecoder decodeObjectForKey:@"_title"];
-        _category = [aDecoder decodeObjectForKey:@"_category"];
-        _artist = [aDecoder decodeObjectForKey:@"_artist"];
+        _title =       [aDecoder decodeObjectForKey:@"_title"];
+        _category =    [aDecoder decodeObjectForKey:@"_category"];
+        _artist =      [aDecoder decodeObjectForKey:@"_artist"];
         _releaseDate = [aDecoder decodeObjectForKey:@"_releaseDate"];
-        _price = [aDecoder decodeObjectForKey:@"_price"];
-        _artworkURL = [aDecoder decodeObjectForKey:@"_artworkURL"];
-        _storeURL = [aDecoder decodeObjectForKey:@"_storeURL"];
-        _rank = [aDecoder decodeIntForKey:@"_rank"];
-        _summary = [aDecoder decodeObjectForKey:@"_summary"];
+        _price =       [aDecoder decodeObjectForKey:@"_price"];
+        _artworkURL =  [aDecoder decodeObjectForKey:@"_artworkURL"];
+        _storeURL =    [aDecoder decodeObjectForKey:@"_storeURL"];
+        _rank =        [aDecoder decodeIntForKey:   @"_rank"];
+        _summary =     [aDecoder decodeObjectForKey:@"_summary"];
     }
     return self;
 }
 
-- (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes
-                        rank:(int)rank
+- (id) initWithJSONAttributes:(NSDictionary*)jsonAttributes
+                         rank:(int)rank
 {
     self = [super init];
     if (self)
@@ -74,7 +74,7 @@
         {
             if([link isKindOfClass: [NSArray class]])
             {
-                NSDictionary* linkAttrholder = [link objectAtIndex:1];// 
+                NSDictionary* linkAttrholder = [link objectAtIndex:1];
                 if(linkAttrholder)
                 {
                     NSDictionary* linkAttr = [linkAttrholder objectForKey:@"attributes"];
@@ -84,10 +84,10 @@
                     }
                 }
             }
-            else
-            {
-                
-            }
+        }
+        if(!link)
+        {
+            NSLog(@"COULD NOT FIND LINK FOR ITEM!");
         }
         
         _summary = jsonAttributes[@"summary"][@"label"];
@@ -117,7 +117,7 @@
 
 - (BOOL) isEqual: (ITunesMediaItem*) other
 {
-    if( self && other)
+    if(self && other)
     {
         if(self.storeURL && other.storeURL)
         {
@@ -138,15 +138,15 @@
 }
 
 
-- (void)encodeWithCoder:(NSCoder *)encoder
+- (void) encodeWithCoder:(NSCoder*)encoder
 {
-    [encoder encodeObject:_title forKey:@"_title"];
-    [encoder encodeObject:_category forKey:@"_category"];
+    [encoder encodeObject:_title       forKey:@"_title"];
+    [encoder encodeObject:_category    forKey:@"_category"];
     [encoder encodeObject:_releaseDate forKey:@"_releaseDate"];
-    [encoder encodeObject:_artworkURL forKey:@"_artworkURL"];
-    [encoder encodeObject:_storeURL forKey:@"_storeURL"];
-    [encoder encodeInt:_rank forKey:@"_rank"];
-    [encoder encodeObject:_summary forKey:@"_summary"];
+    [encoder encodeObject:_artworkURL  forKey:@"_artworkURL"];
+    [encoder encodeObject:_storeURL    forKey:@"_storeURL"];
+    [encoder encodeInt:_rank           forKey:@"_rank"];
+    [encoder encodeObject:_summary     forKey:@"_summary"];
 }
 
 

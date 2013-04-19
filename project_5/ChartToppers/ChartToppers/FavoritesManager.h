@@ -11,12 +11,12 @@
 
 @interface FavoritesManager : NSObject
 
-- (void)addFavorite:(ITunesMediaItem*)mediaItem;
-- (void)removeFavorite:(ITunesMediaItem*)mediaItem;
-- (BOOL)isFavorite:(ITunesMediaItem*)mediaItem;
+- (void) addFavorite:   (ITunesMediaItem*)mediaItem;
+- (void) removeFavorite:(ITunesMediaItem*)mediaItem;
+- (BOOL) isFavorite:    (ITunesMediaItem*)mediaItem;
 
-- (NSArray*)allFavorites;
+- (NSArray*) allFavorites;
 
-+ (FavoritesManager*)sharedFavoritesManager;
++ (FavoritesManager*) sharedFavoritesManager;
 
 @end

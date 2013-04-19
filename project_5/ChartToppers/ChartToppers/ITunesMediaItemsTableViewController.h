@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) NSArray* currentTopItems;
 
+- (void) reloadTableViewData;
+
 @end

@@ -16,10 +16,10 @@
 @property (nonatomic, readonly) NSString* artist;
 @property (nonatomic, readonly) NSString* releaseDate;
 @property (nonatomic, readonly) NSString* price;
-@property (nonatomic, readonly) NSURL* artworkURL;
-@property (nonatomic, readonly) UIImage* artworkImage;
-@property (nonatomic, readonly) NSURL* storeURL;
-@property (nonatomic, readonly) int rank;
+@property (nonatomic, readonly) NSURL*    artworkURL;
+@property (nonatomic, readonly) UIImage*  artworkImage;
+@property (nonatomic, readonly) NSURL*    storeURL;
+@property (nonatomic, readonly) int       rank;
 @property (nonatomic, readonly) NSString* summary;
 
 - (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes
