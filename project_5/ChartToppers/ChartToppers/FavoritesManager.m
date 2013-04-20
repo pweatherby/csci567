@@ -20,17 +20,16 @@ NSString* const ArchiveFileName = @"ChartToppers.fav";
 
 + (NSString*) getArchiveDirectoryPath
 {
-    NSFileManager* fileManager = [[NSFileManager alloc] init];
-    NSArray* urls = [fileManager URLsForDirectory:NSApplicationDirectory inDomains:NSUserDomainMask];
-    if(urls)
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    if(paths)
     {
-        NSURL* path = [urls objectAtIndex:0];
-        if(path)
+        NSString* documentsDirectory = [paths objectAtIndex:0];
+        if(documentsDirectory)
         {
-            return [path absoluteString];
+            return documentsDirectory;
         }
     }
-    return nil;
+    return @"";
 }
 
 - (void) addFavorite:(ITunesMediaItem*)mediaItem
@@ -38,10 +37,7 @@ NSString* const ArchiveFileName = @"ChartToppers.fav";
     if(![self isFavorite:mediaItem])
     {
         [self.favs addObject:mediaItem];
-        if([self saveFavsToFile])
-        {
-            NSLog(@"SAVED!");
-        }
+        [self saveFavsToFile];
     }
 }
 
@@ -77,7 +73,7 @@ NSString* const ArchiveFileName = @"ChartToppers.fav";
         sharedInstance = [[FavoritesManager alloc] init];
         sharedInstance.favs = [[NSMutableSet alloc] init];
         
-        NSString* filepath = [[FavoritesManager getArchiveDirectoryPath] stringByAppendingString:ArchiveFileName];
+        NSString* filepath = [[FavoritesManager getArchiveDirectoryPath] stringByAppendingPathComponent:ArchiveFileName];
         if([[NSFileManager defaultManager] isReadableFileAtPath:filepath])
         {
             sharedInstance.favs = [NSKeyedUnarchiver unarchiveObjectWithFile:filepath];
@@ -90,20 +86,22 @@ NSString* const ArchiveFileName = @"ChartToppers.fav";
 
 - (BOOL) saveFavsToFile
 {
+    BOOL success = false;
     NSString* directoryPath = [FavoritesManager getArchiveDirectoryPath];
-    NSString* filePath = [directoryPath stringByAppendingString:ArchiveFileName];
+    NSString* filePath = [directoryPath stringByAppendingPathComponent:ArchiveFileName];
     if(![[NSFileManager defaultManager] isReadableFileAtPath:filePath])
     {
-        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath
-                                  withIntermediateDirectories:TRUE
-                                                   attributes:nil
-                                                        error:nil];
+        success = [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath
+                                            withIntermediateDirectories:TRUE
+                                                             attributes:nil
+                                                                  error:nil];
     }
 
-    [[NSFileManager defaultManager] createFileAtPath:filePath
-                                            contents:[[NSData alloc] init]
-                                          attributes:nil];
-    BOOL success = [NSKeyedArchiver archiveRootObject:self.favs toFile:filePath];
+    success = [[NSFileManager defaultManager] createFileAtPath:filePath
+                                                      contents:[[NSData alloc] init]
+                                                    attributes:nil];
+    success = [NSKeyedArchiver archiveRootObject:self.favs
+                                          toFile:filePath];
     return success;
 }
 

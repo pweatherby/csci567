@@ -57,6 +57,9 @@
         self.detailTitle.text = self.detailItem.title;
         self.detailArtist.text = self.detailItem.artist;
         [self.detailPrice setTitle: self.detailItem.price forState:UIControlStateNormal];
+        [self.detailPrice setTitle: self.detailItem.price forState:UIControlStateSelected];
+        [self.detailPrice setTitle: self.detailItem.price forState:UIControlStateHighlighted];
+        
         self.detailRank.text = [NSString stringWithFormat:@"%d", self.detailItem.rank];
         self.detailCategory.text = self.detailItem.category;
         self.detailReleaseDt.text = self.detailItem.releaseDate;
@@ -91,9 +94,7 @@
     if(indexPath.section == 1 && indexPath.row == 0)
     {
         h = 200;//self.detailSummary.frame.size.height;
-    }
-    NSLog(@"h: %f", h);
-    
+    }    
     return h;
     
 }

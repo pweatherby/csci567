@@ -142,7 +142,9 @@
 {
     [encoder encodeObject:_title       forKey:@"_title"];
     [encoder encodeObject:_category    forKey:@"_category"];
+    [encoder encodeObject:_artist      forKey:@"_artist"];
     [encoder encodeObject:_releaseDate forKey:@"_releaseDate"];
+    [encoder encodeObject:_price       forKey:@"_price"];
     [encoder encodeObject:_artworkURL  forKey:@"_artworkURL"];
     [encoder encodeObject:_storeURL    forKey:@"_storeURL"];
     [encoder encodeInt:_rank           forKey:@"_rank"];
