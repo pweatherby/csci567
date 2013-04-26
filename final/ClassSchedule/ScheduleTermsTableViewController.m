@@ -10,28 +10,63 @@
 
 @interface ScheduleTermsTableViewController ()
 
+@property (nonatomic, strong) NSArray*  termData;
+
 @end
 
 @implementation ScheduleTermsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self reloadterms];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+
+- (void) reloadterms
+{
+    // show the spinner if it's not already showing
+    if( self.refreshControl)
+    {
+        [self.refreshControl beginRefreshing];
+    }
+    dispatch_queue_t q = dispatch_queue_create("table view loading queue", NULL);
+    dispatch_async(q, ^{
+        // do something to get new data for this table view (which presumably takes time)
+        self.termData = [ScheduleTerm currentTerms];
+        if(self.termData)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // update the table view's Model to the new data, reloadData if necessary
+                [self.tableView reloadData];
+                // and let the user know the refresh is over (stop spinner)
+                if(self.refreshControl)
+                {
+                    [self.refreshControl endRefreshing];
+                }
+            });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString* message = @"A network connection cannot be detected. Please confirm that you have an active network connection and try again.";
+                // update the table view's Model to the new data, reloadData if necessary
+                UIAlertView* uav = [[UIAlertView alloc] initWithTitle:@"Network Error"
+                                                              message:message
+                                                             delegate:self
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+                [uav show];
+                // and let the user know the refresh is over (stop spinner)
+                if(self.refreshControl)
+                {
+                    [self.refreshControl endRefreshing];
+                }
+            });
+        }
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,21 +79,22 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    if(self.termData)
+    {
+        return [self.termData count];
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"TermCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
@@ -66,44 +102,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

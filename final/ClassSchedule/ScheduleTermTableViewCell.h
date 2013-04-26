@@ -10,4 +10,8 @@
 
 @interface ScheduleTermTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel* abbrevLabel;
+@property (weak, nonatomic) IBOutlet UILabel* longDescLabel;
+@property (weak, nonatomic) IBOutlet UILabel* regDatesLabel;
+
 @end

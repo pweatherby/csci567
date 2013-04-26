@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ScheduleTerm.h"
 @interface ScheduleTermsTableViewController : UITableViewController
 
 @end

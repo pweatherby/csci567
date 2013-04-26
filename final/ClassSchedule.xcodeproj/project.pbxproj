@@ -17,7 +17,10 @@
 		FDA4BCF4172A165200BAAB26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA4BCF3172A165200BAAB26 /* Default@2x.png */; };
 		FDA4BCF6172A165200BAAB26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */; };
 		FDA4BCF9172A165200BAAB26 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA4BCF7172A165200BAAB26 /* MainStoryboard.storyboard */; };
-		FDA4BCFC172A165200BAAB26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA4BCFB172A165200BAAB26 /* ViewController.m */; };
+		FDD23C61172A191E00833E28 /* ScheduleTermsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */; };
+		FDD23C64172A19FA00833E28 /* ScheduleTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C63172A19FA00833E28 /* ScheduleTerm.m */; };
+		FDD23C67172A1BAD00833E28 /* ScheduleTermTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C66172A1BAD00833E28 /* ScheduleTermTableViewCell.m */; };
+		FDD23C6A172A1FE300833E28 /* NetworkActivityTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +38,14 @@
 		FDA4BCF3172A165200BAAB26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FDA4BCF8172A165200BAAB26 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FDA4BCFA172A165200BAAB26 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FDA4BCFB172A165200BAAB26 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FDD23C5F172A191E00833E28 /* ScheduleTermsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTermsTableViewController.h; sourceTree = "<group>"; };
+		FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTermsTableViewController.m; sourceTree = "<group>"; };
+		FDD23C62172A19FA00833E28 /* ScheduleTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTerm.h; sourceTree = "<group>"; };
+		FDD23C63172A19FA00833E28 /* ScheduleTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTerm.m; sourceTree = "<group>"; };
+		FDD23C65172A1BAD00833E28 /* ScheduleTermTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTermTableViewCell.h; sourceTree = "<group>"; };
+		FDD23C66172A1BAD00833E28 /* ScheduleTermTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTermTableViewCell.m; sourceTree = "<group>"; };
+		FDD23C68172A1FE300833E28 /* NetworkActivityTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityTracker.h; sourceTree = "<group>"; };
+		FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkActivityTracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +92,11 @@
 		FDA4BCE5172A165200BAAB26 /* ClassSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				FDD23C58172A16FE00833E28 /* Views */,
+				FDD23C57172A16F500833E28 /* Controllers */,
+				FDD23C56172A16DB00833E28 /* Models */,
 				FDA4BCEE172A165200BAAB26 /* AppDelegate.h */,
 				FDA4BCEF172A165200BAAB26 /* AppDelegate.m */,
-				FDA4BCF7172A165200BAAB26 /* MainStoryboard.storyboard */,
-				FDA4BCFA172A165200BAAB26 /* ViewController.h */,
-				FDA4BCFB172A165200BAAB26 /* ViewController.m */,
 				FDA4BCE6172A165200BAAB26 /* Supporting Files */,
 			);
 			path = ClassSchedule;
@@ -105,6 +114,60 @@
 				FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDD23C56172A16DB00833E28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDD23C68172A1FE300833E28 /* NetworkActivityTracker.h */,
+				FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */,
+				FDD23C62172A19FA00833E28 /* ScheduleTerm.h */,
+				FDD23C63172A19FA00833E28 /* ScheduleTerm.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FDD23C57172A16F500833E28 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDD23C5B172A17EC00833E28 /* Profile */,
+				FDD23C5A172A17E500833E28 /* Cart */,
+				FDD23C59172A17DE00833E28 /* Schedule */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FDD23C58172A16FE00833E28 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDA4BCF7172A165200BAAB26 /* MainStoryboard.storyboard */,
+				FDD23C65172A1BAD00833E28 /* ScheduleTermTableViewCell.h */,
+				FDD23C66172A1BAD00833E28 /* ScheduleTermTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FDD23C59172A17DE00833E28 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FDD23C5F172A191E00833E28 /* ScheduleTermsTableViewController.h */,
+				FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		FDD23C5A172A17E500833E28 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cart;
+			sourceTree = "<group>";
+		};
+		FDD23C5B172A17EC00833E28 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +238,10 @@
 			files = (
 				FDA4BCEC172A165200BAAB26 /* main.m in Sources */,
 				FDA4BCF0172A165200BAAB26 /* AppDelegate.m in Sources */,
-				FDA4BCFC172A165200BAAB26 /* ViewController.m in Sources */,
+				FDD23C61172A191E00833E28 /* ScheduleTermsTableViewController.m in Sources */,
+				FDD23C64172A19FA00833E28 /* ScheduleTerm.m in Sources */,
+				FDD23C67172A1BAD00833E28 /* ScheduleTermTableViewCell.m in Sources */,
+				FDD23C6A172A1FE300833E28 /* NetworkActivityTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +364,7 @@
 				FDA4BD01172A165200BAAB26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
