@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ScheduleTermTableViewCell.h
 //  ClassSchedule
 //
 //  Created by iOS Student on 4/25/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ScheduleTermTableViewCell : UITableViewCell
 
 @end
