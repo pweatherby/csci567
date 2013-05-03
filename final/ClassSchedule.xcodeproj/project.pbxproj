@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD8E6D8D173347E200E65FC7 /* body-bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8E6D8C173347E200E65FC7 /* body-bkg.png */; };
+		FD8E6D8F17334E0C00E65FC7 /* body-bkg-pixel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */; };
+		FD8E6D95173351C200E65FC7 /* ScheduleSessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D94173351C200E65FC7 /* ScheduleSessionGroup.m */; };
+		FD8E6D9B17335A5800E65FC7 /* ScheduleListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D9A17335A5800E65FC7 /* ScheduleListTableViewController.m */; };
 		FDA4BCE0172A165200BAAB26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA4BCDF172A165200BAAB26 /* UIKit.framework */; };
 		FDA4BCE2172A165200BAAB26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA4BCE1172A165200BAAB26 /* Foundation.framework */; };
 		FDA4BCE4172A165200BAAB26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA4BCE3172A165200BAAB26 /* CoreGraphics.framework */; };
@@ -24,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD8E6D8C173347E200E65FC7 /* body-bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body-bkg.png"; sourceTree = "<group>"; };
+		FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "body-bkg-pixel.jpg"; sourceTree = "<group>"; };
+		FD8E6D93173351C200E65FC7 /* ScheduleSessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleSessionGroup.h; sourceTree = "<group>"; };
+		FD8E6D94173351C200E65FC7 /* ScheduleSessionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleSessionGroup.m; sourceTree = "<group>"; };
+		FD8E6D9917335A5800E65FC7 /* ScheduleListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleListTableViewController.h; sourceTree = "<group>"; };
+		FD8E6D9A17335A5800E65FC7 /* ScheduleListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleListTableViewController.m; sourceTree = "<group>"; };
 		FDA4BCDC172A165200BAAB26 /* ClassSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA4BCDF172A165200BAAB26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FDA4BCE1172A165200BAAB26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +115,8 @@
 		FDA4BCE6172A165200BAAB26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */,
+				FD8E6D8C173347E200E65FC7 /* body-bkg.png */,
 				FDA4BCE7172A165200BAAB26 /* ClassSchedule-Info.plist */,
 				FDA4BCE8172A165200BAAB26 /* InfoPlist.strings */,
 				FDA4BCEB172A165200BAAB26 /* main.m */,
@@ -123,6 +135,8 @@
 				FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */,
 				FDD23C62172A19FA00833E28 /* ScheduleTerm.h */,
 				FDD23C63172A19FA00833E28 /* ScheduleTerm.m */,
+				FD8E6D93173351C200E65FC7 /* ScheduleSessionGroup.h */,
+				FD8E6D94173351C200E65FC7 /* ScheduleSessionGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -152,6 +166,8 @@
 			children = (
 				FDD23C5F172A191E00833E28 /* ScheduleTermsTableViewController.h */,
 				FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */,
+				FD8E6D9917335A5800E65FC7 /* ScheduleListTableViewController.h */,
+				FD8E6D9A17335A5800E65FC7 /* ScheduleListTableViewController.m */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -226,6 +242,8 @@
 				FDA4BCF4172A165200BAAB26 /* Default@2x.png in Resources */,
 				FDA4BCF6172A165200BAAB26 /* Default-568h@2x.png in Resources */,
 				FDA4BCF9172A165200BAAB26 /* MainStoryboard.storyboard in Resources */,
+				FD8E6D8D173347E200E65FC7 /* body-bkg.png in Resources */,
+				FD8E6D8F17334E0C00E65FC7 /* body-bkg-pixel.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +260,8 @@
 				FDD23C64172A19FA00833E28 /* ScheduleTerm.m in Sources */,
 				FDD23C67172A1BAD00833E28 /* ScheduleTermTableViewCell.m in Sources */,
 				FDD23C6A172A1FE300833E28 /* NetworkActivityTracker.m in Sources */,
+				FD8E6D95173351C200E65FC7 /* ScheduleSessionGroup.m in Sources */,
+				FD8E6D9B17335A5800E65FC7 /* ScheduleListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

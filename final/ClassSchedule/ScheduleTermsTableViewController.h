@@ -2,12 +2,16 @@
 //  ScheduleTermsTableViewController.h
 //  ClassSchedule
 //
-//  Created by iOS Student on 4/25/13.
+//  Created by Paul Weatherby on 4/25/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduleListTableViewController.h"
+
 #import "ScheduleTerm.h"
-@interface ScheduleTermsTableViewController : UITableViewController
+#import "ScheduleTermTableViewCell.h"
+
+@interface ScheduleTermsTableViewController : ScheduleListTableViewController
 
 @end
