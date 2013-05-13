@@ -3,7 +3,7 @@ using System.Web;
 
 namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
 {
-    public class ScheduleInfoAuth
+    public class CalendarInfoAuth
     {
         public static bool isRequestAuthorized(HttpContext context)
         {

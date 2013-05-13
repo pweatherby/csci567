@@ -12,7 +12,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
 
         public void ProcessRequest(HttpContext context)
         {
-            if (!ScheduleInfoAuth.isRequestAuthorized(context))
+            if (!CalendarInfoAuth.isRequestAuthorized(context))
             {
                 return;
             }
@@ -32,13 +32,13 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
             if (PeopleSoftDataManager.TryGetSessionGroups(requestedTerm, out result, out error) && result != null)
             {
                 StringBuilder JSON = new StringBuilder();
-                JSON.AppendLine("[");
+                JSON.Append("[");
                 for (int i = 0; i < result.SessionGroupResultCount; i++)
                 {
                     PS_SCHEDULE_WS.ClassSchedSessionGroup SessGrp = result.ClassSchedSessionGroups[i];
                     if (i > 0)
                     {
-                        JSON.AppendLine(", ");
+                        JSON.Append(",");
                     }
                     JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
                     JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");

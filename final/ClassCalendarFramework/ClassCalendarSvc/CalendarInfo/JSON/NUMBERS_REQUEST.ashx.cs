@@ -12,7 +12,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
 
         public void ProcessRequest(HttpContext context)
         {
-            if (!ScheduleInfoAuth.isRequestAuthorized(context))
+            if (!CalendarInfoAuth.isRequestAuthorized(context))
             {
                 return;
             }

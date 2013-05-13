@@ -12,7 +12,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
 
         public void ProcessRequest(HttpContext context)
         {
-            if (!ScheduleInfoAuth.isRequestAuthorized(context))
+            if (!CalendarInfoAuth.isRequestAuthorized(context))
             {
                 return;
             }
@@ -29,11 +29,11 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
                     PS_SCHEDULE_WS.ClassSchedTerm term = result.ClassSchedTerms[i];
                     if (i > 0)
                     {
-                        JSON.AppendLine(", ");
+                        JSON.Append(",");
                     }
                     JSON.Append("{ \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM) + "\" ");
                     JSON.Append(", \"TERM_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_SDESC) + "\" ");
-                    JSON.Append(", \"TERM_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_LDESC) + "\" }");
+                    JSON.AppendLine(", \"TERM_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_LDESC) + "\" }");
                 }
                 JSON.AppendLine("]");
                 context.Response.ContentType = "application/json";
