@@ -1,30 +1,30 @@
 //
-//  ScheduleTermsTableViewController.m
-//  ClassSchedule
+//  CalendarTermsTableViewController.m
+//  ClassCalendar
 //
 //  Created by Paul Weatherby on 4/25/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "ScheduleTermsTableViewController.h"
+#import "CalendarTermsTableViewController.h"
 
 
-@implementation ScheduleTermsTableViewController
+@implementation CalendarTermsTableViewController
 
-- (void) getScheduleData
+- (void) getCalendarData
 {
-    self.scheduleData = [ScheduleTerm currentTerms];
+    self.calendarData = [CalendarTerm currentTerms];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ItemCell";
-    ScheduleTermTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CalendarTermTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    if(indexPath.item < [[super scheduleData] count])
+    if(indexPath.item < [[super calendarData] count])
     {
-        ScheduleTerm* t = [[super scheduleData] objectAtIndex:indexPath.item];
+        CalendarTerm* t = [[super calendarData] objectAtIndex:indexPath.item];
         if(t)
         {
             cell.longDescLabel.text = t.longDesc;

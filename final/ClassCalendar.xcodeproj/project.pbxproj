@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		FD8E6D8D173347E200E65FC7 /* body-bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8E6D8C173347E200E65FC7 /* body-bkg.png */; };
 		FD8E6D8F17334E0C00E65FC7 /* body-bkg-pixel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */; };
-		FD8E6D95173351C200E65FC7 /* ScheduleSessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D94173351C200E65FC7 /* ScheduleSessionGroup.m */; };
-		FD8E6D9B17335A5800E65FC7 /* ScheduleListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D9A17335A5800E65FC7 /* ScheduleListTableViewController.m */; };
+		FD8E6D95173351C200E65FC7 /* CalendarSessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D94173351C200E65FC7 /* CalendarSessionGroup.m */; };
+		FD8E6D9B17335A5800E65FC7 /* CalendarListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D9A17335A5800E65FC7 /* CalendarListTableViewController.m */; };
 		FDA4BCE0172A165200BAAB26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA4BCDF172A165200BAAB26 /* UIKit.framework */; };
 		FDA4BCE2172A165200BAAB26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA4BCE1172A165200BAAB26 /* Foundation.framework */; };
 		FDA4BCE4172A165200BAAB26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA4BCE3172A165200BAAB26 /* CoreGraphics.framework */; };
@@ -21,39 +21,39 @@
 		FDA4BCF4172A165200BAAB26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA4BCF3172A165200BAAB26 /* Default@2x.png */; };
 		FDA4BCF6172A165200BAAB26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */; };
 		FDA4BCF9172A165200BAAB26 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA4BCF7172A165200BAAB26 /* MainStoryboard.storyboard */; };
-		FDD23C61172A191E00833E28 /* ScheduleTermsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */; };
-		FDD23C64172A19FA00833E28 /* ScheduleTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C63172A19FA00833E28 /* ScheduleTerm.m */; };
-		FDD23C67172A1BAD00833E28 /* ScheduleTermTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C66172A1BAD00833E28 /* ScheduleTermTableViewCell.m */; };
+		FDD23C61172A191E00833E28 /* CalendarTermsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C60172A191E00833E28 /* CalendarTermsTableViewController.m */; };
+		FDD23C64172A19FA00833E28 /* CalendarTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C63172A19FA00833E28 /* CalendarTerm.m */; };
+		FDD23C67172A1BAD00833E28 /* CalendarTermTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C66172A1BAD00833E28 /* CalendarTermTableViewCell.m */; };
 		FDD23C6A172A1FE300833E28 /* NetworkActivityTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD02CC531741904C00940220 /* ClassCalendar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ClassCalendar-Prefix.pch"; path = "ClassCalendar/ClassCalendar-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FD8E6D8C173347E200E65FC7 /* body-bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body-bkg.png"; sourceTree = "<group>"; };
 		FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "body-bkg-pixel.jpg"; sourceTree = "<group>"; };
-		FD8E6D93173351C200E65FC7 /* ScheduleSessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleSessionGroup.h; sourceTree = "<group>"; };
-		FD8E6D94173351C200E65FC7 /* ScheduleSessionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleSessionGroup.m; sourceTree = "<group>"; };
-		FD8E6D9917335A5800E65FC7 /* ScheduleListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleListTableViewController.h; sourceTree = "<group>"; };
-		FD8E6D9A17335A5800E65FC7 /* ScheduleListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleListTableViewController.m; sourceTree = "<group>"; };
-		FDA4BCDC172A165200BAAB26 /* ClassSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8E6D93173351C200E65FC7 /* CalendarSessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSessionGroup.h; sourceTree = "<group>"; };
+		FD8E6D94173351C200E65FC7 /* CalendarSessionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSessionGroup.m; sourceTree = "<group>"; };
+		FD8E6D9917335A5800E65FC7 /* CalendarListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarListTableViewController.h; sourceTree = "<group>"; };
+		FD8E6D9A17335A5800E65FC7 /* CalendarListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarListTableViewController.m; sourceTree = "<group>"; };
+		FDA4BCDC172A165200BAAB26 /* ClassCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA4BCDF172A165200BAAB26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FDA4BCE1172A165200BAAB26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FDA4BCE3172A165200BAAB26 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FDA4BCE7172A165200BAAB26 /* ClassSchedule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClassSchedule-Info.plist"; sourceTree = "<group>"; };
+		FDA4BCE7172A165200BAAB26 /* ClassCalendar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClassCalendar-Info.plist"; sourceTree = "<group>"; };
 		FDA4BCE9172A165200BAAB26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FDA4BCEB172A165200BAAB26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FDA4BCED172A165200BAAB26 /* ClassSchedule-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassSchedule-Prefix.pch"; sourceTree = "<group>"; };
 		FDA4BCEE172A165200BAAB26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FDA4BCEF172A165200BAAB26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FDA4BCF1172A165200BAAB26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FDA4BCF3172A165200BAAB26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FDA4BCF8172A165200BAAB26 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FDD23C5F172A191E00833E28 /* ScheduleTermsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTermsTableViewController.h; sourceTree = "<group>"; };
-		FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTermsTableViewController.m; sourceTree = "<group>"; };
-		FDD23C62172A19FA00833E28 /* ScheduleTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTerm.h; sourceTree = "<group>"; };
-		FDD23C63172A19FA00833E28 /* ScheduleTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTerm.m; sourceTree = "<group>"; };
-		FDD23C65172A1BAD00833E28 /* ScheduleTermTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTermTableViewCell.h; sourceTree = "<group>"; };
-		FDD23C66172A1BAD00833E28 /* ScheduleTermTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTermTableViewCell.m; sourceTree = "<group>"; };
+		FDD23C5F172A191E00833E28 /* CalendarTermsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTermsTableViewController.h; sourceTree = "<group>"; };
+		FDD23C60172A191E00833E28 /* CalendarTermsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTermsTableViewController.m; sourceTree = "<group>"; };
+		FDD23C62172A19FA00833E28 /* CalendarTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTerm.h; sourceTree = "<group>"; };
+		FDD23C63172A19FA00833E28 /* CalendarTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTerm.m; sourceTree = "<group>"; };
+		FDD23C65172A1BAD00833E28 /* CalendarTermTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTermTableViewCell.h; sourceTree = "<group>"; };
+		FDD23C66172A1BAD00833E28 /* CalendarTermTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTermTableViewCell.m; sourceTree = "<group>"; };
 		FDD23C68172A1FE300833E28 /* NetworkActivityTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityTracker.h; sourceTree = "<group>"; };
 		FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkActivityTracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +75,7 @@
 		FDA4BCD3172A165200BAAB26 = {
 			isa = PBXGroup;
 			children = (
-				FDA4BCE5172A165200BAAB26 /* ClassSchedule */,
+				FDA4BCE5172A165200BAAB26 /* ClassCalendar */,
 				FDA4BCDE172A165200BAAB26 /* Frameworks */,
 				FDA4BCDD172A165200BAAB26 /* Products */,
 			);
@@ -84,7 +84,7 @@
 		FDA4BCDD172A165200BAAB26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FDA4BCDC172A165200BAAB26 /* ClassSchedule.app */,
+				FDA4BCDC172A165200BAAB26 /* ClassCalendar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FDA4BCE5172A165200BAAB26 /* ClassSchedule */ = {
+		FDA4BCE5172A165200BAAB26 /* ClassCalendar */ = {
 			isa = PBXGroup;
 			children = (
 				FDD23C58172A16FE00833E28 /* Views */,
@@ -109,18 +109,18 @@
 				FDA4BCEF172A165200BAAB26 /* AppDelegate.m */,
 				FDA4BCE6172A165200BAAB26 /* Supporting Files */,
 			);
-			path = ClassSchedule;
+			path = ClassCalendar;
 			sourceTree = "<group>";
 		};
 		FDA4BCE6172A165200BAAB26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD02CC531741904C00940220 /* ClassCalendar-Prefix.pch */,
 				FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */,
 				FD8E6D8C173347E200E65FC7 /* body-bkg.png */,
-				FDA4BCE7172A165200BAAB26 /* ClassSchedule-Info.plist */,
+				FDA4BCE7172A165200BAAB26 /* ClassCalendar-Info.plist */,
 				FDA4BCE8172A165200BAAB26 /* InfoPlist.strings */,
 				FDA4BCEB172A165200BAAB26 /* main.m */,
-				FDA4BCED172A165200BAAB26 /* ClassSchedule-Prefix.pch */,
 				FDA4BCF1172A165200BAAB26 /* Default.png */,
 				FDA4BCF3172A165200BAAB26 /* Default@2x.png */,
 				FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */,
@@ -133,10 +133,10 @@
 			children = (
 				FDD23C68172A1FE300833E28 /* NetworkActivityTracker.h */,
 				FDD23C69172A1FE300833E28 /* NetworkActivityTracker.m */,
-				FDD23C62172A19FA00833E28 /* ScheduleTerm.h */,
-				FDD23C63172A19FA00833E28 /* ScheduleTerm.m */,
-				FD8E6D93173351C200E65FC7 /* ScheduleSessionGroup.h */,
-				FD8E6D94173351C200E65FC7 /* ScheduleSessionGroup.m */,
+				FDD23C62172A19FA00833E28 /* CalendarTerm.h */,
+				FDD23C63172A19FA00833E28 /* CalendarTerm.m */,
+				FD8E6D93173351C200E65FC7 /* CalendarSessionGroup.h */,
+				FD8E6D94173351C200E65FC7 /* CalendarSessionGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			children = (
 				FDD23C5B172A17EC00833E28 /* Profile */,
 				FDD23C5A172A17E500833E28 /* Cart */,
-				FDD23C59172A17DE00833E28 /* Schedule */,
+				FDD23C59172A17DE00833E28 /* Calendar */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -155,21 +155,21 @@
 			isa = PBXGroup;
 			children = (
 				FDA4BCF7172A165200BAAB26 /* MainStoryboard.storyboard */,
-				FDD23C65172A1BAD00833E28 /* ScheduleTermTableViewCell.h */,
-				FDD23C66172A1BAD00833E28 /* ScheduleTermTableViewCell.m */,
+				FDD23C65172A1BAD00833E28 /* CalendarTermTableViewCell.h */,
+				FDD23C66172A1BAD00833E28 /* CalendarTermTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		FDD23C59172A17DE00833E28 /* Schedule */ = {
+		FDD23C59172A17DE00833E28 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				FDD23C5F172A191E00833E28 /* ScheduleTermsTableViewController.h */,
-				FDD23C60172A191E00833E28 /* ScheduleTermsTableViewController.m */,
-				FD8E6D9917335A5800E65FC7 /* ScheduleListTableViewController.h */,
-				FD8E6D9A17335A5800E65FC7 /* ScheduleListTableViewController.m */,
+				FDD23C5F172A191E00833E28 /* CalendarTermsTableViewController.h */,
+				FDD23C60172A191E00833E28 /* CalendarTermsTableViewController.m */,
+				FD8E6D9917335A5800E65FC7 /* CalendarListTableViewController.h */,
+				FD8E6D9A17335A5800E65FC7 /* CalendarListTableViewController.m */,
 			);
-			name = Schedule;
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		FDD23C5A172A17E500833E28 /* Cart */ = {
@@ -189,9 +189,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FDA4BCDB172A165200BAAB26 /* ClassSchedule */ = {
+		FDA4BCDB172A165200BAAB26 /* ClassCalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDA4BCFF172A165200BAAB26 /* Build configuration list for PBXNativeTarget "ClassSchedule" */;
+			buildConfigurationList = FDA4BCFF172A165200BAAB26 /* Build configuration list for PBXNativeTarget "ClassCalendar" */;
 			buildPhases = (
 				FDA4BCD8172A165200BAAB26 /* Sources */,
 				FDA4BCD9172A165200BAAB26 /* Frameworks */,
@@ -201,9 +201,9 @@
 			);
 			dependencies = (
 			);
-			name = ClassSchedule;
+			name = ClassCalendar;
 			productName = ClassSchedule;
-			productReference = FDA4BCDC172A165200BAAB26 /* ClassSchedule.app */;
+			productReference = FDA4BCDC172A165200BAAB26 /* ClassCalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +215,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Paul Weatherby";
 			};
-			buildConfigurationList = FDA4BCD7172A165200BAAB26 /* Build configuration list for PBXProject "ClassSchedule" */;
+			buildConfigurationList = FDA4BCD7172A165200BAAB26 /* Build configuration list for PBXProject "ClassCalendar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -227,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FDA4BCDB172A165200BAAB26 /* ClassSchedule */,
+				FDA4BCDB172A165200BAAB26 /* ClassCalendar */,
 			);
 		};
 /* End PBXProject section */
@@ -256,12 +256,12 @@
 			files = (
 				FDA4BCEC172A165200BAAB26 /* main.m in Sources */,
 				FDA4BCF0172A165200BAAB26 /* AppDelegate.m in Sources */,
-				FDD23C61172A191E00833E28 /* ScheduleTermsTableViewController.m in Sources */,
-				FDD23C64172A19FA00833E28 /* ScheduleTerm.m in Sources */,
-				FDD23C67172A1BAD00833E28 /* ScheduleTermTableViewCell.m in Sources */,
+				FDD23C61172A191E00833E28 /* CalendarTermsTableViewController.m in Sources */,
+				FDD23C64172A19FA00833E28 /* CalendarTerm.m in Sources */,
+				FDD23C67172A1BAD00833E28 /* CalendarTermTableViewCell.m in Sources */,
 				FDD23C6A172A1FE300833E28 /* NetworkActivityTracker.m in Sources */,
-				FD8E6D95173351C200E65FC7 /* ScheduleSessionGroup.m in Sources */,
-				FD8E6D9B17335A5800E65FC7 /* ScheduleListTableViewController.m in Sources */,
+				FD8E6D95173351C200E65FC7 /* CalendarSessionGroup.m in Sources */,
+				FD8E6D9B17335A5800E65FC7 /* CalendarListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +347,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ClassSchedule/ClassSchedule-Prefix.pch";
-				INFOPLIST_FILE = "ClassSchedule/ClassSchedule-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ClassCalendar/ClassCalendar-Prefix.pch";
+				INFOPLIST_FILE = "ClassCalendar/ClassCalendar-Info.plist";
+				PRODUCT_NAME = ClassCalendar;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -358,9 +358,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ClassSchedule/ClassSchedule-Prefix.pch";
-				INFOPLIST_FILE = "ClassSchedule/ClassSchedule-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ClassCalendar/ClassCalendar-Prefix.pch";
+				INFOPLIST_FILE = "ClassCalendar/ClassCalendar-Info.plist";
+				PRODUCT_NAME = ClassCalendar;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -368,7 +368,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FDA4BCD7172A165200BAAB26 /* Build configuration list for PBXProject "ClassSchedule" */ = {
+		FDA4BCD7172A165200BAAB26 /* Build configuration list for PBXProject "ClassCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDA4BCFD172A165200BAAB26 /* Debug */,
@@ -377,7 +377,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDA4BCFF172A165200BAAB26 /* Build configuration list for PBXNativeTarget "ClassSchedule" */ = {
+		FDA4BCFF172A165200BAAB26 /* Build configuration list for PBXNativeTarget "ClassCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDA4BD00172A165200BAAB26 /* Debug */,

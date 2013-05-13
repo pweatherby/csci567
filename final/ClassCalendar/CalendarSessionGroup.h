@@ -1,21 +1,21 @@
 //
-//  ScheduleTerm.h
-//  ClassSchedule
+//  CalendarSessionGroup.h
+//  ClassCalendar
 //
-//  Created by Paul Weatherby on 4/25/13.
+//  Created by Paul Weatherby on 5/2/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "NetworkActivityTracker.h"
-@interface ScheduleTerm : NSObject
+@interface CalendarSessionGroup : NSObject
 
-+ (NSArray*) currentTerms;
++ (NSArray*) currentSessionGroups:(NSString*) termCode;
 
 @property (nonatomic, readonly) NSString* code;
 @property (nonatomic, readonly) NSString* abbrev;
-@property (nonatomic, readonly) NSString* shortDesc;
 @property (nonatomic, readonly) NSString* longDesc;
+@property (nonatomic, readonly) int displaySeq;
 
 - (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes;
 

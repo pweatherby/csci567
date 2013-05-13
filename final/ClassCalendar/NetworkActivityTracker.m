@@ -1,6 +1,6 @@
 //
 //  NetworkActivityTracker.m
-//  ClassSchedule
+//  ClassCalendar
 //
 //  Created by Paul Weatherby on 4/12/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.

@@ -1,21 +1,21 @@
 //
-//  ScheduleTerm.m
-//  ClassSchedule
+//  CalendarTerm.m
+//  ClassCalendar
 //
 //  Created by Paul Weatherby on 4/25/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "ScheduleTerm.h"
+#import "CalendarTerm.h"
 
-@implementation ScheduleTerm
+@implementation CalendarTerm
 
 
 + (NSArray*) currentTerms
 {
     /// DEBUG; RETURNING TEST VALUES
-    return [ScheduleTerm testValues];
-    NSURL* url = [[NSURL alloc] initWithString:@""];
+    /// return [ScheduleTerm testValues];
+    NSURL* url = [[NSURL alloc] initWithString:@"https://emsdev.csuchico.edu/services/ClassSchedule/CalendarInfo/JSON/TERMS_REQUEST.ashx"];
     
     [[NetworkActivityTracker sharedInstance] showActivityIndicator];
     NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
@@ -37,7 +37,7 @@
             
             for(int i = 0; i < parsedJSON.count; i++)
             {
-                ScheduleTerm* item = [[ScheduleTerm alloc] initWithJSONAttributes: [parsedJSON objectAtIndex:i]];
+                CalendarTerm* item = [[CalendarTerm alloc] initWithJSONAttributes: [parsedJSON objectAtIndex:i]];
                 [curTerms addObject: item];
             }
             
@@ -51,15 +51,15 @@
 {
     
     NSMutableArray* curTerms = [[NSMutableArray alloc] init];
-    ScheduleTerm* F13 = [[ScheduleTerm alloc] initWithCode:@"2138"
+    CalendarTerm* F13 = [[CalendarTerm alloc] initWithCode:@"2138"
                                                      SDesc:@"Fa 2013"
                                                      LDesc:@"Fall 2013"];
     [curTerms addObject: F13];
-    ScheduleTerm* S14 = [[ScheduleTerm alloc] initWithCode:@"2142"
+    CalendarTerm* S14 = [[CalendarTerm alloc] initWithCode:@"2142"
                                                      SDesc:@"Spr 2014"
                                                      LDesc:@"Spring 2014"];
     [curTerms addObject: S14];
-    ScheduleTerm* F14 = [[ScheduleTerm alloc] initWithCode:@"2148"
+    CalendarTerm* F14 = [[CalendarTerm alloc] initWithCode:@"2148"
                                                      SDesc:@"Fa 2014"
                                                      LDesc:@"Fall 2014"];
     [curTerms addObject: F14];

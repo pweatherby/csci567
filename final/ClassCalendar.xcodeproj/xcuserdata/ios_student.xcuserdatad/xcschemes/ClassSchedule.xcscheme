@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FDA4BCDB172A165200BAAB26"
-               BuildableName = "ClassSchedule.app"
-               BlueprintName = "ClassSchedule"
-               ReferencedContainer = "container:ClassSchedule.xcodeproj">
+               BuildableName = "ClassCalendar.app"
+               BlueprintName = "ClassCalendar"
+               ReferencedContainer = "container:ClassCalendar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDA4BCDB172A165200BAAB26"
-            BuildableName = "ClassSchedule.app"
-            BlueprintName = "ClassSchedule"
-            ReferencedContainer = "container:ClassSchedule.xcodeproj">
+            BuildableName = "ClassCalendar.app"
+            BlueprintName = "ClassCalendar"
+            ReferencedContainer = "container:ClassCalendar.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDA4BCDB172A165200BAAB26"
-            BuildableName = "ClassSchedule.app"
-            BlueprintName = "ClassSchedule"
-            ReferencedContainer = "container:ClassSchedule.xcodeproj">
+            BuildableName = "ClassCalendar.app"
+            BlueprintName = "ClassCalendar"
+            ReferencedContainer = "container:ClassCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDA4BCDB172A165200BAAB26"
-            BuildableName = "ClassSchedule.app"
-            BlueprintName = "ClassSchedule"
-            ReferencedContainer = "container:ClassSchedule.xcodeproj">
+            BuildableName = "ClassCalendar.app"
+            BlueprintName = "ClassCalendar"
+            ReferencedContainer = "container:ClassCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

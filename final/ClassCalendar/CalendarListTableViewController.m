@@ -1,20 +1,20 @@
 //
-//  ScheduleListTableViewController.m
-//  ClassSchedule
+//  CalendarListTableViewController.m
+//  ClassCalendar
 //
 //  Created by iOS Student on 5/2/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "ScheduleListTableViewController.h"
+#import "CalendarListTableViewController.h"
 
-@interface ScheduleListTableViewController ()
+@interface CalendarListTableViewController ()
 
 - (IBAction)refreshButtonPressed:(id)sender;
 
 @end
 
-@implementation ScheduleListTableViewController
+@implementation CalendarListTableViewController
 
 - (void)viewDidLoad
 {
@@ -44,9 +44,9 @@
 
 #pragma mark - Get/Refresh Data Listing
 
-- (void) getScheduleData
+- (void) getCalendarData
 {
-    self.scheduleData = nil;
+    self.calendarData = nil;
 }
 
 - (void) reloadList
@@ -59,8 +59,8 @@
     dispatch_queue_t q = dispatch_queue_create("table view loading queue", NULL);
     dispatch_async(q, ^{
         // do something to get new data for this table view (which presumably takes time)
-        [self getScheduleData];
-        if(self.scheduleData)
+        [self getCalendarData];
+        if(self.calendarData)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 // update the table view's Model to the new data, reloadData if necessary
@@ -105,9 +105,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.scheduleData)
+    if(self.calendarData)
     {
-        return [self.scheduleData count];
+        return [self.calendarData count];
     }
     return 0;
 }

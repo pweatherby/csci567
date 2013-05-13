@@ -1,20 +1,20 @@
 //
-//  ScheduleSessionGroup.m
-//  ClassSchedule
+//  CalendarSessionGroup.m
+//  ClassCalendar
 //
-//  Created by iOS Student on 5/2/13.
+//  Created by Paul Weatherby on 5/2/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "ScheduleSessionGroup.h"
+#import "CalendarSessionGroup.h"
 
-@implementation ScheduleSessionGroup
+@implementation CalendarSessionGroup
 
 
 + (NSArray*) currentSessionGroups:(NSString*) termCode
 {
     /// DEBUG; RETURNING TEST VALUES
-    return [ScheduleSessionGroup testValues];
+    return [CalendarSessionGroup testValues];
     NSURL* url = [[NSURL alloc] initWithString:@""];
     
     [[NetworkActivityTracker sharedInstance] showActivityIndicator];
@@ -37,7 +37,7 @@
             
             for(int i = 0; i < parsedJSON.count; i++)
             {
-                ScheduleSessionGroup* item = [[ScheduleSessionGroup alloc] initWithJSONAttributes: [parsedJSON objectAtIndex:i]];
+                CalendarSessionGroup* item = [[CalendarSessionGroup alloc] initWithJSONAttributes: [parsedJSON objectAtIndex:i]];
                 [curItems addObject: item];
             }
             
@@ -51,11 +51,11 @@
 {
     
     NSMutableArray* curItems = [[NSMutableArray alloc] init];
-    ScheduleSessionGroup* StateGroup = [[ScheduleSessionGroup alloc] initWithCode:@"10"
+    CalendarSessionGroup* StateGroup = [[CalendarSessionGroup alloc] initWithCode:@"10"
                                                                             abbvr:@"State"
                                                                             LDesc:@"State Supported Classes"];
     [curItems addObject: StateGroup];
-    ScheduleSessionGroup* SelfGroup = [[ScheduleSessionGroup alloc] initWithCode:@"20"
+    CalendarSessionGroup* SelfGroup = [[CalendarSessionGroup alloc] initWithCode:@"20"
                                                                            abbvr:@"Self"
                                                                            LDesc:@"Self Supported Classes"];
     [curItems addObject: SelfGroup];

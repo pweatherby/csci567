@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'ClassSchedule' target in the 'ClassSchedule' project
+// Prefix header for all source files of the 'ClassCalendar' target in the 'ClassCalendar' project
 //
 
 #import <Availability.h>
