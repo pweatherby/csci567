@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/HCM/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SCC_FAULT_RESP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="detail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="1" name="MSGS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="unbounded" name="MSG">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:string" />
+                          <xs:element minOccurs="1" maxOccurs="1" name="DESCR" type="xs:string" />
+                          <xs:element minOccurs="1" maxOccurs="1" name="MESSAGE_SEVERITY" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="PROPS">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="PROP">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" maxOccurs="1" name="SCC_ENTITY_INST_ID" type="xs:string" />
+                                      <xs:element minOccurs="0" maxOccurs="1" name="PROPNAME" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

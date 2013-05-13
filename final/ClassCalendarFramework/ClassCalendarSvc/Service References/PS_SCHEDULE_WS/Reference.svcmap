@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0d69aa24-ada5-42e2-a9bc-da84ddb6796f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLASS_SCHED.1.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_SECTIONS_REQ.xsd" MetadataType="Schema" ID="c31756fc-936d-46b1-86ea-8ace7c2066a9" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_SESSIONS_RES.xsd" MetadataType="Schema" ID="283ee6d2-4d8b-4163-84a8-8d097b87b031" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_SESSIONS_RES.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_NUMBERS_RES.xsd" MetadataType="Schema" ID="41f104f3-9b61-4ffa-8528-4ee117644147" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_NUMBERS_RES.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_SUBJECTS_RES.xsd" MetadataType="Schema" ID="40fbc593-a029-453f-8a6a-ea82208eabbf" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1.xsd" />
+    <MetadataFile FileName="SCC_FAULT_RESP.xsd" MetadataType="Schema" ID="da4c6832-e7bd-4e86-b1cf-fadce8ed74d5" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/SCC_FAULT_RESP.V1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_NUMBERS_REQ.xsd" MetadataType="Schema" ID="b9bff585-14a0-4113-aebf-75c6235b4666" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_SUBJECTS_REQ.xsd" MetadataType="Schema" ID="0f62a6d2-abff-48da-bfd1-6109ecd84d8d" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_SECTIONS_RES.xsd" MetadataType="Schema" ID="b897b002-bd9a-4348-980d-01b296ce91ae" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_SECTIONS_RES.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLASS_SCHED.wsdl" MetadataType="Wsdl" ID="57cb800f-764a-4b4d-8d2e-0b334e4fb1e3" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLASS_SCHED.1.wsdl" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_TERMS_REQ.xsd" MetadataType="Schema" ID="47ef571d-3f5d-4c86-a20a-c23cc05532af" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_TERMS_REQ.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_SESSIONS_REQ.xsd" MetadataType="Schema" ID="8514034b-ce2b-48f9-ab1b-b3420ce5b4ae" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1.xsd" />
+    <MetadataFile FileName="CHI_SR_CLSS_SCHD_TERMS_RES.xsd" MetadataType="Schema" ID="696a051d-cbf0-4ce5-b5bc-8ffe49aec617" SourceId="1" SourceUrl="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL/CHI_SR_CLSS_SCHD_TERMS_RES.v1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

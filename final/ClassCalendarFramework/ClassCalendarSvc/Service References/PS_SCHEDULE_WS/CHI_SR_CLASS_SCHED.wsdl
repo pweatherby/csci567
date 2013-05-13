@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:SCC_FAULT_RESP.V1="http://xmlns.oracle.com/Enterprise/HCM/services" xmlns:CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tns="http://xmlns.oracle.com/Enterprise/Tools/services/CHI_SR_CLASS_SCHED.1" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_SESSIONS_RES.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_TERMS_RES.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_TERMS_REQ.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_SECTIONS_RES.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:CHI_SR_CLSS_SCHD_NUMBERS_RES.v1="http://xmlns.oracle.com/Enterprise/Tools/services" name="CHI_SR_CLASS_SCHED.1" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/services/CHI_SR_CLASS_SCHED.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsagePolicy wsdl:Required="true" />
+  <plnk:partnerLinkType name="CHI_SR_CLASS_SCHED_PartnerLinkType">
+    <plnk:role name="CHI_SR_CLASS_SCHED_Provider">
+      <plnk:portType name="tns:CHI_SR_CLASS_SCHED_PortType" />
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="SCC_FAULT_RESP.V1.xsd" namespace="http://xmlns.oracle.com/Enterprise/HCM/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_SECTIONS_RES.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_SESSIONS_RES.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_TERMS_REQ.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+      <xsd:import schemaLocation="CHI_SR_CLSS_SCHD_TERMS_RES.v1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:NUMBERS_REQUEST" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:ClassSchedClassNumberResults" />
+  </wsdl:message>
+  <wsdl:message name="SCC_FAULT_RESP.V1">
+    <wsdl:documentation>Fault Response</wsdl:documentation>
+    <wsdl:part name="parameter" element="SCC_FAULT_RESP.V1:SCC_FAULT_RESP" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:SECTIONS_REQUEST" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_SECTIONS_RES.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:ClassSchedClassSectionResults" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:SESSIONGROUPS_REQUEST" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_SESSIONS_RES.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:ClassSchedSessionGroupResults" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:SUBJECTS_REQUEST" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:ClassSchedSubjResults" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_TERMS_REQ.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:TERMS_REQUEST" />
+  </wsdl:message>
+  <wsdl:message name="CHI_SR_CLSS_SCHD_TERMS_RES.v1">
+    <wsdl:part name="parameter" element="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1:ClassSchedTermResults" />
+  </wsdl:message>
+  <wsdl:portType name="CHI_SR_CLASS_SCHED_PortType">
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_NUMBERS">
+      <wsdl:documentation>Class Schedule Subject Numbers</wsdl:documentation>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1" message="tns:CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1" />
+      <wsdl:output name="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1" message="tns:CHI_SR_CLSS_SCHD_NUMBERS_RES.v1" />
+      <wsdl:fault name="SCC_FAULT_RESP.V1" message="tns:SCC_FAULT_RESP.V1" />
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_SECTIONS">
+      <wsdl:documentation>Class Schedule Sections</wsdl:documentation>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1" message="tns:CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1" />
+      <wsdl:output name="CHI_SR_CLSS_SCHD_SECTIONS_RES.v1" message="tns:CHI_SR_CLSS_SCHD_SECTIONS_RES.v1" />
+      <wsdl:fault name="SCC_FAULT_RESP.V1" message="tns:SCC_FAULT_RESP.V1" />
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_SESSIONS">
+      <wsdl:documentation>Retrieve Sessions for a Term</wsdl:documentation>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1" message="tns:CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1" />
+      <wsdl:output name="CHI_SR_CLSS_SCHD_SESSIONS_RES.v1" message="tns:CHI_SR_CLSS_SCHD_SESSIONS_RES.v1" />
+      <wsdl:fault name="SCC_FAULT_RESP.V1" message="tns:SCC_FAULT_RESP.V1" />
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_SUBJECTS">
+      <wsdl:documentation>Retrieve Subjects in a Trm-Ses</wsdl:documentation>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1" message="tns:CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1" />
+      <wsdl:output name="CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1" message="tns:CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1" />
+      <wsdl:fault name="SCC_FAULT_RESP.V1" message="tns:SCC_FAULT_RESP.V1" />
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_TERMS">
+      <wsdl:documentation>Retrieve Class Schedule Terms</wsdl:documentation>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_TERMS_REQ.v1" message="tns:CHI_SR_CLSS_SCHD_TERMS_REQ.v1" />
+      <wsdl:output name="CHI_SR_CLSS_SCHD_TERMS_RES.v1" message="tns:CHI_SR_CLSS_SCHD_TERMS_RES.v1" />
+      <wsdl:fault name="SCC_FAULT_RESP.V1" message="tns:SCC_FAULT_RESP.V1" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CHI_SR_CLASS_SCHED_Binding" type="tns:CHI_SR_CLASS_SCHED_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_NUMBERS">
+      <soap:operation soapAction="CHI_SR_CLASS_SCHED_NUMBERS.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordRequired" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Required" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_NUMBERS_REQ.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CHI_SR_CLSS_SCHD_NUMBERS_RES.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="SCC_FAULT_RESP.V1">
+        <soap:fault use="literal" name="SCC_FAULT_RESP.V1" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_SECTIONS">
+      <soap:operation soapAction="CHI_SR_CLASS_SCHED_SECTIONS.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordRequired" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Required" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_SECTIONS_REQ.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CHI_SR_CLSS_SCHD_SECTIONS_RES.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="SCC_FAULT_RESP.V1">
+        <soap:fault use="literal" name="SCC_FAULT_RESP.V1" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_SESSIONS">
+      <soap:operation soapAction="CHI_SR_CLASS_SCHED_SESSIONS.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordRequired" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Required" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_SESSIONS_REQ.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CHI_SR_CLSS_SCHD_SESSIONS_RES.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="SCC_FAULT_RESP.V1">
+        <soap:fault use="literal" name="SCC_FAULT_RESP.V1" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_SUBJECTS">
+      <soap:operation soapAction="CHI_SR_CLASS_SCHED_SUBJECTS.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordRequired" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Required" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_SUBJECTS_REQ.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CHI_SR_CLSS_SCHD_SUBJECTS_RES.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="SCC_FAULT_RESP.V1">
+        <soap:fault use="literal" name="SCC_FAULT_RESP.V1" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CHI_SR_CLASS_SCHED_TERMS">
+      <soap:operation soapAction="CHI_SR_CLASS_SCHED_TERMS.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordRequired" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Required" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="CHI_SR_CLSS_SCHD_TERMS_REQ.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CHI_SR_CLSS_SCHD_TERMS_RES.v1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="SCC_FAULT_RESP.V1">
+        <soap:fault use="literal" name="SCC_FAULT_RESP.V1" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CHI_SR_CLASS_SCHED">
+    <wsdl:documentation>Class Schedule</wsdl:documentation>
+    <wsdl:port name="CHI_SR_CLASS_SCHED_Port" binding="tns:CHI_SR_CLASS_SCHED_Binding">
+      <soap:address location="https://cmsdev1-reports.calstate.edu/PSIGW/PeopleSoftServiceListeningConnector/HACHIDVL" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

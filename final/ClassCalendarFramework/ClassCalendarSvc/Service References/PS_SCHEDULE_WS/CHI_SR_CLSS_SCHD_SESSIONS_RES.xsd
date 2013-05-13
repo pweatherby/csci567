@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:cust="http://ereg.oracle.com/2010/ERCustom" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ClassSchedSessionGroupResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:entityName="CHI_SR_CLASS_SCHED_SESGRP_RSL" minOccurs="0" maxOccurs="1" ref="ClassSchedSessionGroupResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_SESS" name="ClassSchedSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Academic Institution" minOccurs="0" maxOccurs="1" name="INSTITUTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Schedule Session Grp ID" minOccurs="0" maxOccurs="1" name="SESSION_GROUP">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Short Description" minOccurs="0" maxOccurs="1" name="SESSION_SDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Description" minOccurs="0" maxOccurs="1" name="SESSION_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="First Date to Enroll" minOccurs="0" maxOccurs="1" name="FIRST_ENRL_DT">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Last Date to Enroll" minOccurs="0" maxOccurs="1" name="LAST_ENRL_DT">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Session Beginning Date" minOccurs="0" maxOccurs="1" name="SESS_BEGIN_DT">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Session End Date" minOccurs="0" maxOccurs="1" name="SESS_END_DT">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Open Enrollment Date" minOccurs="0" maxOccurs="1" name="ENROLL_OPEN_DT">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Census Date" minOccurs="0" maxOccurs="1" name="CENSUS_DT">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Weeks of Instruction" minOccurs="0" maxOccurs="1" name="WEEKS_OF_INSTRUCT">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Entity Instance Id" minOccurs="0" maxOccurs="1" name="SCC_ENTITY_INST_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_SESGRP" name="ClassSchedSessionGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Academic Institution" minOccurs="0" maxOccurs="1" name="INSTITUTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Schedule Session Grp ID" minOccurs="0" maxOccurs="1" name="SESSION_GROUP">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Abbreviation" minOccurs="0" maxOccurs="1" name="GROUP_ABBREV">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Description" minOccurs="0" maxOccurs="1" name="GROUP_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="100" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Sequence Number" minOccurs="0" maxOccurs="1" name="DISPLAY_SEQ">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Entity Instance Id" minOccurs="0" maxOccurs="1" name="SCC_ENTITY_INST_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ClassSchedSessions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_SESS" minOccurs="0" maxOccurs="20" ref="ClassSchedSession" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_SESGRP_RSL" name="ClassSchedSessionGroupResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Academic Institution" minOccurs="0" maxOccurs="1" name="INSTITUTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="General Message" minOccurs="0" maxOccurs="1" name="SessionGroupResultMessage">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="200" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Count" minOccurs="0" maxOccurs="1" name="SessionGroupResultCount">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Entity Instance Id" minOccurs="0" maxOccurs="1" name="SCC_ENTITY_INST_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ClassSchedSessionGroups">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_SESGRP" minOccurs="0" maxOccurs="unbounded" ref="ClassSchedSessionGroup" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

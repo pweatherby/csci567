@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="noble.coder.pweatherby.AppValetWeb.Stand.Attendant" CodeBehind="Attendant.svc.cs" %>

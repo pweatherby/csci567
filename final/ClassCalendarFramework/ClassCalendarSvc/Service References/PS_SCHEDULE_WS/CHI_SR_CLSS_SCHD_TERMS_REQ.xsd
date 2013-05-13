@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:cust="http://ereg.oracle.com/2010/ERCustom" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TERMS_REQUEST">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.WCF.Schedule" CodeBehind="Schedule.svc.cs" %>

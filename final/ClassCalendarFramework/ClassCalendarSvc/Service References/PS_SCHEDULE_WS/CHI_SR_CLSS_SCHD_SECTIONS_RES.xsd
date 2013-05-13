@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:cust="http://ereg.oracle.com/2010/ERCustom" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ClassSchedClassSectionResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_SEC_RSL" minOccurs="0" maxOccurs="1" ref="ClassSchedClassSectionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_TXB" name="ClassScheduleClassTextbook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="0" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="0" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Section" minOccurs="0" maxOccurs="1" name="CLASS_SECTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Textbook Sequence Number" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_SEQNO">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Course Material Type" minOccurs="0" maxOccurs="1" name="SSR_CRSEMAT_TYPE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Course Material Status" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_STATUS">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Course Material Title" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_TITLE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="ISBN Number" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_ISBN">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="20" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Author" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_AUTHOR">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Book Publisher" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_PUBLISH">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Textbook Edition" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_EDITION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Year Published" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_PUBYEAR">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Currency Code" minOccurs="0" maxOccurs="1" name="CURRENCY_CD">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Purchase Price" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_PRICE">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="19" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Course Material Notes" minOccurs="0" maxOccurs="1" name="SSR_TXBDTL_NOTES">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="254" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Textbook Summary Seq Order" minOccurs="0" maxOccurs="1" name="SSR_CRSEMAT_SEQ">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_NTE" name="ClassSchedClassNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="0" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="0" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Section" minOccurs="0" maxOccurs="1" name="CLASS_SECTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Notes Sequence Nbr" minOccurs="0" maxOccurs="1" name="CLASS_NOTES_SEQ">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Notes" minOccurs="0" maxOccurs="1" name="CLASS_NOTE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_ATR" name="ClassSchedClassAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="0" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="0" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Section" minOccurs="0" maxOccurs="1" name="CLASS_SECTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Attribute" minOccurs="0" maxOccurs="1" name="COURSE_ATTR">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Short Description" minOccurs="0" maxOccurs="1" name="COURSE_ATTR_SDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr" minOccurs="0" maxOccurs="1" name="COURSE_ATTR_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Attribute Value" minOccurs="0" maxOccurs="1" name="COURSE_ATTR_VALUE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr2" minOccurs="0" maxOccurs="1" name="COURSE_ATTR_VALUE_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Formal Description" minOccurs="0" maxOccurs="1" name="COURSE_ATTR_VALUE_FDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_INSTRUCTOR" name="ClassSchedInstructor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="0" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="0" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Section" minOccurs="0" maxOccurs="1" name="CLASS_SECTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Meeting Pattern Nbr" minOccurs="0" maxOccurs="1" name="CLASS_MTG_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class/Instructor Assign Seq #" minOccurs="0" maxOccurs="1" name="INSTR_ASSIGN_SEQ">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Display Name" minOccurs="0" maxOccurs="1" name="NAME_DISPLAY">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Last Name" minOccurs="0" maxOccurs="1" name="LAST_NAME">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="First Name" minOccurs="0" maxOccurs="1" name="FIRST_NAME">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_MTG_PAT" name="ClassSchedMeetingPattern">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="0" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="0" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Section" minOccurs="0" maxOccurs="1" name="CLASS_SECTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Meeting Pattern Nbr" minOccurs="0" maxOccurs="1" name="CLASS_MTG_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Building" minOccurs="0" maxOccurs="1" name="BUILDING">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Room" minOccurs="0" maxOccurs="1" name="ROOM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Start Date" minOccurs="0" maxOccurs="1" name="MEETING_DATE_START">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Description" minOccurs="0" maxOccurs="1" name="MEETING_DATE_START_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="End Date" minOccurs="0" maxOccurs="1" name="MEETING_DATE_END">
+          <xs:simpleType>
+            <xs:restriction base="xs:date" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr" minOccurs="0" maxOccurs="1" name="MEETING_DATE_END_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr Short One" minOccurs="0" maxOccurs="1" name="MEETING_TIME_START">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr Short 2" minOccurs="0" maxOccurs="1" name="MEETING_TIME_END">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Standard Meeting Pattern" minOccurs="0" maxOccurs="1" name="STND_MTG_PAT">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ClassSchedInstructors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_INSTRUCTOR" minOccurs="0" maxOccurs="unbounded" ref="ClassSchedInstructor" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_SEC" name="ClassSchedClassSection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Academic Institution" minOccurs="0" maxOccurs="1" name="INSTITUTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Schedule Session Grp ID" minOccurs="0" maxOccurs="1" name="SESSION_GROUP">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="0" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="0" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="0" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Session" minOccurs="0" maxOccurs="1" name="SESSION_CODE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Subject Area" minOccurs="0" maxOccurs="1" name="SUBJECT">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="8" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Catalog Nbr" minOccurs="0" maxOccurs="1" name="CLASS_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Section" minOccurs="0" maxOccurs="1" name="CLASS_SECTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Class Status" minOccurs="0" maxOccurs="1" name="CLASS_STATUS">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr" minOccurs="0" maxOccurs="1" name="CLASS_STATUS_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Class Type" minOccurs="0" maxOccurs="1" name="CLASS_TYPE">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Descr2" minOccurs="0" maxOccurs="1" name="CLASS_TYPE_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Associated Class" minOccurs="0" maxOccurs="1" name="ASSOCIATED_CLASS">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Class Nbr" minOccurs="0" maxOccurs="1" name="REGISTRATION_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Course Component" minOccurs="0" maxOccurs="1" name="CLASS_COMPONENT">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Component Description" minOccurs="0" maxOccurs="1" name="CLASS_COMPONENT_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Enrollment Status" minOccurs="0" maxOccurs="1" name="ENRL_STATUS">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Enrollment Status" minOccurs="0" maxOccurs="1" name="ENRL_STATUS_LDESC">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="30" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Enrollment Total" minOccurs="0" maxOccurs="1" name="ENRL_TOTAL">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Enrollment Capacity" minOccurs="0" maxOccurs="1" name="ENRL_CAPACITY">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Auto Enroll from Wait List" minOccurs="0" maxOccurs="1" name="AUTO_ENRL_WAITLIST">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="WAITLIST DAEMON SWITCH" minOccurs="0" maxOccurs="1" name="WAITLIST_DAEMON">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Wait List Total" minOccurs="0" maxOccurs="1" name="WAITLIST_TOTAL">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Wait List Capacity" minOccurs="0" maxOccurs="1" name="WAITLIST_CAPACITY">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ClassSchedMeetingPatterns">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_MTG_PAT" minOccurs="0" maxOccurs="unbounded" ref="ClassSchedMeetingPattern" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClassSchedClassAttributes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_ATR" minOccurs="0" maxOccurs="unbounded" ref="ClassSchedClassAttribute" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClassSchedClassNotes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_NTE" minOccurs="0" maxOccurs="unbounded" ref="ClassSchedClassNote" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClassSchedClassTextbooks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_TXB" minOccurs="0" maxOccurs="unbounded" ref="ClassScheduleClassTextbook" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_SEC_RSL" name="ClassSchedClassSectionResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element cust:iskey="true" cust:label="Academic Institution" minOccurs="0" maxOccurs="1" name="INSTITUTION">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Term" minOccurs="1" maxOccurs="1" name="TERM">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="4" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Class Schedule Session Grp ID" minOccurs="0" maxOccurs="1" name="SESSION_GROUP">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course ID" minOccurs="1" maxOccurs="1" name="COURSE_ID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="6" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:iskey="true" cust:label="Course Offering Nbr" minOccurs="1" maxOccurs="1" name="COURSE_OFFER_NBR">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="2" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="General Message" minOccurs="0" maxOccurs="1" name="SectionsResultMessage">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="200" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element cust:label="Count" minOccurs="0" maxOccurs="1" name="SectionsResultCount">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0" />
+              <xs:totalDigits value="5" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ClassSchedClassSections">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element cust:entityName="CHI_SR_CLASS_SCHED_CLS_SEC" minOccurs="0" maxOccurs="unbounded" ref="ClassSchedClassSection" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

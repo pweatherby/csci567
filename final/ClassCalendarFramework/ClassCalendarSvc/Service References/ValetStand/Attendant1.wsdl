@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Attendant" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://emsdev.csuchico.edu/ADTS/AppValet/Stand/Attendant.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://emsdev.csuchico.edu/ADTS/AppValet/Stand/Attendant.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://emsdev.csuchico.edu/ADTS/AppValet/Stand/Attendant.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/noble.coder.pweatherby.AppValet" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAttendant_GetUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserName" />
+  </wsdl:message>
+  <wsdl:message name="IAttendant_GetUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttendant_GetUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserID" />
+  </wsdl:message>
+  <wsdl:message name="IAttendant_GetUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttendant_GetKeyStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAttendant_GetKeyStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAttendant">
+    <wsdl:operation name="GetUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttendant/GetUserName" message="tns:IAttendant_GetUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttendant/GetUserNameResponse" message="tns:IAttendant_GetUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttendant/GetUserID" message="tns:IAttendant_GetUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttendant/GetUserIDResponse" message="tns:IAttendant_GetUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttendant/GetKeyStatus" message="tns:IAttendant_GetKeyStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttendant/GetKeyStatusResponse" message="tns:IAttendant_GetKeyStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAttendant" type="tns:IAttendant">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserName">
+      <soap:operation soapAction="http://tempuri.org/IAttendant/GetUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <soap:operation soapAction="http://tempuri.org/IAttendant/GetUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyStatus">
+      <soap:operation soapAction="http://tempuri.org/IAttendant/GetKeyStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Attendant">
+    <wsdl:port name="BasicHttpBinding_IAttendant" binding="tns:BasicHttpBinding_IAttendant">
+      <soap:address location="http://emsdev.csuchico.edu/ADTS/AppValet/Stand/Attendant.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
