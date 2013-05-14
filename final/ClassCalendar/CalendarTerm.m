@@ -72,9 +72,9 @@
     self = [super init];
     if (self)
     {
-        _code = jsonAttributes[@"TERM"];
-        _shortDesc = jsonAttributes[@"TERM_SDESC"];
-        _longDesc = jsonAttributes[@"TERM_LDESC"];
+        _code = [jsonAttributes[@"TERM"] stringByDecodingXMLEntities];
+        _shortDesc = [jsonAttributes[@"TERM_SDESC"] stringByDecodingXMLEntities];
+        _longDesc = [jsonAttributes[@"TERM_LDESC"] stringByDecodingXMLEntities];
         _abbrev = [[_shortDesc stringByReplacingOccurrencesOfString:@" 20" withString:@""] uppercaseString];
     }
     return self;

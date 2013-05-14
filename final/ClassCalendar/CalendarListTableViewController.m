@@ -2,7 +2,7 @@
 //  CalendarListTableViewController.m
 //  ClassCalendar
 //
-//  Created by iOS Student on 5/2/13.
+//  Created by Paul Weatherby on 5/2/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
@@ -16,9 +16,26 @@
 
 @implementation CalendarListTableViewController
 
+- (UINavigationItem *)navigationItem{
+    UINavigationItem *item = [super navigationItem];
+    if (item != nil && item.backBarButtonItem == nil)
+    {
+        item.backBarButtonItem = [[UIBarButtonItem alloc] init];
+        item.backBarButtonItem.title = [self title];
+    }
+    
+    return item;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(self.refreshControl)
+    {
+        [self.refreshControl addTarget:self
+                                action:@selector(reloadList)
+                      forControlEvents:UIControlEventValueChanged];
+    }
     [self reloadList];
     UIColor* bkg = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"body-bkg-pixel.jpg"]];
                                     // initWithHue:22.34f saturation:97.86f brightness:54.9f alpha:1.0f];
@@ -30,6 +47,17 @@
     self.tableView.backgroundView = view;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"nextList"]) {
+        CalendarListTableViewController* nextViewController = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        if(self.calendarData && indexPath.row < self.calendarData.count)
+        {
+            nextViewController.dataParam = [self.calendarData objectAtIndex:indexPath.row];
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

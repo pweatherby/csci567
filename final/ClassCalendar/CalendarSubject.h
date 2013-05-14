@@ -1,8 +1,8 @@
 //
-//  CalendarTerm.h
+//  CalendarSubject.h
 //  ClassCalendar
 //
-//  Created by Paul Weatherby on 4/25/13.
+//  Created by Paul Weatherby on 5/13/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
@@ -10,14 +10,15 @@
 #import "NetworkActivityTracker.h"
 #import "StringUtility.h"
 
-@interface CalendarTerm : NSObject
+@interface CalendarSubject : NSObject
 
-+ (NSArray*) currentTerms;
++ (NSArray*) currentSubjects:(NSString*) termCode
+                SessionGroup:(NSString*) sesGrp;
 
 @property (nonatomic, readonly) NSString* code;
-@property (nonatomic, readonly) NSString* abbrev;
 @property (nonatomic, readonly) NSString* shortDesc;
 @property (nonatomic, readonly) NSString* longDesc;
+@property (nonatomic, readonly) NSString* formalDesc;
 
 - (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes;
 

@@ -10,4 +10,5 @@
 
 @interface CalendarListTableViewController : UITableViewController
 @property (nonatomic, strong) NSArray*  calendarData;
+@property (nonatomic, strong) id dataParam;
 @end

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "CalendarListTableViewController.h"
 
 #import "CalendarTerm.h"

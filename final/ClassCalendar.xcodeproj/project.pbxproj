@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD032A2A17419585009C3FC2 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A2917419585009C3FC2 /* calendar_icon.png */; };
+		FD032A2E174195CC009C3FC2 /* calendar_iconx57.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A2D174195CC009C3FC2 /* calendar_iconx57.png */; };
+		FD032A321741965C009C3FC2 /* calendar_iconx114.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A311741965C009C3FC2 /* calendar_iconx114.png */; };
+		FD032A35174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD032A34174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m */; };
+		FD032A38174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD032A37174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m */; };
+		FD8B284F1741A05B0022CFCB /* CalendarSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B284E1741A05B0022CFCB /* CalendarSubject.m */; };
+		FD8B28521741A2C80022CFCB /* CalendarSubjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B28511741A2C80022CFCB /* CalendarSubjectTableViewCell.m */; };
+		FD8B28551741A2F80022CFCB /* CalendarSubjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B28541741A2F80022CFCB /* CalendarSubjectsTableViewController.m */; };
+		FD8B28581741A8350022CFCB /* StringUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B28571741A8350022CFCB /* StringUtility.m */; };
 		FD8E6D8D173347E200E65FC7 /* body-bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8E6D8C173347E200E65FC7 /* body-bkg.png */; };
 		FD8E6D8F17334E0C00E65FC7 /* body-bkg-pixel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */; };
 		FD8E6D95173351C200E65FC7 /* CalendarSessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E6D94173351C200E65FC7 /* CalendarSessionGroup.m */; };
@@ -29,6 +38,23 @@
 
 /* Begin PBXFileReference section */
 		FD02CC531741904C00940220 /* ClassCalendar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ClassCalendar-Prefix.pch"; path = "ClassCalendar/ClassCalendar-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		FD032A2917419585009C3FC2 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_icon.png; sourceTree = "<group>"; };
+		FD032A2B174195B4009C3FC2 /* calendar_iconx57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_iconx57.png; sourceTree = "<group>"; };
+		FD032A2D174195CC009C3FC2 /* calendar_iconx57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_iconx57.png; sourceTree = "<group>"; };
+		FD032A2F17419654009C3FC2 /* calendar_iconx114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_iconx114.png; sourceTree = "<group>"; };
+		FD032A311741965C009C3FC2 /* calendar_iconx114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_iconx114.png; sourceTree = "<group>"; };
+		FD032A33174196B5009C3FC2 /* CalendarSessionGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSessionGroupTableViewController.h; sourceTree = "<group>"; };
+		FD032A34174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSessionGroupTableViewController.m; sourceTree = "<group>"; };
+		FD032A36174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSessionGroupTableViewCell.h; sourceTree = "<group>"; };
+		FD032A37174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSessionGroupTableViewCell.m; sourceTree = "<group>"; };
+		FD8B284D1741A05B0022CFCB /* CalendarSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSubject.h; sourceTree = "<group>"; };
+		FD8B284E1741A05B0022CFCB /* CalendarSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSubject.m; sourceTree = "<group>"; };
+		FD8B28501741A2C80022CFCB /* CalendarSubjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSubjectTableViewCell.h; sourceTree = "<group>"; };
+		FD8B28511741A2C80022CFCB /* CalendarSubjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSubjectTableViewCell.m; sourceTree = "<group>"; };
+		FD8B28531741A2F80022CFCB /* CalendarSubjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSubjectsTableViewController.h; sourceTree = "<group>"; };
+		FD8B28541741A2F80022CFCB /* CalendarSubjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSubjectsTableViewController.m; sourceTree = "<group>"; };
+		FD8B28561741A8350022CFCB /* StringUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtility.h; sourceTree = "<group>"; };
+		FD8B28571741A8350022CFCB /* StringUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtility.m; sourceTree = "<group>"; };
 		FD8E6D8C173347E200E65FC7 /* body-bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body-bkg.png"; sourceTree = "<group>"; };
 		FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "body-bkg-pixel.jpg"; sourceTree = "<group>"; };
 		FD8E6D93173351C200E65FC7 /* CalendarSessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSessionGroup.h; sourceTree = "<group>"; };
@@ -75,6 +101,8 @@
 		FDA4BCD3172A165200BAAB26 = {
 			isa = PBXGroup;
 			children = (
+				FD032A311741965C009C3FC2 /* calendar_iconx114.png */,
+				FD032A2D174195CC009C3FC2 /* calendar_iconx57.png */,
 				FDA4BCE5172A165200BAAB26 /* ClassCalendar */,
 				FDA4BCDE172A165200BAAB26 /* Frameworks */,
 				FDA4BCDD172A165200BAAB26 /* Products */,
@@ -115,6 +143,9 @@
 		FDA4BCE6172A165200BAAB26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD032A2F17419654009C3FC2 /* calendar_iconx114.png */,
+				FD032A2B174195B4009C3FC2 /* calendar_iconx57.png */,
+				FD032A2917419585009C3FC2 /* calendar_icon.png */,
 				FD02CC531741904C00940220 /* ClassCalendar-Prefix.pch */,
 				FD8E6D8E17334E0C00E65FC7 /* body-bkg-pixel.jpg */,
 				FD8E6D8C173347E200E65FC7 /* body-bkg.png */,
@@ -124,6 +155,8 @@
 				FDA4BCF1172A165200BAAB26 /* Default.png */,
 				FDA4BCF3172A165200BAAB26 /* Default@2x.png */,
 				FDA4BCF5172A165200BAAB26 /* Default-568h@2x.png */,
+				FD8B28561741A8350022CFCB /* StringUtility.h */,
+				FD8B28571741A8350022CFCB /* StringUtility.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -137,6 +170,8 @@
 				FDD23C63172A19FA00833E28 /* CalendarTerm.m */,
 				FD8E6D93173351C200E65FC7 /* CalendarSessionGroup.h */,
 				FD8E6D94173351C200E65FC7 /* CalendarSessionGroup.m */,
+				FD8B284D1741A05B0022CFCB /* CalendarSubject.h */,
+				FD8B284E1741A05B0022CFCB /* CalendarSubject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -157,6 +192,10 @@
 				FDA4BCF7172A165200BAAB26 /* MainStoryboard.storyboard */,
 				FDD23C65172A1BAD00833E28 /* CalendarTermTableViewCell.h */,
 				FDD23C66172A1BAD00833E28 /* CalendarTermTableViewCell.m */,
+				FD032A36174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.h */,
+				FD032A37174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m */,
+				FD8B28501741A2C80022CFCB /* CalendarSubjectTableViewCell.h */,
+				FD8B28511741A2C80022CFCB /* CalendarSubjectTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -168,6 +207,10 @@
 				FDD23C60172A191E00833E28 /* CalendarTermsTableViewController.m */,
 				FD8E6D9917335A5800E65FC7 /* CalendarListTableViewController.h */,
 				FD8E6D9A17335A5800E65FC7 /* CalendarListTableViewController.m */,
+				FD032A33174196B5009C3FC2 /* CalendarSessionGroupTableViewController.h */,
+				FD032A34174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m */,
+				FD8B28531741A2F80022CFCB /* CalendarSubjectsTableViewController.h */,
+				FD8B28541741A2F80022CFCB /* CalendarSubjectsTableViewController.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -244,6 +287,9 @@
 				FDA4BCF9172A165200BAAB26 /* MainStoryboard.storyboard in Resources */,
 				FD8E6D8D173347E200E65FC7 /* body-bkg.png in Resources */,
 				FD8E6D8F17334E0C00E65FC7 /* body-bkg-pixel.jpg in Resources */,
+				FD032A2A17419585009C3FC2 /* calendar_icon.png in Resources */,
+				FD032A2E174195CC009C3FC2 /* calendar_iconx57.png in Resources */,
+				FD032A321741965C009C3FC2 /* calendar_iconx114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +308,12 @@
 				FDD23C6A172A1FE300833E28 /* NetworkActivityTracker.m in Sources */,
 				FD8E6D95173351C200E65FC7 /* CalendarSessionGroup.m in Sources */,
 				FD8E6D9B17335A5800E65FC7 /* CalendarListTableViewController.m in Sources */,
+				FD032A35174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m in Sources */,
+				FD032A38174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m in Sources */,
+				FD8B284F1741A05B0022CFCB /* CalendarSubject.m in Sources */,
+				FD8B28521741A2C80022CFCB /* CalendarSubjectTableViewCell.m in Sources */,
+				FD8B28551741A2F80022CFCB /* CalendarSubjectsTableViewController.m in Sources */,
+				FD8B28581741A8350022CFCB /* StringUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,8 +14,10 @@
 + (NSArray*) currentSessionGroups:(NSString*) termCode
 {
     /// DEBUG; RETURNING TEST VALUES
-    return [CalendarSessionGroup testValues];
-    NSURL* url = [[NSURL alloc] initWithString:@""];
+    /// return [CalendarSessionGroup testValues];
+    NSString* queryStr = @"https://emsdev.csuchico.edu/services/ClassSchedule/CalendarInfo/JSON/SESSIONS_REQUEST.ashx?term=";
+    queryStr = [queryStr stringByAppendingString:termCode];
+    NSURL* url = [[NSURL alloc] initWithString:queryStr];
     
     [[NetworkActivityTracker sharedInstance] showActivityIndicator];
     NSData* rawContents = [[NSData alloc] initWithContentsOfURL:url];
@@ -51,11 +53,13 @@
 {
     
     NSMutableArray* curItems = [[NSMutableArray alloc] init];
-    CalendarSessionGroup* StateGroup = [[CalendarSessionGroup alloc] initWithCode:@"10"
+    CalendarSessionGroup* StateGroup = [[CalendarSessionGroup alloc] initWithTerm:@"2138"
+                                                                           sesGrp:@"10"
                                                                             abbvr:@"State"
                                                                             LDesc:@"State Supported Classes"];
     [curItems addObject: StateGroup];
-    CalendarSessionGroup* SelfGroup = [[CalendarSessionGroup alloc] initWithCode:@"20"
+    CalendarSessionGroup* SelfGroup = [[CalendarSessionGroup alloc] initWithTerm:@"2138"
+                                                                          sesGrp:@"20"
                                                                            abbvr:@"Self"
                                                                            LDesc:@"Self Supported Classes"];
     [curItems addObject: SelfGroup];
@@ -68,22 +72,25 @@
     self = [super init];
     if (self)
     {
-        _code = jsonAttributes[@"SESSION_GROUP"];
-        _abbrev = jsonAttributes[@"GROUP_ABBREV"];
-        _longDesc = jsonAttributes[@"GROUP_LDESC"];
+        _termCode = [jsonAttributes[@"TERM"] stringByDecodingXMLEntities];
+        _sessionGroupCode = [jsonAttributes[@"SESSION_GROUP"] stringByDecodingXMLEntities];
+        _abbrev = [jsonAttributes[@"GROUP_ABBREV"] stringByDecodingXMLEntities];
+        _longDesc = [jsonAttributes[@"GROUP_LDESC"] stringByDecodingXMLEntities];
     }
     return self;
 }
 
 
-- (id) initWithCode:(NSString*)c
+- (id) initWithTerm:(NSString*)t
+             sesGrp:(NSString*)c
               abbvr:(NSString*)a
               LDesc:(NSString*)l
 {
     self = [super init];
     if (self)
     {
-        _code = c;
+        _termCode = t;
+        _sessionGroupCode = c;
         _longDesc = l;
         _abbrev = a;
     }

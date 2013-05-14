@@ -19,35 +19,137 @@
             </objects>
             <point key="canvasLocation" x="534" y="464"/>
         </scene>
-        <!--Schedule Terms Table View Controller - Terms-->
+        <!--Calendar Terms Table View Controller - Terms-->
         <scene sceneID="sXg-QK-DVp">
             <objects>
-                <tableViewController title="Terms" id="jXN-AU-jVs" customClass="ScheduleTermsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="AQJ-MY-WPk">
+                <tableViewController title="Terms" id="jXN-AU-jVs" customClass="CalendarTermsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="AQJ-MY-WPk">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" id="lG6-F8-qA7" customClass="ScheduleTermTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" id="lG6-F8-qA7" customClass="CalendarTermTableViewCell">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Semester Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PZ-l5-LrI">
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="43" id="8ve-9y-jTv"/>
-                                                <constraint firstAttribute="width" constant="264" id="qi8-JQ-EUh"/>
+                                                <constraint firstAttribute="width" constant="260" id="peK-Mr-qLo"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=">" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-Ut-xzR">
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8PZ-l5-LrI" firstAttribute="centerX" secondItem="lG6-F8-qA7" secondAttribute="centerX" type="default" id="XXQ-ve-uZf"/>
+                                    <constraint firstItem="8PZ-l5-LrI" firstAttribute="top" secondItem="lG6-F8-qA7" secondAttribute="top" constant="1" id="bkn-NP-V4y"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="longDescLabel" destination="8PZ-l5-LrI" id="08m-W9-7tT"/>
+                                    <segue destination="J21-Y5-fFZ" kind="push" identifier="nextList" id="VSq-d6-PaZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Terms" id="rUj-kN-Vch"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1zt-eX-JJR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGL-Qj-CrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="-325"/>
+        </scene>
+        <!--Calendar Session Group Table View Controller - Sessions-->
+        <scene sceneID="wue-6E-q44">
+            <objects>
+                <tableViewController storyboardIdentifier="SessionTableViewController" id="J21-Y5-fFZ" customClass="CalendarSessionGroupTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Jj0-hv-nj2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" id="hGC-FU-IhV" customClass="CalendarSessionGroupTableViewCell">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Group Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-ma-iFj">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="26" id="D4L-sC-R5L"/>
+                                                <constraint firstAttribute="width" constant="260" id="sKF-ur-OQo"/>
+                                                <constraint firstAttribute="height" constant="43" id="v4e-be-WQe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="wsM-ma-iFj" firstAttribute="top" secondItem="hGC-FU-IhV" secondAttribute="top" constant="1" id="ZdG-lm-wa4"/>
+                                    <constraint firstItem="wsM-ma-iFj" firstAttribute="centerX" secondItem="hGC-FU-IhV" secondAttribute="centerX" type="default" id="hg1-bs-ILR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="longDescLabel" destination="wsM-ma-iFj" id="fAX-iQ-RsB"/>
+                                    <segue destination="yv1-xP-U4T" kind="push" identifier="nextList" id="Kte-9w-cwk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J21-Y5-fFZ" id="koe-im-AYs"/>
+                            <outlet property="delegate" destination="J21-Y5-fFZ" id="8ya-os-uO6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sessions" id="iiY-j2-kEk"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1S4-ZO-f12">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Lh-VF-yaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509" y="-325"/>
+        </scene>
+        <!--Calendar Subjects Table View Controller - Subjects-->
+        <scene sceneID="KXv-nm-WMn">
+            <objects>
+                <tableViewController id="yv1-xP-U4T" customClass="CalendarSubjectsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LRu-ne-y9o">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" id="c1w-ph-j7R" customClass="CalendarSubjectTableViewCell">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subject Formal Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="toe-wQ-Ly1">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="260" id="3BW-92-3py"/>
+                                                <constraint firstAttribute="height" constant="23" id="aYx-4D-jxw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subject SDesc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckT-Gl-Icp">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="133" id="SW2-6t-aNh"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -57,62 +159,30 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="8PZ-l5-LrI" firstAttribute="top" secondItem="fgo-Ut-xzR" secondAttribute="top" type="default" id="Ysp-JU-8tS"/>
-                                    <constraint firstItem="8PZ-l5-LrI" firstAttribute="top" secondItem="lG6-F8-qA7" secondAttribute="top" constant="1" id="bkn-NP-V4y"/>
-                                    <constraint firstItem="8PZ-l5-LrI" firstAttribute="leading" secondItem="lG6-F8-qA7" secondAttribute="leading" constant="30" id="gJ5-KK-SLq"/>
-                                    <constraint firstAttribute="trailing" secondItem="fgo-Ut-xzR" secondAttribute="trailing" constant="10" id="w5y-gp-Za2"/>
-                                    <constraint firstItem="fgo-Ut-xzR" firstAttribute="bottom" secondItem="8PZ-l5-LrI" secondAttribute="bottom" type="default" id="zR0-t8-ho2"/>
+                                    <constraint firstItem="toe-wQ-Ly1" firstAttribute="centerX" secondItem="c1w-ph-j7R" secondAttribute="centerX" type="default" id="50S-A2-az3"/>
+                                    <constraint firstItem="ckT-Gl-Icp" firstAttribute="leading" secondItem="toe-wQ-Ly1" secondAttribute="leading" type="default" id="aUZ-nh-TcN"/>
+                                    <constraint firstItem="ckT-Gl-Icp" firstAttribute="top" secondItem="c1w-ph-j7R" secondAttribute="top" constant="21" id="aZv-xC-j27"/>
+                                    <constraint firstItem="toe-wQ-Ly1" firstAttribute="top" secondItem="c1w-ph-j7R" secondAttribute="top" constant="1" id="sHk-11-I7Z"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="longDescLabel" destination="8PZ-l5-LrI" id="08m-W9-7tT"/>
+                                    <outlet property="formalDescLabel" destination="toe-wQ-Ly1" id="e50-hO-bSu"/>
+                                    <outlet property="shortDescLabel" destination="ckT-Gl-Icp" id="fgZ-JC-Y21"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yv1-xP-U4T" id="VhZ-oc-Zxo"/>
+                            <outlet property="delegate" destination="yv1-xP-U4T" id="xLl-V1-Jwa"/>
+                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Terms" id="rUj-kN-Vch">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="Qn5-As-QSK">
-                            <connections>
-                                <action selector="refreshButtonPressed:" destination="jXN-AU-jVs" id="fpU-fR-Uya"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1zt-eX-JJR">
+                    <navigationItem key="navigationItem" title="Subjects" id="YYF-JN-Jwj"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Kyr-zg-Cfh">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DGL-Qj-CrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Iv-bw-ICb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-325"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="wue-6E-q44">
-            <objects>
-                <tableViewController storyboardIdentifier="SessionTableViewController" id="J21-Y5-fFZ" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jj0-hv-nj2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SessionGroupCell" id="hGC-FU-IhV">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="J21-Y5-fFZ" id="koe-im-AYs"/>
-                            <outlet property="delegate" destination="J21-Y5-fFZ" id="8ya-os-uO6"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="iiY-j2-kEk"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Lh-VF-yaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1509" y="-325"/>
+            <point key="canvasLocation" x="1933" y="-325"/>
         </scene>
         <!--Navigation Controller - Schedule-->
         <scene sceneID="Hyi-XB-0Bl">
@@ -150,26 +220,6 @@
             <point key="canvasLocation" x="-146" y="112"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ScheduleTermTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleTermTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="longDescLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ScheduleTermsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleTermsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="UIRefreshControl" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
