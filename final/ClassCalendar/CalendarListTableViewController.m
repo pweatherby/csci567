@@ -51,7 +51,7 @@
 {
     if ([[segue identifier] isEqualToString:@"nextList"]) {
         CalendarListTableViewController* nextViewController = [segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
         if(self.calendarData && indexPath.row < self.calendarData.count)
         {
             nextViewController.dataParam = [self.calendarData objectAtIndex:indexPath.row];

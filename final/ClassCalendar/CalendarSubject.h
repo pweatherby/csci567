@@ -15,7 +15,9 @@
 + (NSArray*) currentSubjects:(NSString*) termCode
                 SessionGroup:(NSString*) sesGrp;
 
-@property (nonatomic, readonly) NSString* code;
+@property (nonatomic, readonly) NSString* termCode;
+@property (nonatomic, readonly) NSString* sessionGroupCode;
+@property (nonatomic, readonly) NSString* subjectCode;
 @property (nonatomic, readonly) NSString* shortDesc;
 @property (nonatomic, readonly) NSString* longDesc;
 @property (nonatomic, readonly) NSString* formalDesc;

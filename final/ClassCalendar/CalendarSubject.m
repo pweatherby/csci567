@@ -11,7 +11,7 @@
 @implementation CalendarSubject
 
 + (NSArray*) currentSubjects:(NSString*) termCode
-                    SessionGroup:(NSString *)sesGrp
+                SessionGroup:(NSString*) sesGrp
 {
     /// DEBUG; RETURNING TEST VALUES
     /// return [CalendarSubject testValues];
@@ -55,12 +55,16 @@
 {
     
     NSMutableArray* curItems = [[NSMutableArray alloc] init];
-    CalendarSubject* csci = [[CalendarSubject alloc] initWithCode:@"CSCI"
+    CalendarSubject* csci = [[CalendarSubject alloc] initWithTerm:@"2138"
+                                                           SesGrp:@"10"
+                                                             Subj:@"CSCI"
                                                             SDesc:@"Csci"
                                                             LDesc:@"Comp. Sci."
                                                             FDesc:@"Computer Science"];
     [curItems addObject: csci];
-    CalendarSubject* edma = [[CalendarSubject alloc] initWithCode:@"EDMA"
+    CalendarSubject* edma = [[CalendarSubject alloc] initWithTerm:@"2138"
+                                                           SesGrp:@"10"
+                                                             Subj:@"EDMA"
                                                             SDesc:@"EDMA"
                                                             LDesc:@"Education- Ma Studies"
                                                             FDesc:@"Education- Masters Studies"];
@@ -74,7 +78,9 @@
     self = [super init];
     if (self)
     {
-        _code = [jsonAttributes[@"SUBJECT"] stringByDecodingXMLEntities];
+        _termCode = [jsonAttributes[@"TERM"] stringByDecodingXMLEntities];
+        _sessionGroupCode = [jsonAttributes[@"SESSION_GROUP"] stringByDecodingXMLEntities];
+        _subjectCode = [jsonAttributes[@"SUBJECT_CODE"] stringByDecodingXMLEntities];
         _shortDesc = [jsonAttributes[@"SUBJECT_SDESC"] stringByDecodingXMLEntities];
         _longDesc = [jsonAttributes[@"SUBJECT_LDESC"] stringByDecodingXMLEntities];
         _formalDesc = [jsonAttributes[@"SUBJECT_FDESC"] stringByDecodingXMLEntities];
@@ -83,7 +89,9 @@
 }
 
 
-- (id) initWithCode:(NSString*)c
+- (id) initWithTerm:(NSString*)t
+             SesGrp:(NSString*)g
+               Subj:(NSString*)c
               SDesc:(NSString*)s
               LDesc:(NSString*)l
               FDesc:(NSString*)f
@@ -91,7 +99,9 @@
     self = [super init];
     if (self)
     {
-        _code = c;
+        _termCode = t;
+        _sessionGroupCode = g;
+        _subjectCode = c;
         _shortDesc = s;
         _longDesc = l;
         _formalDesc = f;
