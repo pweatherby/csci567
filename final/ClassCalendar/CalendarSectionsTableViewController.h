@@ -14,4 +14,7 @@
 
 @interface CalendarSectionsTableViewController : CalendarListTableViewController
 
+@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView* descrLabel;
+
 @end

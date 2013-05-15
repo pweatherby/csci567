@@ -1,20 +1,18 @@
 //
-//  CalendarListTableViewController.m
+//  CalendarCartItemsTableViewController.m
 //  ClassCalendar
 //
-//  Created by Paul Weatherby on 5/2/13.
+//  Created by Paul Weatherby on 5/15/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
-#import "CalendarListTableViewController.h"
+#import "CalendarCartItemsTableViewController.h"
 
-@interface CalendarListTableViewController ()
-
-- (IBAction)refreshButtonPressed:(id)sender;
+@interface CalendarCartItemsTableViewController ()
 
 @end
 
-@implementation CalendarListTableViewController
+@implementation CalendarCartItemsTableViewController
 
 - (UINavigationItem *)navigationItem{
     UINavigationItem *item = [super navigationItem];
@@ -38,8 +36,8 @@
     }
     [self reloadList];
     UIColor* bkg = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"body-bkg-pixel.jpg"]];
-                                    // initWithHue:22.34f saturation:97.86f brightness:54.9f alpha:1.0f];
-                                    // initWithRed:(140.0/256) green:(54.0/256) blue:(3.0/256) alpha:1.0f];
+    // initWithHue:22.34f saturation:97.86f brightness:54.9f alpha:1.0f];
+    // initWithRed:(140.0/256) green:(54.0/256) blue:(3.0/256) alpha:1.0f];
     self.tableView.backgroundColor = bkg;
     
     UIImageView* view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"body-bkg.png"]];
@@ -50,11 +48,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"nextList"]) {
-        CalendarListTableViewController* nextViewController = [segue destinationViewController];
+        CalendarCartItemsTableViewController* nextViewController = [segue destinationViewController];
         NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
-        if(self.calendarData && indexPath.row < self.calendarData.count)
+        if(self.cartData && indexPath.row < self.cartData.count)
         {
-            nextViewController.dataParam = [self.calendarData objectAtIndex:indexPath.row];
+            nextViewController.dataParam = [self.cartData objectAtIndex:indexPath.row];
         }
     }
 }
@@ -72,9 +70,9 @@
 
 #pragma mark - Get/Refresh Data Listing
 
-- (void) getCalendarData
+- (void) getCartData
 {
-    self.calendarData = nil;
+    self.cartData = nil;
 }
 
 - (void) reloadList
@@ -87,8 +85,8 @@
     dispatch_queue_t q = dispatch_queue_create("table view loading queue", NULL);
     dispatch_async(q, ^{
         // do something to get new data for this table view (which presumably takes time)
-        [self getCalendarData];
-        if(self.calendarData)
+        [self getCartData];
+        if(self.cartData)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 // update the table view's Model to the new data, reloadData if necessary
@@ -133,9 +131,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.calendarData)
+    if(self.cartData)
     {
-        return [self.calendarData count];
+        return [self.cartData count];
     }
     return 0;
 }
@@ -148,6 +146,5 @@
     
     return cell;
 }
-
 
 @end

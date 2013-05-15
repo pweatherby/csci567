@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface CalendarSectionTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel* numberLabel;
-@property (weak, nonatomic) IBOutlet UILabel* unitsLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel* keyLabel;
+@property (weak, nonatomic) IBOutlet UILabel* regMethodLabel;
+@property (weak, nonatomic) IBOutlet UILabel* regNbrLabel;
+@property (weak, nonatomic) IBOutlet UILabel* compLabel;
+@property (weak, nonatomic) IBOutlet UILabel* asscClassLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel* classStatusLabel;
+
 @end
