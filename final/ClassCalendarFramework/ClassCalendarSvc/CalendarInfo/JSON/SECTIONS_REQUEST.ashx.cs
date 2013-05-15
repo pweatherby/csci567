@@ -133,6 +133,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
                         JSON.AppendLine("] }");
                         curPat++;
                     }// finish all Meeting Patterns
+                    JSON.AppendLine("]");
                     JSON.Append(", \"CLASS_ATTRIBUTES\": [");
                     int curAttr = 0;
                     foreach (PS_SCHEDULE_WS.ClassSchedClassAttribute attr in sect.ClassSchedClassAttributes)

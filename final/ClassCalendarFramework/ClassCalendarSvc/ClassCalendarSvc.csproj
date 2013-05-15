@@ -127,7 +127,7 @@
     <Compile Include="CalendarInfo\JSON\NUMBERS_REQUEST.ashx.cs">
       <DependentUpon>NUMBERS_REQUEST.ashx</DependentUpon>
     </Compile>
-    <Compile Include="CalendarInfo\JSON\ScheduleInfoAuth.cs" />
+    <Compile Include="CalendarInfo\JSON\CalendarInfoAuth.cs" />
     <Compile Include="CalendarInfo\JSON\SECTIONS_REQUEST.ashx.cs">
       <DependentUpon>SECTIONS_REQUEST.ashx</DependentUpon>
     </Compile>
