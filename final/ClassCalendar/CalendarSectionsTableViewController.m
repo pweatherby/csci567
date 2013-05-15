@@ -2,7 +2,7 @@
 //  CalendarSectionsTableViewController.m
 //  ClassCalendar
 //
-//  Created by iOS Student on 5/14/13.
+//  Created by Paul Weatherby on 5/14/13.
 //  Copyright (c) 2013 Paul Weatherby. All rights reserved.
 //
 
@@ -67,9 +67,9 @@
         if(t && self.myNumber)
         {
             cell.keyLabel.text = [[[[self.myNumber.subjectCode stringByAppendingString:@" "]
-                                                                  stringByAppendingString: self.myNumber.classNumber]
-                                                                  stringByAppendingString: @" "]
-                                                                  stringByAppendingString: t.classSection];
+                                    stringByAppendingString: self.myNumber.classNumber]
+                                   stringByAppendingString: @"-"]
+                                  stringByAppendingString: t.classSection];
             
             if( [t.classType isEqualToString:@"E"])
             {
@@ -99,6 +99,9 @@
             {
                 cell.classStatusLabel.text = [t.classStatusLDesc uppercaseString];
             }
+            cell.enrlLabel.text = [[t.enrlTotal stringByAppendingString:@" out of "] stringByAppendingString: t.enrlCapacity];
+            cell.waitLabel.text = [[t.waitTotal stringByAppendingString:@" out of "] stringByAppendingString: t.waitCapacity];
+            
         }
     }
     return cell;

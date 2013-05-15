@@ -10,6 +10,8 @@
 		3FE4B7E417443C360055D375 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4B7E317443C360055D375 /* cart.png */; };
 		3FE4B7E717443D3C0055D375 /* CalendarCartItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4B7E617443D3C0055D375 /* CalendarCartItemsTableViewController.m */; };
 		3FE4B7E917443F750055D375 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4B7E817443F750055D375 /* calendar.png */; };
+		3FE4B7EC174444E60055D375 /* CalendarMeetingPatternsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4B7EB174444E50055D375 /* CalendarMeetingPatternsTableViewController.m */; };
+		3FE4B7EF174445270055D375 /* CalendarMeetingPatternTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4B7EE174445270055D375 /* CalendarMeetingPatternTableViewCell.m */; };
 		FD032A2A17419585009C3FC2 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A2917419585009C3FC2 /* calendar_icon.png */; };
 		FD032A2E174195CC009C3FC2 /* calendar_iconx57.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A2D174195CC009C3FC2 /* calendar_iconx57.png */; };
 		FD032A321741965C009C3FC2 /* calendar_iconx114.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A311741965C009C3FC2 /* calendar_iconx114.png */; };
@@ -52,6 +54,10 @@
 		3FE4B7E517443D3C0055D375 /* CalendarCartItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCartItemsTableViewController.h; sourceTree = "<group>"; };
 		3FE4B7E617443D3C0055D375 /* CalendarCartItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCartItemsTableViewController.m; sourceTree = "<group>"; };
 		3FE4B7E817443F750055D375 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		3FE4B7EA174444E50055D375 /* CalendarMeetingPatternsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMeetingPatternsTableViewController.h; sourceTree = "<group>"; };
+		3FE4B7EB174444E50055D375 /* CalendarMeetingPatternsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMeetingPatternsTableViewController.m; sourceTree = "<group>"; };
+		3FE4B7ED174445270055D375 /* CalendarMeetingPatternTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMeetingPatternTableViewCell.h; sourceTree = "<group>"; };
+		3FE4B7EE174445270055D375 /* CalendarMeetingPatternTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMeetingPatternTableViewCell.m; sourceTree = "<group>"; };
 		FD02CC531741904C00940220 /* ClassCalendar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ClassCalendar-Prefix.pch"; path = "ClassCalendar/ClassCalendar-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FD032A2917419585009C3FC2 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_icon.png; sourceTree = "<group>"; };
 		FD032A2B174195B4009C3FC2 /* calendar_iconx57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_iconx57.png; sourceTree = "<group>"; };
@@ -241,6 +247,8 @@
 				FD66BA341742FDAC005C1DAC /* CalendarNumberTableViewCell.m */,
 				FD66BA3917430D8F005C1DAC /* CalendarSectionTableViewCell.h */,
 				FD66BA3A17430D8F005C1DAC /* CalendarSectionTableViewCell.m */,
+				3FE4B7ED174445270055D375 /* CalendarMeetingPatternTableViewCell.h */,
+				3FE4B7EE174445270055D375 /* CalendarMeetingPatternTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -260,6 +268,8 @@
 				FD66BA2E1742F99F005C1DAC /* CalendarNumbersTableViewController.m */,
 				FD66BA3C17430DBF005C1DAC /* CalendarSectionsTableViewController.h */,
 				FD66BA3D17430DBF005C1DAC /* CalendarSectionsTableViewController.m */,
+				3FE4B7EA174444E50055D375 /* CalendarMeetingPatternsTableViewController.h */,
+				3FE4B7EB174444E50055D375 /* CalendarMeetingPatternsTableViewController.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -376,6 +386,8 @@
 				FD66BA411743133E005C1DAC /* CalendarMeetingPattern.m in Sources */,
 				FD66BA44174317BF005C1DAC /* CalendarInstructor.m in Sources */,
 				3FE4B7E717443D3C0055D375 /* CalendarCartItemsTableViewController.m in Sources */,
+				3FE4B7EC174444E60055D375 /* CalendarMeetingPatternsTableViewController.m in Sources */,
+				3FE4B7EF174445270055D375 /* CalendarMeetingPatternTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
