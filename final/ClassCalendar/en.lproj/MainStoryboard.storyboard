@@ -242,6 +242,7 @@
                                     <outlet property="numberLabel" destination="bWc-74-c8n" id="gmc-Ef-3OK"/>
                                     <outlet property="titleLabel" destination="1eu-Vd-wsV" id="KFw-Co-9gw"/>
                                     <outlet property="unitsLabel" destination="XPS-PB-yEH" id="D8D-kM-M4w"/>
+                                    <segue destination="F3p-Cf-5hs" kind="push" identifier="nextList" id="def-ai-hO3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -258,6 +259,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maM-6T-qb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2335" y="-325"/>
+        </scene>
+        <!--Calendar Sections Table View Controller - Sections-->
+        <scene sceneID="FJT-8k-y46">
+            <objects>
+                <tableViewController id="F3p-Cf-5hs" customClass="CalendarSectionsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ZtS-E7-BVf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" id="ubr-g2-Hds" customClass="CalendarSectionTableViewCell">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Course Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="tII-Z4-Mm7">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="260" id="RLz-io-HK0"/>
+                                                <constraint firstAttribute="height" constant="23" id="gWf-lP-MeV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Course Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKa-22-LXs">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="133" id="aXq-xM-AMW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unit Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V3-py-jQU">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="119" id="2OV-Ud-xxG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="6V3-py-jQU" firstAttribute="top" secondItem="ubr-g2-Hds" secondAttribute="top" constant="3" id="4T8-Yf-L9o"/>
+                                    <constraint firstItem="XKa-22-LXs" firstAttribute="top" secondItem="ubr-g2-Hds" secondAttribute="top" constant="1" id="7ty-3q-k1k"/>
+                                    <constraint firstItem="tII-Z4-Mm7" firstAttribute="top" secondItem="ubr-g2-Hds" secondAttribute="top" constant="21" id="80f-De-BlF"/>
+                                    <constraint firstItem="XKa-22-LXs" firstAttribute="leading" secondItem="ubr-g2-Hds" secondAttribute="leading" constant="25" id="V3o-QK-RYp"/>
+                                    <constraint firstItem="tII-Z4-Mm7" firstAttribute="leading" secondItem="XKa-22-LXs" secondAttribute="leading" type="default" id="aIL-Wb-BQb"/>
+                                    <constraint firstAttribute="trailing" secondItem="6V3-py-jQU" secondAttribute="trailing" constant="30" id="lvh-3q-DDz"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F3p-Cf-5hs" id="iTD-c8-m95"/>
+                            <outlet property="delegate" destination="F3p-Cf-5hs" id="EOB-dW-cq9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sections" id="6tK-ec-Cy3"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Kg0-jo-ZxR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bz8-DN-vox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2773" y="-325"/>
         </scene>
         <!--Navigation Controller - Schedule-->
         <scene sceneID="Hyi-XB-0Bl">
@@ -312,6 +382,17 @@
         </class>
         <class className="CalendarNumbersTableViewController" superclassName="CalendarListTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarNumbersTableViewController.h"/>
+        </class>
+        <class className="CalendarSectionTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarSectionTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="unitsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CalendarSectionsTableViewController" superclassName="CalendarListTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarSectionsTableViewController.h"/>
         </class>
         <class className="CalendarSessionGroupTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarSessionGroupTableViewCell.h"/>
