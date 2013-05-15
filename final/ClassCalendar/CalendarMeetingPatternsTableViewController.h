@@ -14,4 +14,6 @@
 
 @interface CalendarMeetingPatternsTableViewController : UITableViewController
 
+@property (strong, nonatomic) CalendarSection* mySection;
+
 @end

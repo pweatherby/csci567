@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CalendarMeetingPatternsTableViewController.h"
 
 @interface CalendarListTableViewController : UITableViewController
 @property (nonatomic, strong) NSArray*  calendarData;

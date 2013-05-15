@@ -10,8 +10,6 @@
 
 @interface CalendarMeetingPatternsTableViewController ()
 
-@property (strong, nonatomic) CalendarSection* mySection;
-
 @end
 
 @implementation CalendarMeetingPatternsTableViewController
@@ -61,38 +59,31 @@
         CalendarMeetingPattern* pat = [t.meetingPatterns objectAtIndex:indexPath.item];
         if(pat)
         {
-            cell.keyLabel.text = @"";
+            cell.meetingPatLabel.text = pat.days;
+            cell.startDateLabel.text = pat.startDateLDesc;
+            cell.endDateLabel.text = pat.endDateLDesc;
+            cell.startTimeLabel.text = [pat.startTime substringToIndex:5];
+            cell.endDateLabel.text = [pat.endTime substringToIndex:5];
             
-            if( [t.classType isEqualToString:@"E"])
+            NSString* insts = @"";
+            for (int i = 0; i < pat.instructors.count; i++)
             {
-                cell.regNbrLabel.text = [@"Reg Nbr: " stringByAppendingString:t.registrationNbr];
-            }
-            else
-            {
-                cell.regNbrLabel.text = [@"Assc Section: " stringByAppendingString:t.associatedClass];
-            }
-            cell.compLabel.text = t.componentLDesc;
-            if ( [t.classStatus isEqualToString:@"A"])
-            {
-                if([t.enrlStatus isEqualToString:@"O"])
+                if( i > 0 )
                 {
-                    cell.classStatusLabel.text = [t.enrlStatusLDesc uppercaseString];
+                    if( i + 1 == pat.instructors.count)
+                    {
+                        insts = [insts stringByAppendingString:@" and "];
+                    }
+                    else
+                    {
+                        
+                        insts = [insts stringByAppendingString:@", "];
+                    }
                 }
-                else if( t.waitCapacity > t.waitTotal)
-                {
-                    cell.classStatusLabel.text = @"WAITLIST";
-                }
-                else
-                {
-                    cell.classStatusLabel.text = @"FULL";
-                }
+                CalendarInstructor* inst = [pat.instructors objectAtIndex:i];
+                insts = [[[insts stringByAppendingString: inst.firstName] stringByAppendingString:@" "] stringByAppendingString: inst.lastName];
             }
-            else
-            {
-                cell.classStatusLabel.text = [t.classStatusLDesc uppercaseString];
-            }
-            cell.enrlLabel.text = [[t.enrlTotal stringByAppendingString:@" out of "] stringByAppendingString: t.enrlCapacity];
-            cell.waitLabel.text = [[t.waitTotal stringByAppendingString:@" out of "] stringByAppendingString: t.waitCapacity];
+            cell.instructorsLabel.text = insts;
         }
     }
     return cell;

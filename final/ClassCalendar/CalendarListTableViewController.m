@@ -56,6 +56,9 @@
         {
             nextViewController.dataParam = [self.calendarData objectAtIndex:indexPath.row];
         }
+    }else if([[segue identifier] isEqualToString:@"sectionMtgPat"]){
+        CalendarMeetingPatternsTableViewController* patController = [segue destinationViewController];
+        patController.mySection = self.dataParam;
     }
 }
 

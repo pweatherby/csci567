@@ -10,11 +10,12 @@
 
 @interface CalendarMeetingPatternTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel* keyLabel;
-@property (weak, nonatomic) IBOutlet UILabel* regNbrLabel;
-@property (weak, nonatomic) IBOutlet UILabel* compLabel;
-@property (weak, nonatomic) IBOutlet UILabel* classStatusLabel;
-@property (weak, nonatomic) IBOutlet UILabel* enrlLabel;
-@property (weak, nonatomic) IBOutlet UILabel* waitLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel* meetingPatLabel;
+@property (weak, nonatomic) IBOutlet UILabel* startDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel* endDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel* startTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel* endTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel* instructorsLabel;
 
 @end

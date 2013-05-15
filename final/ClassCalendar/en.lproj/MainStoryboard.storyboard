@@ -430,7 +430,7 @@
                                     <outlet property="keyLabel" destination="XKa-22-LXs" id="sMc-C7-gci"/>
                                     <outlet property="regNbrLabel" destination="6V3-py-jQU" id="VpL-tk-Aa9"/>
                                     <outlet property="waitLabel" destination="0PN-R3-36i" id="EKO-Oe-JcA"/>
-                                    <segue destination="61x-V7-jaV" kind="push" identifier="nextList" id="gmy-Eh-lms"/>
+                                    <segue destination="61x-V7-jaV" kind="push" identifier="sectionMtgPat" id="gmy-Eh-lms"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -457,16 +457,16 @@
         <scene sceneID="B4F-4g-Iy3">
             <objects>
                 <tableViewController id="61x-V7-jaV" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="183" sectionHeaderHeight="10" sectionFooterHeight="10" id="tB7-gg-q6F">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="206" sectionHeaderHeight="10" sectionFooterHeight="10" id="tB7-gg-q6F">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="183" id="afP-QK-WMB" customClass="CalendarMeetingPatternTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="185"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" rowHeight="206" id="afP-QK-WMB" customClass="CalendarMeetingPatternTableViewCell">
+                                <rect key="frame" x="0.0" y="46" width="320" height="208"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="182"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="205"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Days of Week:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9D-3B-ZWo">
@@ -546,6 +546,7 @@
                                     <constraint firstItem="eja-Bb-DzM" firstAttribute="baseline" secondItem="nnl-10-jt0" secondAttribute="baseline" type="default" id="3BU-Fz-3Sl"/>
                                     <constraint firstItem="3rX-Zt-El9" firstAttribute="leading" secondItem="2x2-Td-ybY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="3cw-po-UYr"/>
                                     <constraint firstItem="3QX-3V-bdq" firstAttribute="leading" secondItem="yf4-Q2-mY6" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="3ur-dr-wpr"/>
+                                    <constraint firstItem="s9D-3B-ZWo" firstAttribute="leading" secondItem="afP-QK-WMB" secondAttribute="leading" constant="10" id="4IW-82-H7p"/>
                                     <constraint firstItem="uda-I5-1kS" firstAttribute="leading" secondItem="eja-Bb-DzM" secondAttribute="leading" type="default" id="5oC-tO-4kx"/>
                                     <constraint firstItem="uda-I5-1kS" firstAttribute="leading" secondItem="ZPw-pX-MLT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5st-XC-sSY"/>
                                     <constraint firstItem="3rX-Zt-El9" firstAttribute="trailing" secondItem="6wQ-yo-6gL" secondAttribute="trailing" type="default" id="6yK-TP-LgM"/>
@@ -559,13 +560,12 @@
                                     <constraint firstItem="uda-I5-1kS" firstAttribute="trailing" secondItem="eja-Bb-DzM" secondAttribute="trailing" type="default" id="S2Z-ch-uQW"/>
                                     <constraint firstItem="3QX-3V-bdq" firstAttribute="trailing" secondItem="3rX-Zt-El9" secondAttribute="trailing" type="default" id="Vws-rW-Yym"/>
                                     <constraint firstItem="ZPw-pX-MLT" firstAttribute="top" secondItem="nnl-10-jt0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wej-i5-GXQ"/>
-                                    <constraint firstItem="6wQ-yo-6gL" firstAttribute="leading" secondItem="s9D-3B-ZWo" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="X1J-ze-DOS"/>
                                     <constraint firstItem="yf4-Q2-mY6" firstAttribute="leading" secondItem="2x2-Td-ybY" secondAttribute="leading" type="default" id="XRZ-RY-gf1"/>
                                     <constraint firstItem="f1H-hW-jgC" firstAttribute="baseline" secondItem="s9D-3B-ZWo" secondAttribute="baseline" type="default" id="aEq-j7-F5L"/>
                                     <constraint firstItem="nnl-10-jt0" firstAttribute="leading" secondItem="yf4-Q2-mY6" secondAttribute="leading" type="default" id="drd-4w-xHi"/>
                                     <constraint firstItem="eja-Bb-DzM" firstAttribute="leading" secondItem="nnl-10-jt0" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hzv-Kv-J3s"/>
+                                    <constraint firstItem="6wQ-yo-6gL" firstAttribute="leading" secondItem="igD-Rh-9od" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iff-0u-hQb"/>
                                     <constraint firstItem="s9D-3B-ZWo" firstAttribute="top" secondItem="afP-QK-WMB" secondAttribute="top" constant="1" id="inA-1U-qiR"/>
-                                    <constraint firstItem="s9D-3B-ZWo" firstAttribute="leading" secondItem="afP-QK-WMB" secondAttribute="leading" constant="30" id="jPm-gT-MaA"/>
                                     <constraint firstItem="2x2-Td-ybY" firstAttribute="top" secondItem="igD-Rh-9od" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jWw-al-Ncn"/>
                                     <constraint firstItem="uda-I5-1kS" firstAttribute="baseline" secondItem="ZPw-pX-MLT" secondAttribute="baseline" type="default" id="m4t-fC-z6k"/>
                                     <constraint firstItem="3rX-Zt-El9" firstAttribute="baseline" secondItem="2x2-Td-ybY" secondAttribute="baseline" type="default" id="nWK-vq-USE"/>
@@ -573,6 +573,14 @@
                                     <constraint firstItem="ZPw-pX-MLT" firstAttribute="leading" secondItem="nnl-10-jt0" secondAttribute="leading" type="default" id="saw-nO-pI5"/>
                                     <constraint firstItem="3QX-3V-bdq" firstAttribute="baseline" secondItem="yf4-Q2-mY6" secondAttribute="baseline" type="default" id="tTd-H5-JA8"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="endDateLabel" destination="3rX-Zt-El9" id="unF-Pl-Sf3"/>
+                                    <outlet property="endTimeLabel" destination="eja-Bb-DzM" id="gWn-FN-aZr"/>
+                                    <outlet property="instructorsLabel" destination="uda-I5-1kS" id="MUE-gi-kKo"/>
+                                    <outlet property="meetingPatLabel" destination="f1H-hW-jgC" id="X7w-is-R8J"/>
+                                    <outlet property="startDateLabel" destination="6wQ-yo-6gL" id="bgt-L1-Qr7"/>
+                                    <outlet property="startTimeLabel" destination="3QX-3V-bdq" id="SG3-aD-aOG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -629,6 +637,9 @@
     <classes>
         <class className="CalendarCartItemsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarCartItemsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshButtonPressed:"/>
+            </relationships>
         </class>
         <class className="CalendarListTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarListTableViewController.h"/>
@@ -639,12 +650,12 @@
         <class className="CalendarMeetingPatternTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarMeetingPatternTableViewCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="classStatusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="compLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="enrlLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="regNbrLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="waitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="instructorsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meetingPatLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startTimeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="CalendarNumberTableViewCell" superclassName="UITableViewCell">
