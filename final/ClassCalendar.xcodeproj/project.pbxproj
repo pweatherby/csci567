@@ -18,6 +18,8 @@
 		FD66BA3817430904005C1DAC /* CalendarSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA3717430904005C1DAC /* CalendarSection.m */; };
 		FD66BA3B17430D8F005C1DAC /* CalendarSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA3A17430D8F005C1DAC /* CalendarSectionTableViewCell.m */; };
 		FD66BA3E17430DBF005C1DAC /* CalendarSectionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA3D17430DBF005C1DAC /* CalendarSectionsTableViewController.m */; };
+		FD66BA411743133E005C1DAC /* CalendarMeetingPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA401743133E005C1DAC /* CalendarMeetingPattern.m */; };
+		FD66BA44174317BF005C1DAC /* CalendarInstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA43174317BE005C1DAC /* CalendarInstructor.m */; };
 		FD8B284F1741A05B0022CFCB /* CalendarSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B284E1741A05B0022CFCB /* CalendarSubject.m */; };
 		FD8B28521741A2C80022CFCB /* CalendarSubjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B28511741A2C80022CFCB /* CalendarSubjectTableViewCell.m */; };
 		FD8B28551741A2F80022CFCB /* CalendarSubjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8B28541741A2F80022CFCB /* CalendarSubjectsTableViewController.m */; };
@@ -65,6 +67,10 @@
 		FD66BA3A17430D8F005C1DAC /* CalendarSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSectionTableViewCell.m; sourceTree = "<group>"; };
 		FD66BA3C17430DBF005C1DAC /* CalendarSectionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSectionsTableViewController.h; sourceTree = "<group>"; };
 		FD66BA3D17430DBF005C1DAC /* CalendarSectionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSectionsTableViewController.m; sourceTree = "<group>"; };
+		FD66BA3F1743133E005C1DAC /* CalendarMeetingPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMeetingPattern.h; sourceTree = "<group>"; };
+		FD66BA401743133E005C1DAC /* CalendarMeetingPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMeetingPattern.m; sourceTree = "<group>"; };
+		FD66BA42174317BE005C1DAC /* CalendarInstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarInstructor.h; sourceTree = "<group>"; };
+		FD66BA43174317BE005C1DAC /* CalendarInstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarInstructor.m; sourceTree = "<group>"; };
 		FD8B284D1741A05B0022CFCB /* CalendarSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSubject.h; sourceTree = "<group>"; };
 		FD8B284E1741A05B0022CFCB /* CalendarSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSubject.m; sourceTree = "<group>"; };
 		FD8B28501741A2C80022CFCB /* CalendarSubjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSubjectTableViewCell.h; sourceTree = "<group>"; };
@@ -194,6 +200,10 @@
 				FD66BA311742F9EC005C1DAC /* CalendarNumber.m */,
 				FD66BA3617430904005C1DAC /* CalendarSection.h */,
 				FD66BA3717430904005C1DAC /* CalendarSection.m */,
+				FD66BA3F1743133E005C1DAC /* CalendarMeetingPattern.h */,
+				FD66BA401743133E005C1DAC /* CalendarMeetingPattern.m */,
+				FD66BA42174317BE005C1DAC /* CalendarInstructor.h */,
+				FD66BA43174317BE005C1DAC /* CalendarInstructor.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -350,6 +360,8 @@
 				FD66BA3817430904005C1DAC /* CalendarSection.m in Sources */,
 				FD66BA3B17430D8F005C1DAC /* CalendarSectionTableViewCell.m in Sources */,
 				FD66BA3E17430DBF005C1DAC /* CalendarSectionsTableViewController.m in Sources */,
+				FD66BA411743133E005C1DAC /* CalendarMeetingPattern.m in Sources */,
+				FD66BA44174317BF005C1DAC /* CalendarInstructor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

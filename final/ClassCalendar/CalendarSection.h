@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NetworkActivityTracker.h"
 #import "StringUtility.h"
+#import "CalendarMeetingPattern.h"
 
 @interface CalendarSection : NSObject
 
@@ -46,6 +47,7 @@
 @property (nonatomic, readonly) NSString* waitTotal;
 @property (nonatomic, readonly) NSString* waitCapacity;
 
+@property (nonatomic, readonly) NSArray* meetingPatterns;
 
 - (id)initWithJSONAttributes:(NSDictionary*)jsonAttributes;
 

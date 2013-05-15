@@ -90,6 +90,20 @@
         _waitTotal = [jsonAttributes[@"WAITLIST_TOTAL"] stringByDecodingXMLEntities];
         _waitCapacity = [jsonAttributes[@"WAITLIST_CAPACITY"] stringByDecodingXMLEntities];
         
+        NSMutableArray* curItems = [[NSMutableArray alloc] init];
+        NSArray* pats = jsonAttributes[@"MEETING_PATTERNS"];
+        if(pats)
+        {
+            for(int i = 0; i < pats.count; i++)
+            {
+                CalendarMeetingPattern* item = [[CalendarMeetingPattern alloc] initWithJSONAttributes: [pats objectAtIndex:i]];
+                [curItems addObject: item];
+            }
+            
+            _meetingPatterns = [curItems copy];
+        }
+
+        
     }
     return self;
 }
