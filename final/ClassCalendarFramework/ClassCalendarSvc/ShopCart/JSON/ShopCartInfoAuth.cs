@@ -63,6 +63,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.ShopCart.JSON
                 _usr = paramUsr;
                 _pwd = paramPwd;
             }
+            return true;
             ValetStand.ValetKeyStatus stats = ValetStand.ValetKeyStatus.Unknown;
             using (ValetStand.AttendantClient Attendant = new ValetStand.AttendantClient())
             {
