@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     NSString* path = @"https://emsdev.csuchico.edu/ADTS/AppValet/Stand/Authorize.aspx";
-    path = [path stringByAppendingString:@"?appID=89b25df7-560f-4e6a-8cbc-097ea9a689c7"];
+    path = [path stringByAppendingString:@"?appID=0a0c2deb-4596-41a7-a0b9-37aa9b45ed11"];
     path = [[path stringByAppendingString:@"&deviceID="] stringByAppendingString:[UserProfile GetDeviceID]];
     
 	NSURL* url = [NSURL URLWithString:path];

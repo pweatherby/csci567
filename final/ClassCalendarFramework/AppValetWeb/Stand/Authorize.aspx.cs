@@ -178,21 +178,21 @@ namespace noble.coder.pweatherby.AppValetWeb.Stand
             String ClassCalendarID = "0a0c2deb-4596-41a7-a0b9-37aa9b45ed11";
             String key = ValetOffice.GenerateNewAppDeviceKey(ClassCalendarID, GetCurUserFromSession(), GetDeviceIDFromSession());
             Response.Clear();
-            Response.ContentType = "text/xml";
-            Response.Write("<AuthRequestResult accept=\"true\">");
-            Response.Write("<ValetKey>" + key + "</ValetKey>");
-            Response.Write("</AuthRequestResult>");
+            Response.ContentType = "application/json";
+            Response.Write("[ { \"ACCEPTED\":\"true\" ");
+            Response.Write(", \"ValetKey\": \"" + key + "\" } ]");
             Response.Flush();
             Response.Close();
         }
 
         protected void DenyButton_Click(object sender, EventArgs e)
         {
+            String ClassCalendarID = "0a0c2deb-4596-41a7-a0b9-37aa9b45ed11";
+            ValetOffice.RevokeAppDeviceKey(ClassCalendarID, GetCurUserFromSession(), GetDeviceIDFromSession());
             Response.Clear();
-            Response.ContentType = "text/xml";
-            Response.Write("<AuthRequestResult accept=\"false\">");
-            Response.Write("<ValetKey></ValetKey>");
-            Response.Write("</AuthRequestResult>");
+            Response.ContentType = "application/json";
+            Response.Write("[ { \"ACCEPTED\":\"false\" ");
+            Response.Write(", \"ValetKey\": \"\" } ]");
             Response.Flush();
             Response.Close();
         }

@@ -33,5 +33,19 @@ namespace noble.coder.pweatherby.AppValet
             }
             return result;
         }
+
+        public static void RevokeAppDeviceKey(String AppID, String Portal, String Device)
+        {
+            using (DataWorker dw = DataWorkerFactory.CreateDataWorker("RDSDB"))
+            {
+                IDataParameter[] args = new IDataParameter[]{
+                    dw.NewParameter("VALET_APP", AppID),
+                    dw.NewParameter("PORTAL", Portal),
+                    dw.NewParameter("DEVICE", Device),
+                    dw.NewParameter("KEY", DBNull.Value)
+                };
+                dw.ExecuteNonQuery("PWEATHERBY.VALET_OFFICE.UpdateAppDeviceKey", CommandType.StoredProcedure, ref args);
+            }
+        }
     }
 }

@@ -285,7 +285,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.ShopCart.JSON
                                     t.Append(", \"AUTO_ENRL_WAITLIST\": \"" + HttpUtility.HtmlAttributeEncode(sect.AUTO_ENRL_WAITLIST) + "\" ");
                                     t.Append(", \"WAITLIST_DAEMON\": \"" + HttpUtility.HtmlAttributeEncode(sect.WAITLIST_DAEMON) + "\" ");
                                     t.Append(", \"WAITLIST_TOTAL\": \"" + sect.WAITLIST_TOTAL + "\" ");
-                                    t.Append(", \"WAITLIST_CAPACTIY\": \"" + sect.WAITLIST_CAPACITY + "\" ");
+                                    t.Append(", \"WAITLIST_CAPACITY\": \"" + sect.WAITLIST_CAPACITY + "\" ");
                                     t.AppendLine(", \"MEETING_PATTERNS\": [");
                                     int curPat = 0;
                                     foreach (PS_SCHEDULE_WS.ClassSchedMeetingPattern pat in sect.ClassSchedMeetingPatterns)

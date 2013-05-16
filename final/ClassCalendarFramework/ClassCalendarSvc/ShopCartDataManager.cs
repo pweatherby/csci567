@@ -50,6 +50,8 @@ namespace noble.coder.pweatherby.ClassCalendarSvc
                                         Int32 requestedSessionGroup,
                                         String requestedCrsID,
                                         Int32 requestedCrsOffrNbr,
+                                        String requestedSubject,
+                                        String requestedNumber,
                                         String requestedSection,
                                         String requestedRegNbr,
                                         out Exception error)
@@ -65,6 +67,8 @@ namespace noble.coder.pweatherby.ClassCalendarSvc
                         dw.NewParameter("SESGRP", requestedSessionGroup),
                         dw.NewParameter("CRSID", requestedCrsID),
                         dw.NewParameter("CRSOFR", requestedCrsOffrNbr),
+                        dw.NewParameter("SUBJ", requestedSubject),
+                        dw.NewParameter("NUMB", requestedNumber),
                         dw.NewParameter("SECT", requestedSection),
                         dw.NewParameter("REGNBR", requestedRegNbr)
                     };
@@ -86,6 +90,8 @@ namespace noble.coder.pweatherby.ClassCalendarSvc
                                            Int32 requestedSessionGroup,
                                            String requestedCrsID,
                                            Int32 requestedCrsOffrNbr,
+                                           String requestedSubject,
+                                           String requestedNumber,
                                            String requestedSection,
                                            String requestedRegNbr,
                                            out Exception error)
@@ -101,6 +107,8 @@ namespace noble.coder.pweatherby.ClassCalendarSvc
                         dw.NewParameter("SESGRP", requestedSessionGroup),
                         dw.NewParameter("CRSID", requestedCrsID),
                         dw.NewParameter("CRSOFR", requestedCrsOffrNbr),
+                        dw.NewParameter("SUBJ", requestedSubject),
+                        dw.NewParameter("NUMB", requestedNumber),
                         dw.NewParameter("SECT", requestedSection),
                         dw.NewParameter("REGNBR", requestedRegNbr)
                     };

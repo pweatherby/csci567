@@ -73,6 +73,26 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.ShopCart.JSON
                     return;
                 }
 
+                String requestedSubject = context.Request["subject"];
+                if (String.IsNullOrWhiteSpace(requestedSubject) ||
+                    !System.Text.RegularExpressions.Regex.IsMatch(requestedSubject, "[a-zA-Z]{4}"))
+                {
+                    context.Response.Clear();
+                    context.Response.StatusCode = 400;// Bad Request
+                    context.Response.Write("Invalid subject format.");
+                    return;
+                }
+
+                String requestedNumber = context.Request["number"];
+                if (String.IsNullOrWhiteSpace(requestedNumber) ||
+                    !System.Text.RegularExpressions.Regex.IsMatch(requestedNumber, "[a-zA-Z0-9]{3,8}"))
+                {
+                    context.Response.Clear();
+                    context.Response.StatusCode = 400;// Bad Request
+                    context.Response.Write("Invalid class number format.");
+                    return;
+                }
+
                 String requestedSection = context.Request["section"];
                 if (String.IsNullOrWhiteSpace(requestedSection) ||
                     !System.Text.RegularExpressions.Regex.IsMatch(requestedSection, "[0-9]{1,3}"))
@@ -99,12 +119,14 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.ShopCart.JSON
                                                    reqSessGrpInt,
                                                    requestedCrsID,
                                                    reqCrsOffrInt,
+                                                   requestedSubject,
+                                                   requestedNumber,
                                                    requestedSection,
                                                    requestedRegNbr,
                                                    out error))
                 {
-                    context.Response.ContentType = "text/plain";
-                    context.Response.Write("SUCCESS");
+                    context.Response.ContentType = "application/json";
+                    context.Response.Write("[{\"RESULT\":\"SUCCESS\"}]");
                 }
                 else
                 {

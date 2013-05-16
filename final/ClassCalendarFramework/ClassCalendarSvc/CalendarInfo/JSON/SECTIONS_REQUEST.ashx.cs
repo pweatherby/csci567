@@ -106,7 +106,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
                         JSON.Append(", \"AUTO_ENRL_WAITLIST\": \"" + HttpUtility.HtmlAttributeEncode(sect.AUTO_ENRL_WAITLIST) + "\" ");
                         JSON.Append(", \"WAITLIST_DAEMON\": \"" + HttpUtility.HtmlAttributeEncode(sect.WAITLIST_DAEMON) + "\" ");
                         JSON.Append(", \"WAITLIST_TOTAL\": \"" + sect.WAITLIST_TOTAL + "\" ");
-                        JSON.Append(", \"WAITLIST_CAPACTIY\": \"" + sect.WAITLIST_CAPACITY + "\" ");
+                        JSON.Append(", \"WAITLIST_CAPACItY\": \"" + sect.WAITLIST_CAPACITY + "\" ");
                         JSON.AppendLine(", \"MEETING_PATTERNS\": [");
                         int curPat = 0;
                         foreach (PS_SCHEDULE_WS.ClassSchedMeetingPattern pat in sect.ClassSchedMeetingPatterns)
