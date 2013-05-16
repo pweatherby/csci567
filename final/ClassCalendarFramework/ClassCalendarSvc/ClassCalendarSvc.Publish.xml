@@ -2,18 +2,18 @@
 <publishData>
   <publishProfile publishUrl="\\esysiis1dev\webdocs\emsdev\services\ClassSchedule" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="esys iis1 dev" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="Web.config" publishTime="05/13/2013 12:33:11" />
+    <file relUrl="_images/schedule_iconx57.jpg" publishTime="05/07/2013 09:30:27" />
     <file relUrl="_images/schedule_iconx114.jpg" publishTime="05/07/2013 09:31:04" />
     <file relUrl="CalendarInfo/JSON/SESSIONS_REQUEST.ashx" publishTime="05/13/2013 12:28:45" />
     <file relUrl="CalendarInfo/WCF/Schedule.svc" publishTime="05/13/2013 12:28:45" />
     <file relUrl="ShopCart/JSON/RemoveItem.ashx" publishTime="05/13/2013 12:09:56" />
-    <file relUrl="_images/schedule_icon.jpg" publishTime="05/07/2013 09:26:55" />
-    <file relUrl="bin/noble.coder.pweatherby.ClassCalendarSvc.dll" publishTime="05/15/2013 08:41:07" />
+    <file relUrl="bin/noble.coder.pweatherby.ClassCalendarSvc.dll" publishTime="05/16/2013 10:04:12" />
     <file relUrl="bin/wsseUserTokenBehavior.dll" publishTime="05/13/2013 12:29:23" />
-    <file relUrl="_images/schedule_iconx57.jpg" publishTime="05/07/2013 09:30:27" />
-    <file relUrl="ShopCart/JSON/AddItem.ashx" publishTime="05/13/2013 11:12:51" />
     <file relUrl="References/edu.csu.chico.enr.DataAbstractionLayer.dll" publishTime="05/13/2013 09:36:56" />
+    <file relUrl="ShopCart/JSON/AddItem.ashx" publishTime="05/13/2013 11:12:51" />
     <file relUrl="bin/edu.csu.chico.enr.DataAbstractionLayer.dll" publishTime="05/13/2013 09:36:56" />
     <file relUrl="ShopCart/JSON/ViewCart.ashx" publishTime="05/13/2013 09:27:01" />
+    <file relUrl="_images/schedule_icon.jpg" publishTime="05/07/2013 09:26:55" />
     <file relUrl="CalendarInfo/JSON/SUBJECTS_REQUEST.ashx" publishTime="05/13/2013 12:28:45" />
     <file relUrl="CalendarInfo/JSON/SECTIONS_REQUEST.ashx" publishTime="05/13/2013 12:28:45" />
     <file relUrl="CalendarInfo/JSON/TERMS_REQUEST.ashx" publishTime="05/13/2013 12:28:45" />

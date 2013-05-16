@@ -10,6 +10,8 @@ create or replace package SHOP_CART is
     SESSION_GROUP number(10),
     COURSE_ID VARCHAR2(6),
     COURSE_OFFER_NBR number(10),
+    SUBJECT VARCHAR2(4),
+    CLASS_NUMBER VARCHAR2(8),
     CLASS_SECTION varchar2(3),
     REGISTRATION_NBR varchar2(5)
    );
@@ -23,6 +25,8 @@ create or replace package SHOP_CART is
                     SESGRP in number,
                     CRSID  in varchar2,
                     CRSOFR in number,
+                    SUBJ   in varchar2,
+                    NUMB   in varchar2,
                     SECT   in varchar2,
                     REGNBR in varchar2);
                     
@@ -31,6 +35,8 @@ create or replace package SHOP_CART is
                        SESGRP in number,
                        CRSID  in varchar2,
                        CRSOFR in number,
+                       SUBJ   in varchar2,
+                       NUMB   in varchar2,
                        SECT   in varchar2,
                        REGNBR in varchar2);
   
@@ -49,6 +55,8 @@ create or replace package body SHOP_CART is
            i.session_group,
            i.course_id,
            i.course_offer_nbr,
+           i.subject,
+           i.class_number,
            i.class_section,
            i.registration_nbr
       FROM SHOP_CART_ITEMS i
@@ -61,6 +69,8 @@ create or replace package body SHOP_CART is
                     SESGRP in number,
                     CRSID  in varchar2,
                     CRSOFR in number,
+                    SUBJ   in varchar2,
+                    NUMB   in varchar2,
                     SECT   in varchar2,
                     REGNBR in varchar2) IS
    v_EMP varchar2(13) := EMPLID;
@@ -68,6 +78,8 @@ create or replace package body SHOP_CART is
    v_GRP number(10) := SESGRP;
    v_CRS varchar2(6) := CRSID;
    v_OFR number(10) := CRSOFR;
+   v_SUB varchar2(4) := SUBJ;
+   v_NBR varchar2(8) := NUMB;
    v_SCT varchar2(3) := SECT;
    v_REG varchar2(5) := REGNBR;
   BEGIN
@@ -80,10 +92,12 @@ create or replace package body SHOP_CART is
               c.COURSE_OFFER_NBR = v_OFR AND
               c.CLASS_SECTION = v_SCT)
      WHEN MATCHED THEN
-          UPDATE SET c.REGISTRATION_NBR = v_REG
+          UPDATE SET c.REGISTRATION_NBR = v_REG,
+                     c.Subject = v_SUB,
+                     c.class_number = v_NBR
      WHEN NOT MATCHED THEN
-          INSERT (c.EMPLID, c.term, c.session_group, c.course_id, c.course_offer_nbr, c.class_section, c.registration_nbr)
-          VALUES (v_EMP, v_TRM, v_GRP, v_CRS, v_OFR, v_SCT, v_REG);
+          INSERT (c.EMPLID, c.term, c.session_group, c.course_id, c.course_offer_nbr, c.subject, c.class_number, c.class_section, c.registration_nbr)
+          VALUES (v_EMP, v_TRM, v_GRP, v_CRS, v_OFR, v_SUB, v_NBR, v_SCT, v_REG);
 
   END AddItem;
   
@@ -93,6 +107,8 @@ create or replace package body SHOP_CART is
                        SESGRP in number,
                        CRSID  in varchar2,
                        CRSOFR in number,
+                       SUBJ   in varchar2,
+                       NUMB   in varchar2,
                        SECT   in varchar2,
                        REGNBR in varchar2) IS
    v_EMP varchar2(13) := EMPLID;
@@ -100,6 +116,8 @@ create or replace package body SHOP_CART is
    v_GRP number(10) := SESGRP;
    v_CRS varchar2(6) := CRSID;
    v_OFR number(10) := CRSOFR;
+   v_SUB varchar2(4) := SUBJ;
+   v_NBR varchar2(8) := NUMB;
    v_SCT varchar2(3) := SECT;
    v_REG varchar2(5) := REGNBR;
   BEGIN
@@ -110,6 +128,8 @@ create or replace package body SHOP_CART is
            c.SESSION_GROUP = v_GRP AND
            c.COURSE_ID = v_CRS AND
            c.COURSE_OFFER_NBR = v_OFR AND
+           c.subject = v_SUB AND
+           c.class_number = v_NBR AND
            c.CLASS_SECTION = v_SCT AND
            c.REGISTRATION_NBR = v_REG;
   END RemoveItem;

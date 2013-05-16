@@ -29,6 +29,8 @@ namespace noble.coder.pweatherby.ClassCalendarSvc
                         item.SessionGroup = Convert.ToString(dr["SESSION_GROUP"]);
                         item.CourseID = Convert.ToString(dr["COURSE_ID"]);
                         item.CourseOfferNbr = Convert.ToString(dr["COURSE_OFFER_NBR"]);
+                        item.Subject = Convert.ToString(dr["SUBJECT"]);
+                        item.ClassNumber = Convert.ToString(dr["CLASS_NUMBER"]);
                         item.ClassSection = Convert.ToString(dr["CLASS_SECTION"]);
                         item.RegistrationNbr = Convert.ToString(dr["REGISTRATION_NBR"]);
                         result.Add(item);

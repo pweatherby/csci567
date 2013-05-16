@@ -47,6 +47,12 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
                 return;
             }
 
+            bool filter = false;
+            String requestedNumber = context.Request["number"];
+            if (!String.IsNullOrWhiteSpace(requestedNumber) && System.Text.RegularExpressions.Regex.IsMatch(requestedNumber, "[0-9A-Z]{3,8}", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+            {
+                filter = true;
+            }
 
             PS_SCHEDULE_WS.ClassSchedClassNumberResult result = new PS_SCHEDULE_WS.ClassSchedClassNumberResult();
             Exception error = new Exception();
@@ -54,26 +60,31 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
             {
                 StringBuilder JSON = new StringBuilder();
                 JSON.Append("[");
+                int j = 0;
                 for (int i = 0; i < result.NumberResultCount; i++)
                 {
                     PS_SCHEDULE_WS.ClassSchedClassNumber numb = result.ClassSchedClassNumbers[i];
-                    if (i > 0)
+                    if (!filter || (filter && numb.CLASS_NBR.Equals(requestedNumber, StringComparison.InvariantCultureIgnoreCase)))
                     {
-                        JSON.Append(",");
+                        if (j > 0)
+                        {
+                            JSON.Append(",");
+                        }
+                        JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
+                        JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");
+                        JSON.Append(", \"SESSION_GROUP\": \"" + result.SESSION_GROUP + "\" ");
+                        JSON.Append(", \"SUBJECT_CODE\": \"" + HttpUtility.HtmlAttributeEncode(result.SUBJECT) + "\" ");
+                        JSON.Append(", \"CLASS_NUMBER\": \"" + HttpUtility.HtmlAttributeEncode(numb.CLASS_NBR) + "\" ");
+                        JSON.Append(", \"COURSE_ID\": \"" + HttpUtility.HtmlAttributeEncode(numb.COURSE_ID) + "\" ");
+                        JSON.Append(", \"COURSE_OFFER_NBR\": \"" + numb.COURSE_OFFER_NBR + "\" ");
+                        JSON.Append(", \"COURSE_TITLE_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(numb.COURSE_TITLE_SDESC) + "\" ");
+                        JSON.Append(", \"COURSE_TITLE_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(numb.COURSE_TITLE_LDESC) + "\" ");
+                        JSON.Append(", \"UNITS_MIN\": \"" + numb.UNITS_MINIMUM + "\" ");
+                        JSON.Append(", \"UNITS_MAX\": \"" + numb.UNITS_MAXIMUM + "\" ");
+                        JSON.Append(", \"COURSE_DESCRIPTION\": \"" + HttpUtility.HtmlAttributeEncode(numb.ClassSchedCourseDescriptions.COURSE_DESCRIPTION) + "\" ");
+                        JSON.AppendLine("}");
+                        j++;
                     }
-                    JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
-                    JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");
-                    JSON.Append(", \"SESSION_GROUP\": \"" + result.SESSION_GROUP + "\" ");
-                    JSON.Append(", \"SUBJECT_CODE\": \"" + HttpUtility.HtmlAttributeEncode(result.SUBJECT) + "\" ");
-                    JSON.Append(", \"CLASS_NUMBER\": \"" + HttpUtility.HtmlAttributeEncode(numb.CLASS_NBR) + "\" ");
-                    JSON.Append(", \"COURSE_ID\": \"" + HttpUtility.HtmlAttributeEncode(numb.COURSE_ID) + "\" ");
-                    JSON.Append(", \"COURSE_OFFER_NBR\": \"" + numb.COURSE_OFFER_NBR + "\" ");
-                    JSON.Append(", \"COURSE_TITLE_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(numb.COURSE_TITLE_SDESC) + "\" ");
-                    JSON.Append(", \"COURSE_TITLE_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(numb.COURSE_TITLE_LDESC) + "\" ");
-                    JSON.Append(", \"UNITS_MIN\": \"" + numb.UNITS_MINIMUM + "\" ");
-                    JSON.Append(", \"UNITS_MAX\": \"" + numb.UNITS_MAXIMUM + "\" ");
-                    JSON.Append(", \"COURSE_DESCRIPTION\": \"" + HttpUtility.HtmlAttributeEncode(numb.ClassSchedCourseDescriptions.COURSE_DESCRIPTION) + "\" ");
-                    JSON.AppendLine("}");
                 }
                 JSON.AppendLine("]");
                 context.Response.ContentType = "application/json";

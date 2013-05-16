@@ -61,6 +61,13 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
                 return;
             }
 
+            bool filter = false;
+            String requestedSect = context.Request["section"];
+            if (!String.IsNullOrWhiteSpace(requestedSect) &&
+                System.Text.RegularExpressions.Regex.IsMatch(requestedSect, "[0-9]{1,3}"))
+            {
+                filter = true;
+            }
 
             PS_SCHEDULE_WS.ClassSchedClassSectionResult result = new PS_SCHEDULE_WS.ClassSchedClassSectionResult();
             Exception error = new Exception();
@@ -68,132 +75,137 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
             {
                 StringBuilder JSON = new StringBuilder();
                 JSON.Append("[");
+                int j = 0;
                 for (int i = 0; i < result.SectionsResultCount; i++)
                 {
                     PS_SCHEDULE_WS.ClassSchedClassSection sect = result.ClassSchedClassSections[i];
-                    if (i > 0)
+                    if (!filter || (filter && sect.CLASS_SECTION.Equals(requestedSect, StringComparison.InvariantCultureIgnoreCase)))
                     {
-                        JSON.Append(",");
-                    }
-                    JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
-                    JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");
-                    JSON.Append(", \"SESSION_GROUP\": \"" + result.SESSION_GROUP + "\" ");
-                    JSON.Append(", \"COURSE_ID\": \"" + HttpUtility.HtmlAttributeEncode(result.COURSE_ID) + "\" ");
-                    JSON.Append(", \"COURSE_OFFER_NBR\": \"" + result.COURSE_OFFER_NBR + "\" ");
-                    JSON.Append(", \"CLASS_SECTION\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_SECTION) + "\" ");
-                    JSON.Append(", \"CLASS_STATUS\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_STATUS) + "\" ");
-                    JSON.Append(", \"CLASS_STATUS_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_STATUS_LDESC) + "\" ");
-                    JSON.Append(", \"CLASS_TYPE\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_TYPE) + "\" ");
-                    JSON.Append(", \"CLASS_TYPE_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_TYPE_LDESC) + "\" ");
-                    JSON.Append(", \"ASSOCIATED_CLASS\": \"" + sect.ASSOCIATED_CLASS + "\" ");
-                    JSON.Append(", \"REGISTRATION_NBR\": \"" + sect.REGISTRATION_NBR + "\" ");
-                    JSON.Append(", \"CLASS_COMPONENT\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_COMPONENT) + "\" ");
-                    JSON.Append(", \"CLASS_COMPONENT_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_COMPONENT_LDESC) + "\" ");
-                    JSON.Append(", \"ENRL_STATUS\": \"" + HttpUtility.HtmlAttributeEncode(sect.ENRL_STATUS) + "\" ");
-                    JSON.Append(", \"ENRL_STATUS_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.ENRL_STATUS_LDESC) + "\" ");
-                    JSON.Append(", \"ENRL_TOTAL\": \"" + sect.ENRL_TOTAL + "\" ");
-                    JSON.Append(", \"ENRL_CAPACITY\": \"" + sect.ENRL_CAPACITY + "\" ");
-                    JSON.Append(", \"AUTO_ENRL_WAITLIST\": \"" + HttpUtility.HtmlAttributeEncode(sect.AUTO_ENRL_WAITLIST) + "\" ");
-                    JSON.Append(", \"WAITLIST_DAEMON\": \"" + HttpUtility.HtmlAttributeEncode(sect.WAITLIST_DAEMON) + "\" ");
-                    JSON.Append(", \"WAITLIST_TOTAL\": \"" + sect.WAITLIST_TOTAL + "\" ");
-                    JSON.Append(", \"WAITLIST_CAPACTIY\": \"" + sect.WAITLIST_CAPACITY + "\" ");
-                    JSON.AppendLine(", \"MEETING_PATTERNS\": [");
-                    int curPat = 0;
-                    foreach (PS_SCHEDULE_WS.ClassSchedMeetingPattern pat in sect.ClassSchedMeetingPatterns)
-                    {
-                        if (curPat > 0)
+                        if (j > 0)
                         {
                             JSON.Append(",");
                         }
-                        JSON.Append("{ \"CLASS_MTG_NBR\": \"" + pat.CLASS_MTG_NBR + "\" ");
-                        JSON.Append(", \"BUILDING\": \"" + HttpUtility.HtmlAttributeEncode(pat.BUILDING) + "\" ");
-                        JSON.Append(", \"ROOM\": \"" + HttpUtility.HtmlAttributeEncode(pat.ROOM) + "\" ");
-                        JSON.Append(", \"MEETING_DATE_START\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_START.ToString("YYYY-MM-dd")) + "\" ");
-                        JSON.Append(", \"MEETING_DATE_START_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_START_LDESC) + "\" ");
-                        JSON.Append(", \"MEETING_DATE_END\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_END.ToString("YYYY-MM-dd")) + "\" ");
-                        JSON.Append(", \"MEETING_DATE_END_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_END_LDESC) + "\" ");
-                        JSON.Append(", \"MEETING_TIME_START\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_TIME_START) + "\" ");
-                        JSON.Append(", \"MEETING_TIME_END\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_TIME_END) + "\" ");
-                        JSON.Append(", \"STND_MTG_PAT\": \"" + HttpUtility.HtmlAttributeEncode(pat.STND_MTG_PAT) + "\" ");
-                        JSON.AppendLine(", \"INSTRUCTORS\": [" );
-                        int curInst = 0;
-                        foreach (PS_SCHEDULE_WS.ClassSchedInstructor inst in pat.ClassSchedInstructors)
+                        JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
+                        JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");
+                        JSON.Append(", \"SESSION_GROUP\": \"" + result.SESSION_GROUP + "\" ");
+                        JSON.Append(", \"COURSE_ID\": \"" + HttpUtility.HtmlAttributeEncode(result.COURSE_ID) + "\" ");
+                        JSON.Append(", \"COURSE_OFFER_NBR\": \"" + result.COURSE_OFFER_NBR + "\" ");
+                        JSON.Append(", \"CLASS_SECTION\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_SECTION) + "\" ");
+                        JSON.Append(", \"CLASS_STATUS\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_STATUS) + "\" ");
+                        JSON.Append(", \"CLASS_STATUS_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_STATUS_LDESC) + "\" ");
+                        JSON.Append(", \"CLASS_TYPE\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_TYPE) + "\" ");
+                        JSON.Append(", \"CLASS_TYPE_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_TYPE_LDESC) + "\" ");
+                        JSON.Append(", \"ASSOCIATED_CLASS\": \"" + sect.ASSOCIATED_CLASS + "\" ");
+                        JSON.Append(", \"REGISTRATION_NBR\": \"" + sect.REGISTRATION_NBR + "\" ");
+                        JSON.Append(", \"CLASS_COMPONENT\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_COMPONENT) + "\" ");
+                        JSON.Append(", \"CLASS_COMPONENT_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.CLASS_COMPONENT_LDESC) + "\" ");
+                        JSON.Append(", \"ENRL_STATUS\": \"" + HttpUtility.HtmlAttributeEncode(sect.ENRL_STATUS) + "\" ");
+                        JSON.Append(", \"ENRL_STATUS_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(sect.ENRL_STATUS_LDESC) + "\" ");
+                        JSON.Append(", \"ENRL_TOTAL\": \"" + sect.ENRL_TOTAL + "\" ");
+                        JSON.Append(", \"ENRL_CAPACITY\": \"" + sect.ENRL_CAPACITY + "\" ");
+                        JSON.Append(", \"AUTO_ENRL_WAITLIST\": \"" + HttpUtility.HtmlAttributeEncode(sect.AUTO_ENRL_WAITLIST) + "\" ");
+                        JSON.Append(", \"WAITLIST_DAEMON\": \"" + HttpUtility.HtmlAttributeEncode(sect.WAITLIST_DAEMON) + "\" ");
+                        JSON.Append(", \"WAITLIST_TOTAL\": \"" + sect.WAITLIST_TOTAL + "\" ");
+                        JSON.Append(", \"WAITLIST_CAPACTIY\": \"" + sect.WAITLIST_CAPACITY + "\" ");
+                        JSON.AppendLine(", \"MEETING_PATTERNS\": [");
+                        int curPat = 0;
+                        foreach (PS_SCHEDULE_WS.ClassSchedMeetingPattern pat in sect.ClassSchedMeetingPatterns)
                         {
-                            if (curInst > 0)
+                            if (curPat > 0)
                             {
                                 JSON.Append(",");
                             }
-                            JSON.Append("{ \"INSTR_ASSIGN_SEQ\": \"" + inst.INSTR_ASSIGN_SEQ + "\" ");
-                            JSON.Append(", \"NAME_DISPLAY\": \"" + HttpUtility.HtmlAttributeEncode(inst.NAME_DISPLAY) + "\" ");
-                            JSON.Append(", \"LAST_NAME\": \"" + HttpUtility.HtmlAttributeEncode(inst.LAST_NAME) + "\" ");
-                            JSON.Append(", \"FIRST_NAME\": \"" + HttpUtility.HtmlAttributeEncode(inst.FIRST_NAME) + "\" ");
+                            JSON.Append("{ \"CLASS_MTG_NBR\": \"" + pat.CLASS_MTG_NBR + "\" ");
+                            JSON.Append(", \"BUILDING\": \"" + HttpUtility.HtmlAttributeEncode(pat.BUILDING) + "\" ");
+                            JSON.Append(", \"ROOM\": \"" + HttpUtility.HtmlAttributeEncode(pat.ROOM) + "\" ");
+                            JSON.Append(", \"MEETING_DATE_START\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_START.ToString("yyyy-MM-dd")) + "\" ");
+                            JSON.Append(", \"MEETING_DATE_START_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_START_LDESC) + "\" ");
+                            JSON.Append(", \"MEETING_DATE_END\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_END.ToString("yyyy-MM-dd")) + "\" ");
+                            JSON.Append(", \"MEETING_DATE_END_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_DATE_END_LDESC) + "\" ");
+                            JSON.Append(", \"MEETING_TIME_START\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_TIME_START) + "\" ");
+                            JSON.Append(", \"MEETING_TIME_END\": \"" + HttpUtility.HtmlAttributeEncode(pat.MEETING_TIME_END) + "\" ");
+                            JSON.Append(", \"STND_MTG_PAT\": \"" + HttpUtility.HtmlAttributeEncode(pat.STND_MTG_PAT) + "\" ");
+                            JSON.AppendLine(", \"INSTRUCTORS\": [");
+                            int curInst = 0;
+                            foreach (PS_SCHEDULE_WS.ClassSchedInstructor inst in pat.ClassSchedInstructors)
+                            {
+                                if (curInst > 0)
+                                {
+                                    JSON.Append(",");
+                                }
+                                JSON.Append("{ \"INSTR_ASSIGN_SEQ\": \"" + inst.INSTR_ASSIGN_SEQ + "\" ");
+                                JSON.Append(", \"NAME_DISPLAY\": \"" + HttpUtility.HtmlAttributeEncode(inst.NAME_DISPLAY) + "\" ");
+                                JSON.Append(", \"LAST_NAME\": \"" + HttpUtility.HtmlAttributeEncode(inst.LAST_NAME) + "\" ");
+                                JSON.Append(", \"FIRST_NAME\": \"" + HttpUtility.HtmlAttributeEncode(inst.FIRST_NAME) + "\" ");
+                                JSON.AppendLine("}");
+                                curInst++;
+                            }//finish all instructors in this pattern
+                            JSON.AppendLine("] }");
+                            curPat++;
+                        }// finish all Meeting Patterns
+                        JSON.AppendLine("]");
+                        JSON.Append(", \"CLASS_ATTRIBUTES\": [");
+                        int curAttr = 0;
+                        foreach (PS_SCHEDULE_WS.ClassSchedClassAttribute attr in sect.ClassSchedClassAttributes)
+                        {
+                            if (curAttr > 0)
+                            {
+                                JSON.Append(",");
+                            }
+                            JSON.Append("{ \"COURSE_ATTR\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR) + "\" ");
+                            JSON.Append(", \"COURSE_ATTR_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_SDESC) + "\" ");
+                            JSON.Append(", \"COURSE_ATTR_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_LDESC) + "\" ");
+                            JSON.Append(", \"COURSE_ATTR_VALUE\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_VALUE) + "\" ");
+                            JSON.Append(", \"COURSE_ATTR_VALUE_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_VALUE_LDESC) + "\" ");
+                            JSON.Append(", \"COURSE_ATTR_VALUE_FDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_VALUE_FDESC) + "\" ");
                             JSON.AppendLine("}");
-                            curInst++;
-                        }//finish all instructors in this pattern
-                        JSON.AppendLine("] }");
-                        curPat++;
-                    }// finish all Meeting Patterns
-                    JSON.AppendLine("]");
-                    JSON.Append(", \"CLASS_ATTRIBUTES\": [");
-                    int curAttr = 0;
-                    foreach (PS_SCHEDULE_WS.ClassSchedClassAttribute attr in sect.ClassSchedClassAttributes)
-                    {
-                        if (curAttr > 0)
-                        {
-                            JSON.Append(",");
+                            curAttr++;
                         }
-                        JSON.Append("{ \"COURSE_ATTR\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR) + "\" ");
-                        JSON.Append(", \"COURSE_ATTR_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_SDESC)+ "\" ");
-                        JSON.Append(", \"COURSE_ATTR_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_LDESC) + "\" ");
-                        JSON.Append(", \"COURSE_ATTR_VALUE\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_VALUE) + "\" ");
-                        JSON.Append(", \"COURSE_ATTR_VALUE_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_VALUE_LDESC) + "\" ");
-                        JSON.Append(", \"COURSE_ATTR_VALUE_FDESC\": \"" + HttpUtility.HtmlAttributeEncode(attr.COURSE_ATTR_VALUE_FDESC) + "\" ");
-                        JSON.AppendLine("}");
-                        curAttr++;
-                    }
-                    JSON.AppendLine("]");
+                        JSON.AppendLine("]");
 
-                    JSON.Append(", \"CLASS_NOTES\": [");
-                    int curNote = 0;
-                    foreach (PS_SCHEDULE_WS.ClassSchedClassNote nte in sect.ClassSchedClassNotes)
-                    {
-                        if (curNote > 0)
+                        JSON.Append(", \"CLASS_NOTES\": [");
+                        int curNote = 0;
+                        foreach (PS_SCHEDULE_WS.ClassSchedClassNote nte in sect.ClassSchedClassNotes)
                         {
-                            JSON.Append(",");
+                            if (curNote > 0)
+                            {
+                                JSON.Append(",");
+                            }
+                            JSON.Append("{ \"CLASS_NOTE_SEQ\": \"" + nte.CLASS_NOTES_SEQ + "\" ");
+                            JSON.Append(", \"COURSE_NOTE\": \"" + HttpUtility.HtmlAttributeEncode(nte.CLASS_NOTE) + "\" ");
+                            JSON.AppendLine("}");
+                            curNote++;
                         }
-                        JSON.Append("{ \"CLASS_NOTE_SEQ\": \"" + nte.CLASS_NOTES_SEQ + "\" ");
-                        JSON.Append(", \"COURSE_NOTE\": \"" + HttpUtility.HtmlAttributeEncode(nte.CLASS_NOTE) + "\" ");
-                        JSON.AppendLine("}");
-                        curNote++;
-                    }
-                    JSON.AppendLine("]");
+                        JSON.AppendLine("]");
 
-                    JSON.Append(", \"CLASS_TEXTBOOKS\": [");
-                    int curTxtBk = 0;
-                    foreach (PS_SCHEDULE_WS.ClassScheduleClassTextbook txtbk in sect.ClassSchedClassTextbooks)
-                    {
-                        if (curTxtBk > 0)
+                        JSON.Append(", \"CLASS_TEXTBOOKS\": [");
+                        int curTxtBk = 0;
+                        foreach (PS_SCHEDULE_WS.ClassScheduleClassTextbook txtbk in sect.ClassSchedClassTextbooks)
                         {
-                            JSON.Append(",");
+                            if (curTxtBk > 0)
+                            {
+                                JSON.Append(",");
+                            }
+                            JSON.Append("{ \"TEXTBOOK_SEQ\": \"" + txtbk.SSR_CRSEMAT_SEQ + "\" ");
+                            JSON.Append(", \"TEXTBOOK_TYPE\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_CRSEMAT_TYPE) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_STATUS\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_STATUS) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_ISBN\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_ISBN) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_TITLE\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_TITLE) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_AUTHOR\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_AUTHOR) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_EDITION\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_EDITION) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_PUBYEAR\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_PUBYEAR) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_PUBLISH\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_PUBLISH) + "\" ");
+                            JSON.Append(", \"TEXTBOOK_PRICE\": \"" + txtbk.SSR_TXBDTL_PRICE + "\" ");
+                            JSON.Append(", \"TEXTBOOK_CURRENCY\": \"" + txtbk.CURRENCY_CD + "\" ");
+                            JSON.Append(", \"TEXTBOOK_NOTES\": \"" + txtbk.SSR_TXBDTL_NOTES + "\" ");
+                            JSON.AppendLine("}");
+                            curTxtBk++;
                         }
-                        JSON.Append("{ \"TEXTBOOK_SEQ\": \"" + txtbk.SSR_CRSEMAT_SEQ + "\" ");
-                        JSON.Append(", \"TEXTBOOK_TYPE\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_CRSEMAT_TYPE) + "\" ");
-                        JSON.Append(", \"TEXTBOOK_STATUS\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_STATUS) + "\" ");
-                        JSON.Append(", \"TEXTBOOK_ISBN\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_ISBN) + "\" ");  
-                        JSON.Append(", \"TEXTBOOK_TITLE\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_TITLE) + "\" ");                        
-                        JSON.Append(", \"TEXTBOOK_AUTHOR\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_AUTHOR) + "\" ");
-                        JSON.Append(", \"TEXTBOOK_EDITION\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_EDITION) + "\" ");
-                        JSON.Append(", \"TEXTBOOK_PUBYEAR\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_PUBYEAR) + "\" ");
-                        JSON.Append(", \"TEXTBOOK_PUBLISH\": \"" + HttpUtility.HtmlAttributeEncode(txtbk.SSR_TXBDTL_PUBLISH) + "\" ");
-                        JSON.Append(", \"TEXTBOOK_PRICE\": \"" + txtbk.SSR_TXBDTL_PRICE + "\" ");
-                        JSON.Append(", \"TEXTBOOK_CURRENCY\": \"" + txtbk.CURRENCY_CD + "\" ");
-                        JSON.Append(", \"TEXTBOOK_NOTES\": \"" + txtbk.SSR_TXBDTL_NOTES + "\" ");
-                        JSON.AppendLine("}");
-                        curTxtBk++;
-                    }
-                    JSON.AppendLine("]");
+                        JSON.AppendLine("]");
 
-                    JSON.AppendLine("}");
+                        JSON.AppendLine("}");
+                        j++;
+                    }
                 }
                 JSON.AppendLine("]");
                 context.Response.ContentType = "application/json";

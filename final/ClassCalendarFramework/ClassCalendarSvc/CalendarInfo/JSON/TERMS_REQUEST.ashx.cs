@@ -16,7 +16,12 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
             {
                 return;
             }
-
+            bool filter = false;
+            String requestedTerm = context.Request["term"];
+            if (!String.IsNullOrWhiteSpace(requestedTerm) && System.Text.RegularExpressions.Regex.IsMatch(requestedTerm, "[0-9]{4}"))
+            {
+                filter = true;
+            }
 
             PS_SCHEDULE_WS.ClassSchedTermResult result = new PS_SCHEDULE_WS.ClassSchedTermResult();
             Exception error = new Exception();
@@ -24,16 +29,21 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
             {
                 StringBuilder JSON = new StringBuilder();
                 JSON.Append("[");
+                int j = 0;
                 for (int i = 0; i < result.ClassSchedTerms.Length; i++)
                 {
                     PS_SCHEDULE_WS.ClassSchedTerm term = result.ClassSchedTerms[i];
-                    if (i > 0)
+                    if (!filter || (filter && term.TERM.Equals(requestedTerm, StringComparison.InvariantCultureIgnoreCase)))
                     {
-                        JSON.Append(",");
+                        if (j > 0)
+                        {
+                            JSON.Append(",");
+                        }
+                        JSON.Append("{ \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM) + "\" ");
+                        JSON.Append(", \"TERM_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_SDESC) + "\" ");
+                        JSON.AppendLine(", \"TERM_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_LDESC) + "\" }");
+                        j++;
                     }
-                    JSON.Append("{ \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM) + "\" ");
-                    JSON.Append(", \"TERM_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_SDESC) + "\" ");
-                    JSON.AppendLine(", \"TERM_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(term.TERM_LDESC) + "\" }");
                 }
                 JSON.AppendLine("]");
                 context.Response.ContentType = "application/json";

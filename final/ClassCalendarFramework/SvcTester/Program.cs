@@ -8,7 +8,8 @@ namespace SvcTester
         static void Main(string[] args)
         {
             //TestTerms();
-            TestSessions();
+            //TestSessions();
+            TestCart();
             Console.ReadLine();
         }
 
@@ -25,7 +26,7 @@ namespace SvcTester
                 //if auth needed;
                 //wc.UseDefaultCredentials = false;
                 //wc.Credentials = new NetworkCredential("89b25df7-560f-4e6a-8cbc-097ea9a689c7", "fe22036a-8c47-458e-9302-48ce6cc920a6");
-                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/ScheduleInfo/JSON/TERMS_REQUEST.ashx");
+                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/CalendarInfo/JSON/TERMS_REQUEST.ashx");
                 Console.WriteLine(response);
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("-----------------------------------------");
@@ -39,7 +40,7 @@ namespace SvcTester
                 //if auth needed;
                 //wc.UseDefaultCredentials = false;
                 //wc.Credentials = new NetworkCredential("89b25df7-560f-4e6a-8cbc-097ea9a689c7", "fe22036a-8c47-458e-9302-48ce6cc920a6");
-                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/ScheduleInfo/JSON/SESSIONS_REQUEST.ashx?term=2138");
+                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/CalendarInfo/JSON/SESSIONS_REQUEST.ashx?term=2138");
                 Console.WriteLine(response);
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("-----------------------------------------");
@@ -53,7 +54,21 @@ namespace SvcTester
                 //if auth needed;
                 //wc.UseDefaultCredentials = false;
                 //wc.Credentials = new NetworkCredential("89b25df7-560f-4e6a-8cbc-097ea9a689c7", "fe22036a-8c47-458e-9302-48ce6cc920a6");
-                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/ScheduleInfo/JSON/SUBJECTS_REQUEST.ashx?term=2138");
+                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/CalendarInfo/JSON/SUBJECTS_REQUEST.ashx?term=2138");
+                Console.WriteLine(response);
+                Console.WriteLine("-----------------------------------------");
+                Console.WriteLine("-----------------------------------------");
+            }
+        }
+
+        private static void TestCart()
+        {
+            using (WebClient wc = new WebClient())
+            {
+                //if auth needed;
+                wc.UseDefaultCredentials = false;
+                wc.Credentials = new NetworkCredential("89b25df7-560f-4e6a-8cbc-097ea9a689c7", "cfc2d4ed-59fd-4163-9f1a-0df9cff0cace");
+                String response = wc.DownloadString("https://emsdev.csuchico.edu/services/ClassSchedule/ShopCart/JSON/ViewCart.ashx");
                 Console.WriteLine(response);
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("-----------------------------------------");

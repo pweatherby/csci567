@@ -37,8 +37,13 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
                 context.Response.Write("Invalid Session Group format.");
                 return;
             }
-            
 
+            bool filter = false;
+            String requestedSubject = context.Request["subject"];
+            if (!String.IsNullOrWhiteSpace(requestedSubject) && System.Text.RegularExpressions.Regex.IsMatch(requestedSubject, "[A-Z]{4}"))
+            {
+                filter = true;
+            }
 
             PS_SCHEDULE_WS.ClassSchedSubjResult result = new PS_SCHEDULE_WS.ClassSchedSubjResult();
             Exception error = new Exception();
@@ -46,21 +51,26 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.CalendarInfo.JSON
             {
                 StringBuilder JSON = new StringBuilder();
                 JSON.Append("[");
+                int j = 0;
                 for (int i = 0; i < result.SubjectResultCount; i++)
                 {
                     PS_SCHEDULE_WS.ClassSchedSubject subj = result.ClassSchedSubjects[i];
-                    if (i > 0)
+                    if (!filter || (filter && subj.SUBJECT.Equals(requestedSubject, StringComparison.InvariantCultureIgnoreCase)))
                     {
-                        JSON.Append(",");
+                        if (j > 0)
+                        {
+                            JSON.Append(",");
+                        }
+                        JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
+                        JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");
+                        JSON.Append(", \"SESSION_GROUP\": \"" + result.SESSION_GROUP + "\" ");
+                        JSON.Append(", \"SUBJECT_CODE\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT) + "\" ");
+                        JSON.Append(", \"SUBJECT_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT_SDESC) + "\" ");
+                        JSON.Append(", \"SUBJECT_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT_LDESC) + "\" ");
+                        JSON.Append(", \"SUBJECT_FDESC\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT_FDESC) + "\" ");
+                        JSON.AppendLine("}");
+                        j++;
                     }
-                    JSON.Append("{\"INSTITUTION\": \"" + HttpUtility.HtmlAttributeEncode(result.INSTITUTION) + "\" ");
-                    JSON.Append(", \"TERM\": \"" + HttpUtility.HtmlAttributeEncode(result.TERM) + "\" ");
-                    JSON.Append(", \"SESSION_GROUP\": \"" + result.SESSION_GROUP + "\" ");
-                    JSON.Append(", \"SUBJECT_CODE\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT) + "\" ");
-                    JSON.Append(", \"SUBJECT_SDESC\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT_SDESC) + "\" ");
-                    JSON.Append(", \"SUBJECT_LDESC\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT_LDESC) + "\" ");
-                    JSON.Append(", \"SUBJECT_FDESC\": \"" + HttpUtility.HtmlAttributeEncode(subj.SUBJECT_FDESC) + "\" ");
-                    JSON.AppendLine("}");
                 }
                 JSON.AppendLine("]");
                 context.Response.ContentType = "application/json";

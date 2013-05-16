@@ -97,6 +97,7 @@ namespace noble.coder.pweatherby.AppValetWeb.Stand
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.ClientTarget = "uplevel";
             bool isLocal = false;
 #if DEBUG
             isLocal = Request.IsLocal;

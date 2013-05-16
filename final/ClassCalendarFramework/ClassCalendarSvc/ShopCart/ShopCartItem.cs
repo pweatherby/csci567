@@ -11,6 +11,8 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.ShopCart
         public String SessionGroup = String.Empty;
         public String CourseID = String.Empty;
         public String CourseOfferNbr = String.Empty;
+        public String Subject = String.Empty;
+        public String ClassNumber = String.Empty;
         public String ClassSection = String.Empty;
         public String RegistrationNbr = String.Empty;
     }

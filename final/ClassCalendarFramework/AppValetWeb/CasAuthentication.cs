@@ -91,7 +91,7 @@ namespace noble.coder.pweatherby.AppValetWeb
                     if (cur_line != null && cur_line.Trim().ToLower() != "no")
                     // returned username if verified, nothing if not
                     {
-                        username = reader.ReadLine().Trim();
+                        username = reader.ReadLine().Trim().ToLower();
                         if (!String.IsNullOrEmpty(username))
                         {
                             return true;
