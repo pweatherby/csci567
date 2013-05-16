@@ -30,12 +30,16 @@
     NSString* absU = u.absoluteString;
     if([absU isEqualToString: @"https://emsdev.csuchico.edu/ADTS/AppValet/Stand/Authorize.aspx"])
     {
-        if(navigationType == UIWebViewNavigationTypeFormSubmitted)
+        if(navigationType == UIWebViewNavigationTypeFormResubmitted)
         {
             [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *resp, NSData *d, NSError *e) {
                 NSString* returned = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
                 NSLog(@"%@", returned);
-                
+                if([returned isEqualToString:@""])
+                {
+                    [UserProfile SetValetKey:returned];
+                    [[self navigationController] popViewControllerAnimated:YES];
+                }
                 [self.webBrowser loadData:d MIMEType:nil textEncodingName:nil baseURL:u];
                 NSLog(@"%@", [(NSHTTPURLResponse*)resp allHeaderFields]);
             }];

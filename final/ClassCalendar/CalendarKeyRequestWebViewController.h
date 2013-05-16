@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NetworkActivityTracker.h"
+#import "UserProfile.h"
 
 @interface CalendarKeyRequestWebViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webBrowser;

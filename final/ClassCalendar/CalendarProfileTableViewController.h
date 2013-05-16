@@ -7,6 +7,7 @@
 //
 
 #import "CalendarBackgroundTableViewController.h"
+#import "UserProfile.h"
 
 @interface CalendarProfileTableViewController : CalendarBackgroundTableViewController
 
