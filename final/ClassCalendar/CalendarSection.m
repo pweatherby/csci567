@@ -88,7 +88,7 @@
         
         _waitDaemon = [jsonAttributes[@"WAITLIST_DAEMON"] stringByDecodingXMLEntities];
         _waitTotal = [jsonAttributes[@"WAITLIST_TOTAL"] stringByDecodingXMLEntities];
-        _waitCapacity = [jsonAttributes[@"WAITLIST_CAPACTIY"] stringByDecodingXMLEntities];
+        _waitCapacity = [jsonAttributes[@"WAITLIST_CAPACItY"] stringByDecodingXMLEntities];
         
         NSMutableArray* curItems = [[NSMutableArray alloc] init];
         NSArray* pats = jsonAttributes[@"MEETING_PATTERNS"];

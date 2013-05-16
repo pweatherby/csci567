@@ -10,6 +10,7 @@
 
 @interface CalendarSectionTableViewCell : UITableViewCell
 
+    @property (weak, nonatomic) IBOutlet UIButton *CartButton;
     @property (weak, nonatomic) IBOutlet UILabel* keyLabel;
     @property (weak, nonatomic) IBOutlet UILabel* regNbrLabel;
     @property (weak, nonatomic) IBOutlet UILabel* compLabel;

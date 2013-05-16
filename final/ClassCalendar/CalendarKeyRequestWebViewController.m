@@ -39,14 +39,33 @@
             [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *resp, NSData *d, NSError *e) {
                 NSString* returned = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
                 NSLog(@"%@", returned);
-                if([resp.MIMEType isEqualToString:@"application/JSON"])
+                if([resp.MIMEType isEqualToString:@"application/json"] || [resp.MIMEType isEqualToString:@"text/xml"])
                 {
-                    [UserProfile SetValetKey:returned];
+                    NSError* error;
+                    NSArray* results = [NSJSONSerialization JSONObjectWithData:d
+                                                                       options:0
+                                                                         error:&error];
+                    if(!error && results && results.count > 0)
+                    {
+                        NSDictionary* acceptedStatus = [results objectAtIndex:0];
+                        if(acceptedStatus)
+                        {
+                            NSString* acceptMessage = acceptedStatus[@"ACCEPTED"];
+                            if([acceptMessage isEqualToString:@"TRUE"])
+                            {
+                                NSString* newKey = acceptedStatus[@"ValetKey"];
+                                if(![newKey isEqualToString:@""])
+                                {
+                                    [UserProfile SetValetKey:returned];
+                                }
+                            }
+                        }
+                    }
                     [[self navigationController] popViewControllerAnimated:YES];
                 }
                 else
                 {
-                    [self.webBrowser loadData:d MIMEType:nil textEncodingName:nil baseURL:u];
+                    [self.webBrowser loadData:d MIMEType:resp.MIMEType textEncodingName:resp.textEncodingName baseURL:u];
                     NSLog(@"%@", [(NSHTTPURLResponse*)resp allHeaderFields]);
                 }
             }];

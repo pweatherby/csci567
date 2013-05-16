@@ -36,15 +36,16 @@
 {
     if(self.dataParam && self.dataParam.meetingPatterns)
     {
-        return self.dataParam.meetingPatterns.count;
+        return self.dataParam.meetingPatterns.count > 0 ? self.dataParam.meetingPatterns.count  : 1;
     }
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* CellIdentifier = @"ItemCell";
     CalendarMeetingPatternTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.meetingPatLabel.text = @"TBA";
     CalendarSection* t = self.dataParam;
 
     if(t && indexPath.item < t.meetingPatterns.count)
@@ -55,8 +56,8 @@
             cell.meetingPatLabel.text = pat.days;
             cell.startDateLabel.text = pat.startDateLDesc;
             cell.endDateLabel.text = pat.endDateLDesc;
-            cell.startTimeLabel.text = [pat.startTime substringToIndex:5];
-            cell.endDateLabel.text = [pat.endTime substringToIndex:5];
+            cell.startTimeLabel.text = [pat.startTime length] > 5 ? [pat.startTime substringToIndex:5] : pat.startTime;
+            cell.endTimeLabel.text = [pat.endTime length] > 5 ? [pat.endTime substringToIndex:5] : pat.endTime;
             
             NSString* insts = @"";
             for (int i = 0; i < pat.instructors.count; i++)
@@ -75,6 +76,10 @@
                 }
                 CalendarInstructor* inst = [pat.instructors objectAtIndex:i];
                 insts = [[[insts stringByAppendingString: inst.firstName] stringByAppendingString:@" "] stringByAppendingString: inst.lastName];
+            }
+            if([insts isEqualToString:@""])
+            {
+                insts = @"TBA";
             }
             cell.instructorsLabel.text = insts;
         }

@@ -17,5 +17,6 @@
 
     @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
     @property (weak, nonatomic) IBOutlet UITextView* descrLabel;
+    - (IBAction)CartButtonPressed:(UIButton *)sender;
 
 @end

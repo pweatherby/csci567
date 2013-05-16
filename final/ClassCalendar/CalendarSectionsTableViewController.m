@@ -80,7 +80,15 @@
     CalendarSectionTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    [cell.classStatusLabel setTransform: CGAffineTransformMakeRotation (-3.14/2)];
+    UIButton* button = cell.CartButton;//x: button.frame.size.width*.3 y: button.frame.size.height*.5
+    UILabel* lbl= [[UILabel alloc] initWithFrame:CGRectMake(8-(button.frame.size.width), 22, button.frame.size.height,button.frame.size.width)];
+    lbl.transform = CGAffineTransformMakeRotation(-M_PI / 2);
+  
+    lbl.textColor =[UIColor blueColor];
+    lbl.backgroundColor =[UIColor clearColor];
+    lbl.text = @"Add";
+    [lbl sizeToFit];
+    [button addSubview:lbl];
     if(indexPath.item < [[self calendarData] count])
     {
         CalendarSection* t = [[self calendarData] objectAtIndex:indexPath.item];
@@ -104,20 +112,20 @@
             {
                 if([t.enrlStatus isEqualToString:@"O"])
                 {
-                    cell.classStatusLabel.text = [t.enrlStatusLDesc uppercaseString];
+                    cell.classStatusLabel.text = t.enrlStatusLDesc;
                 }
                 else if( t.waitCapacity > t.waitTotal)
                 {
-                    cell.classStatusLabel.text = @"WAITLIST";
+                    cell.classStatusLabel.text = @"WaitList";
                 }
                 else
                 {
-                    cell.classStatusLabel.text = @"FULL";
+                    cell.classStatusLabel.text = @"Full";
                 }
             }
             else
             {
-                cell.classStatusLabel.text = [t.classStatusLDesc uppercaseString];
+                cell.classStatusLabel.text = t.classStatusLDesc;
             }
             cell.enrlLabel.text = [[t.enrlTotal stringByAppendingString:@" out of "] stringByAppendingString: t.enrlCapacity];
             cell.waitLabel.text = [[t.waitTotal stringByAppendingString:@" out of "] stringByAppendingString: t.waitCapacity];
@@ -128,4 +136,6 @@
 }
 
 
+- (IBAction)CartButtonPressed:(UIButton *)sender {
+}
 @end
