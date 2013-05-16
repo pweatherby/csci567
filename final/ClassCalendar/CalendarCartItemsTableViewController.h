@@ -15,5 +15,6 @@
 
     @property (nonatomic, strong) NSArray* cartData;
     @property (nonatomic, strong) id dataParam;
+- (IBAction)RefreshPressed:(UIBarButtonItem *)sender;
 
 @end

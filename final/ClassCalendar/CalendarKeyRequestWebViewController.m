@@ -51,12 +51,12 @@
                         if(acceptedStatus)
                         {
                             NSString* acceptMessage = acceptedStatus[@"ACCEPTED"];
-                            if([acceptMessage isEqualToString:@"TRUE"])
+                            if([acceptMessage isEqualToString:@"true"])
                             {
                                 NSString* newKey = acceptedStatus[@"ValetKey"];
                                 if(![newKey isEqualToString:@""])
                                 {
-                                    [UserProfile SetValetKey:returned];
+                                    [UserProfile SetValetKey:newKey];
                                 }
                             }
                         }

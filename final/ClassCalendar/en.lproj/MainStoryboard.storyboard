@@ -167,7 +167,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Cart" id="V93-zG-r0P"/>
+                    <navigationItem key="navigationItem" title="My Cart" id="V93-zG-r0P">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="6Yw-lf-NlR">
+                            <connections>
+                                <action selector="RefreshPressed:" destination="Xdl-jh-U2Z" id="OTB-m2-Sa0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ab-rw-yGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -978,6 +984,7 @@
         <class className="CalendarCartItemsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarCartItemsTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="RefreshPressed:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="refreshButtonPressed:"/>
             </relationships>
         </class>

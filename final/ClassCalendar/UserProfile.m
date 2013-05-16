@@ -18,8 +18,6 @@
     dID = [SFHFKeychainUtils getPasswordForUsername:@"noble.coder.pweatherby.classCalendar.deviceID"
                                      andServiceName:@"noble.coder.pweatherby.classCalendar.deviceID"
                                               error:&error];
-    //KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] init];
-    //dID = [wrapper objectForKey:];
     if(!dID || [dID isEqualToString:@""])
     {
         dID = [UserProfile GetNewDeviceID];
@@ -41,9 +39,6 @@
 {
     NSString* dID = @"";
     NSError* error = [[NSError alloc] init];
-    //NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    //[DateFormatter setDateFormat:@"yyyy-MM-dd-hh-mm-ss"];
-    // dID = [DateFormatter stringFromDate:[NSDate date]];
     dID = [dID stringByAppendingString:[UserProfile uuid]];
     [SFHFKeychainUtils storeUsername:@"noble.coder.pweatherby.classCalendar.deviceID"
                          andPassword:dID
@@ -51,6 +46,9 @@
                       updateExisting:TRUE
                                error:&error];
     
+    [SFHFKeychainUtils deleteItemForUsername:@"noble.coder.pweatherby.classCalendar.deviceID"
+                              andServiceName:@"noble.coder.pweatherby.classCalendar.deviceID"
+                                       error:&error];
     
     // Debug Stuff
     if(!dID || [dID isEqualToString:@""])
@@ -59,6 +57,7 @@
         [DateFormatter setDateFormat:@"yyyy-MM-dd-hh-mm-sss-mm-hh-dd-MM-yyyy"];
         dID = [DateFormatter stringFromDate:[NSDate date]];
     }
+    
     // END Debug Stuff
     return dID;
 }
@@ -66,17 +65,15 @@
 + (NSString*) GetValetKey
 {
     NSError* error = [[NSError alloc] init];
-    NSString* vKey = @"";
+    NSObject* vKey;
     vKey = [SFHFKeychainUtils getPasswordForUsername:@"noble.coder.pweatherby.classCalendar.valetKey"
                                       andServiceName:@"noble.coder.pweatherby.classCalendar.valetKey"
                                                error:&error];
-    // KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] init];
-    // vKey = [wrapper objectForKey:@"noble.coder.pweatherby.classCalendar.valetKey"];
-    if(vKey)
+    if(!vKey)
     {
         vKey = @"";
     }
-    return vKey;
+    return [NSString stringWithFormat:@"%@",vKey];
 }
 
 + (void) SetValetKey:(NSString*) key

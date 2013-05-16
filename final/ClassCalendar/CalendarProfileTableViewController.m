@@ -22,4 +22,13 @@
     self.vKeyLabel.text = [UserProfile GetValetKey];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSString* dID = [UserProfile GetDeviceID];
+    self.dIDLabel.text = dID;
+    NSString* key = [UserProfile GetValetKey];
+    self.vKeyLabel.text = key;
+}
+
 @end

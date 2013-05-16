@@ -35,7 +35,8 @@
 {
     NSString* queryStr = @"https://emsdev.csuchico.edu/services/ClassSchedule/ShopCart/JSON/ViewCart.ashx";
     NSURL* url = [[NSURL alloc] initWithString:queryStr];
-    
+    queryStr = [[queryStr stringByAppendingString:@"?deviceID="] stringByAppendingString:self.deviceID];
+    queryStr = [[queryStr stringByAppendingString:@"&valetKey="] stringByAppendingString:self.key];
     /*
     NSString* loginString = [[dID stringByAppendingString:@":"] stringByAppendingString: key];
     NSString* encodedLoginData = [Base64 encode:[loginString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -73,6 +74,8 @@
         if (error)
         {
             NSLog(@"JSON Parsing Error: %@", error);
+            NSString* temp = [[NSString alloc] initWithData:rawContents encoding: NSUTF8StringEncoding];
+            NSLog(@"JSON rawContents: %@", temp);
         }
         
         if(parsedJSON)

@@ -20,13 +20,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ClassCalendar/CalendarKeyRequestWebViewController.m"
-         timestampString = "390430280.860446"
+         filePath = "ClassCalendar/ShopCartManager.m"
+         timestampString = "390436623.224761"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
-         landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
+         landmarkName = "-currentCart"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

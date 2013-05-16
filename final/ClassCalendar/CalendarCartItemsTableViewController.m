@@ -62,11 +62,6 @@
     }
 }
 
-- (IBAction)refreshButtonPressed:(id)sender
-{
-    [self reloadList];
-}
-
 #pragma mark - Get/Refresh Data Listing
 
 - (void) getCartData
@@ -194,4 +189,8 @@
     return cell;
 }
 
+- (IBAction)RefreshPressed:(UIBarButtonItem *)sender
+{
+    [self reloadList];
+}
 @end
