@@ -10,6 +10,7 @@
 
 @interface ShopCartItemTableViewCell : UITableViewCell
 
+    @property (weak, nonatomic) IBOutlet UIButton *CartButton;
 
     @property (weak, nonatomic) IBOutlet UILabel* termLabel;
     @property (weak, nonatomic) IBOutlet UILabel* sessionGroupLabel;

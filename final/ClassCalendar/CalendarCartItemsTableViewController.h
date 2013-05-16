@@ -10,6 +10,7 @@
 #import "ShopCartManager.h"
 #import "UserProfile.h"
 #import "ShopCartItemTableViewCell.h"
+#import "CalendarMeetingPatternsTableViewController.h"
 
 @interface CalendarCartItemsTableViewController : UITableViewController
 

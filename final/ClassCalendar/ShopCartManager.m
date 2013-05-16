@@ -84,7 +84,7 @@
             
             for(int i = 0; i < parsedJSON.count; i++)
             {
-                CalendarSubject* item = [[CalendarSubject alloc] initWithJSONAttributes: [parsedJSON objectAtIndex:i]];
+                ShopCartItem* item = [[ShopCartItem alloc] initWithJSONAttributes: [parsedJSON objectAtIndex:i]];
                 [curItems addObject: item];
             }
             

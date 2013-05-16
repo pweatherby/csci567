@@ -50,18 +50,6 @@
     self.tableView.backgroundView = view;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"nextList"]) {
-        CalendarCartItemsTableViewController* nextViewController = [segue destinationViewController];
-        NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
-        if(self.cartData && indexPath.row < self.cartData.count)
-        {
-            nextViewController.dataParam = [self.cartData objectAtIndex:indexPath.row];
-        }
-    }
-}
-
 #pragma mark - Get/Refresh Data Listing
 
 - (void) getCartData
@@ -114,6 +102,30 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"sectionMtgPat"])
+    {
+        CalendarMeetingPatternsTableViewController* patController = [segue destinationViewController];
+        NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
+        if(indexPath && indexPath.item < [[self cartData] count])
+        {
+            ShopCartItem* t = [[self cartData] objectAtIndex:indexPath.item];
+            if(t)
+            {
+                CalendarSection* s = t.section;
+                if(s)
+                {
+                    patController.dataParam = s;
+                }
+            }
+        }
+    }else{
+        [super prepareForSegue:segue sender:sender];
+    }
+}
+
+
 
 #pragma mark - Table view data source
 
@@ -140,7 +152,16 @@
     if(cell)
     {
         // Configure the cell...
-        [cell.classStatusLabel setTransform: CGAffineTransformMakeRotation (-3.14/2)];
+        UIButton* button = cell.CartButton;
+        UILabel* lbl= [[UILabel alloc] initWithFrame:CGRectMake(10-(button.frame.size.width), 52, button.frame.size.height,button.frame.size.width)];
+        lbl.transform = CGAffineTransformMakeRotation(-M_PI / 2);
+        
+        lbl.textColor =[UIColor blueColor];
+        lbl.backgroundColor =[UIColor clearColor];
+        lbl.text = @"Remove";
+        [lbl sizeToFit];
+        [button addSubview:lbl];
+        [button setHidden:YES];
         if(indexPath.item < [[self cartData] count])
         {
             ShopCartItem* t = [[self cartData] objectAtIndex:indexPath.item];

@@ -89,6 +89,7 @@
     lbl.text = @"Add";
     [lbl sizeToFit];
     [button addSubview:lbl];
+    [button setHidden:YES];
     if(indexPath.item < [[self calendarData] count])
     {
         CalendarSection* t = [[self calendarData] objectAtIndex:indexPath.item];
@@ -136,6 +137,7 @@
 }
 
 
-- (IBAction)CartButtonPressed:(UIButton *)sender {
+- (IBAction)CartButtonPressed:(UIButton *)sender
+{
 }
 @end
