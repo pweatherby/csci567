@@ -59,6 +59,11 @@
                                     [UserProfile SetValetKey:newKey];
                                 }
                             }
+                            else
+                            {
+                                [UserProfile SetValetKey:@""];
+                                
+                            }
                         }
                     }
                     [[self navigationController] popViewControllerAnimated:YES];

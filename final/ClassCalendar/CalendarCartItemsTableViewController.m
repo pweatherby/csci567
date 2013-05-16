@@ -180,27 +180,27 @@
                 }
                 else
                 {
-                    cell.regNbrLabel.text = [@"Assc Section: " stringByAppendingString:t.section.associatedClass];
+                    cell.regNbrLabel.text = @"";//[@"Assc Section: " stringByAppendingString:t.section.associatedClass];
                 }
                 cell.compLabel.text = t.section.componentLDesc;
                 if ( [t.section.classStatus isEqualToString:@"A"])
                 {
                     if([t.section.enrlStatus isEqualToString:@"O"])
                     {
-                        cell.classStatusLabel.text = [t.section.enrlStatusLDesc uppercaseString];
+                        cell.classStatusLabel.text = t.section.enrlStatusLDesc;
                     }
                     else if( t.section.waitCapacity > t.section.waitTotal)
                     {
-                        cell.classStatusLabel.text = @"WAITLIST";
+                        cell.classStatusLabel.text = @"WaitList";
                     }
                     else
                     {
-                        cell.classStatusLabel.text = @"FULL";
+                        cell.classStatusLabel.text = @"Full";
                     }
                 }
                 else
                 {
-                    cell.classStatusLabel.text = [t.section.classStatusLDesc uppercaseString];
+                    cell.classStatusLabel.text = t.section.classStatusLDesc;
                 }
                 cell.enrlLabel.text = [[t.section.enrlTotal stringByAppendingString:@" out of "] stringByAppendingString: t.section.enrlCapacity];
                 cell.waitLabel.text = [[t.section.waitTotal stringByAppendingString:@" out of "] stringByAppendingString: t.section.waitCapacity];
