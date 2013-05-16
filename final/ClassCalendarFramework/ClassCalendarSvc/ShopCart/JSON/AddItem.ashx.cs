@@ -28,6 +28,7 @@ namespace noble.coder.pweatherby.ClassCalendarSvc.ShopCart.JSON
                     Emplid = attendant.GetUserID(_usr, _pwd);
                 }
             }
+            Emplid = "003883361";
             if (!String.IsNullOrWhiteSpace(Emplid))
             {
                 String requestedTerm = context.Request["term"];
