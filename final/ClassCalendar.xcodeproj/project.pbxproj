@@ -17,6 +17,10 @@
 		FD032A321741965C009C3FC2 /* calendar_iconx114.png in Resources */ = {isa = PBXBuildFile; fileRef = FD032A311741965C009C3FC2 /* calendar_iconx114.png */; };
 		FD032A35174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD032A34174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m */; };
 		FD032A38174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD032A37174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m */; };
+		FD08CBB117446A6500919E2B /* CalendarBackgroundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD08CBB017446A6500919E2B /* CalendarBackgroundTableViewController.m */; };
+		FD08CBB417446BB400919E2B /* CalendarProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD08CBB317446BB400919E2B /* CalendarProfileTableViewController.m */; };
+		FD08CBB617446C1D00919E2B /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = FD08CBB517446C1D00919E2B /* account.png */; };
+		FD08CBB917446F9B00919E2B /* CalendarKeyRequestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD08CBB817446F9B00919E2B /* CalendarKeyRequestWebViewController.m */; };
 		FD66BA2F1742F99F005C1DAC /* CalendarNumbersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA2E1742F99F005C1DAC /* CalendarNumbersTableViewController.m */; };
 		FD66BA321742F9EC005C1DAC /* CalendarNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA311742F9EC005C1DAC /* CalendarNumber.m */; };
 		FD66BA351742FDAC005C1DAC /* CalendarNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA341742FDAC005C1DAC /* CalendarNumberTableViewCell.m */; };
@@ -68,6 +72,13 @@
 		FD032A34174196B5009C3FC2 /* CalendarSessionGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSessionGroupTableViewController.m; sourceTree = "<group>"; };
 		FD032A36174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSessionGroupTableViewCell.h; sourceTree = "<group>"; };
 		FD032A37174197B5009C3FC2 /* CalendarSessionGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSessionGroupTableViewCell.m; sourceTree = "<group>"; };
+		FD08CBAF17446A6500919E2B /* CalendarBackgroundTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarBackgroundTableViewController.h; sourceTree = "<group>"; };
+		FD08CBB017446A6500919E2B /* CalendarBackgroundTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarBackgroundTableViewController.m; sourceTree = "<group>"; };
+		FD08CBB217446BB400919E2B /* CalendarProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarProfileTableViewController.h; sourceTree = "<group>"; };
+		FD08CBB317446BB400919E2B /* CalendarProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarProfileTableViewController.m; sourceTree = "<group>"; };
+		FD08CBB517446C1D00919E2B /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
+		FD08CBB717446F9B00919E2B /* CalendarKeyRequestWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarKeyRequestWebViewController.h; sourceTree = "<group>"; };
+		FD08CBB817446F9B00919E2B /* CalendarKeyRequestWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarKeyRequestWebViewController.m; sourceTree = "<group>"; };
 		FD66BA2D1742F99F005C1DAC /* CalendarNumbersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNumbersTableViewController.h; sourceTree = "<group>"; };
 		FD66BA2E1742F99F005C1DAC /* CalendarNumbersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNumbersTableViewController.m; sourceTree = "<group>"; };
 		FD66BA301742F9EC005C1DAC /* CalendarNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNumber.h; sourceTree = "<group>"; };
@@ -180,6 +191,7 @@
 		FDA4BCE6172A165200BAAB26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD08CBB517446C1D00919E2B /* account.png */,
 				3FE4B7E817443F750055D375 /* calendar.png */,
 				3FE4B7E317443C360055D375 /* cart.png */,
 				FD032A2F17419654009C3FC2 /* calendar_iconx114.png */,
@@ -229,6 +241,8 @@
 				FDD23C5B172A17EC00833E28 /* Profile */,
 				FDD23C5A172A17E500833E28 /* Cart */,
 				FDD23C59172A17DE00833E28 /* Calendar */,
+				FD08CBAF17446A6500919E2B /* CalendarBackgroundTableViewController.h */,
+				FD08CBB017446A6500919E2B /* CalendarBackgroundTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +300,10 @@
 		FDD23C5B172A17EC00833E28 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FD08CBB217446BB400919E2B /* CalendarProfileTableViewController.h */,
+				FD08CBB317446BB400919E2B /* CalendarProfileTableViewController.m */,
+				FD08CBB717446F9B00919E2B /* CalendarKeyRequestWebViewController.h */,
+				FD08CBB817446F9B00919E2B /* CalendarKeyRequestWebViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -353,6 +371,7 @@
 				FD032A321741965C009C3FC2 /* calendar_iconx114.png in Resources */,
 				3FE4B7E417443C360055D375 /* cart.png in Resources */,
 				3FE4B7E917443F750055D375 /* calendar.png in Resources */,
+				FD08CBB617446C1D00919E2B /* account.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +407,9 @@
 				3FE4B7E717443D3C0055D375 /* CalendarCartItemsTableViewController.m in Sources */,
 				3FE4B7EC174444E60055D375 /* CalendarMeetingPatternsTableViewController.m in Sources */,
 				3FE4B7EF174445270055D375 /* CalendarMeetingPatternTableViewCell.m in Sources */,
+				FD08CBB117446A6500919E2B /* CalendarBackgroundTableViewController.m in Sources */,
+				FD08CBB417446BB400919E2B /* CalendarProfileTableViewController.m in Sources */,
+				FD08CBB917446F9B00919E2B /* CalendarKeyRequestWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

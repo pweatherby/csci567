@@ -7,6 +7,7 @@
 //
 
 #import "CalendarListTableViewController.h"
+#import "CalendarMeetingPatternsTableViewController.h"
 
 #import "CalendarNumber.h"
 #import "CalendarSection.h"
@@ -14,7 +15,7 @@
 
 @interface CalendarSectionsTableViewController : CalendarListTableViewController
 
-@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
-@property (weak, nonatomic) IBOutlet UITextView* descrLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+    @property (weak, nonatomic) IBOutlet UITextView* descrLabel;
 
 @end

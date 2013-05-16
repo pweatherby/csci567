@@ -34,6 +34,26 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"sectionMtgPat"])
+    {
+        CalendarMeetingPatternsTableViewController* patController = [segue destinationViewController];
+        NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
+        if(indexPath && indexPath.item < [[self calendarData] count])
+        {
+            CalendarSection* t = [[self calendarData] objectAtIndex:indexPath.item];
+            if(t)
+            {
+                patController.dataParam = nil;
+            }
+        }
+    }else{
+        [super prepareForSegue:segue sender:sender];
+    }
+}
+
+
 - (void) getCalendarData
 {
     NSString* reqTerm = @"";
@@ -61,9 +81,9 @@
     
     // Configure the cell...
     [cell.classStatusLabel setTransform: CGAffineTransformMakeRotation (-3.14/2)];
-    if(indexPath.item < [[super calendarData] count])
+    if(indexPath.item < [[self calendarData] count])
     {
-        CalendarSection* t = [[super calendarData] objectAtIndex:indexPath.item];
+        CalendarSection* t = [[self calendarData] objectAtIndex:indexPath.item];
         if(t && self.myNumber)
         {
             cell.keyLabel.text = [[[[self.myNumber.subjectCode stringByAppendingString:@" "]
