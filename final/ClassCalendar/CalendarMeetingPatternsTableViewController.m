@@ -9,12 +9,24 @@
 #import "CalendarMeetingPatternsTableViewController.h"
 
 @interface CalendarMeetingPatternsTableViewController ()
-     @property (strong, nonatomic) CalendarSection* mySection;
+
 @end
 
 @implementation CalendarMeetingPatternsTableViewController
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self reloadList];
+}
+
+
+- (void) reloadList
+{
+    [self.tableView reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
     // Return the number of sections.
     return 1;
@@ -22,18 +34,18 @@
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.mySection && self.mySection.meetingPatterns)
+    if(self.dataParam && self.dataParam.meetingPatterns)
     {
-        return self.mySection.meetingPatterns.count;
+        return self.dataParam.meetingPatterns.count;
     }
     return 0;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* CellIdentifier = @"ItemCell";
     CalendarMeetingPatternTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    CalendarSection* t = self.mySection;
+    CalendarSection* t = self.dataParam;
 
     if(t && indexPath.item < t.meetingPatterns.count)
     {

@@ -14,19 +14,12 @@
 
 @implementation CalendarProfileTableViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSString* dID = [UserProfile GetDeviceID];
+    self.dIDLabel.text = dID;
+    self.vKeyLabel.text = [UserProfile GetValetKey];
 }
 
 @end

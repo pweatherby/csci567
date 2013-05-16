@@ -1,339 +1,366 @@
-// Retrieved From https://gist.github.com/kristopherjohnson/5212625
+// previos version still at https://gist.github.com/kristopherjohnson/5212625
 
-// Based upon code from Apple's "GenericKeychain" sample application
 
-// Converted to support ARC (see https://gist.github.com/dhoerl/1170641 )
+// retrieved from http://stackoverflow.com/questions/7663443/sfhfkeychainutils-ios-keychain-arc-compatible
 
-#if ! __has_feature(objc_arc)
-#error THIS CODE MUST BE COMPILED WITH ARC ENABLED!
-#endif
+//
+//  SFHFKeychainUtils.m
+//
 
-/*
- File: KeychainItemWrapper.m
- Abstract:
- Objective-C wrapper for accessing a single keychain item.
- 
- Version: 1.2
- 
- Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
- Inc. ("Apple") in consideration of your agreement to the following
- terms, and your use, installation, modification or redistribution of
- this Apple software constitutes acceptance of these terms.  If you do
- not agree with these terms, please do not use, install, modify or
- redistribute this Apple software.
- 
- In consideration of your agreement to abide by the following terms, and
- subject to these terms, Apple grants you a personal, non-exclusive
- license, under Apple's copyrights in this original Apple software (the
- "Apple Software"), to use, reproduce, modify and redistribute the Apple
- Software, with or without modifications, in source and/or binary forms;
- provided that if you redistribute the Apple Software in its entirety and
- without modifications, you must retain this notice and the following
- text and disclaimers in all such redistributions of the Apple Software.
- Neither the name, trademarks, service marks or logos of Apple Inc. may
- be used to endorse or promote products derived from the Apple Software
- without specific prior written permission from Apple.  Except as
- expressly stated in this notice, no other rights or licenses, express or
- implied, are granted by Apple herein, including but not limited to any
- patent rights that may be infringed by your derivative works or by other
- works in which the Apple Software may be incorporated.
- 
- The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
- MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
- THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
- FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
- OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
- 
- IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
- OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
- MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
- AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
- STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
- 
- Copyright (C) 2010 Apple Inc. All Rights Reserved.
- 
- */
+//  Created by Buzz Andersen on 10/20/08.
+//  Based partly on code by Jonathan Wight, Jon Crosby, and Mike Malone.
+//  Copyright 2008 Sci-Fi Hi-Fi. All rights reserved.
+//
+
+//  Permission is hereby granted, free of charge, to any person
+//  obtaining a copy of this software and associated documentation
+//  files (the "Software"), to deal in the Software without
+//  restriction, including without limitation the rights to use,
+//  copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the
+//  Software is furnished to do so, subject to the following
+//  conditions:
+//
+
+//  The above copyright notice and this permission notice shall be
+//  included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+//  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+//  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+//  OTHER DEALINGS IN THE SOFTWARE.
+//
 
 #import "KeychainItemWrapper.h"
 #import <Security/Security.h>
 
-/*
- 
- These are the default constants and their respective types,
- available for the kSecClassGenericPassword Keychain Item class:
- 
- kSecAttrAccessGroup            -       CFStringRef
- kSecAttrCreationDate           -       CFDateRef
- kSecAttrModificationDate       -       CFDateRef
- kSecAttrDescription            -       CFStringRef
- kSecAttrComment                -       CFStringRef
- kSecAttrCreator                -       CFNumberRef
- kSecAttrType                   -       CFNumberRef
- kSecAttrLabel                  -       CFStringRef
- kSecAttrIsInvisible            -       CFBooleanRef
- kSecAttrIsNegative             -       CFBooleanRef
- kSecAttrAccount                -       CFStringRef
- kSecAttrService                -       CFStringRef
- kSecAttrGeneric                -       CFDataRef
- 
- See the header file Security/SecItem.h for more details.
- 
- */
 
-/*
- Define aliases to avoid "(__bridge id)" clutter throughout the code
- */
-#define b_kSecAttrAccessGroup      ((__bridge id) kSecAttrAccessGroup)
-#define b_kSecAttrAccount          ((__bridge id) kSecAttrAccount)
-#define b_kSecAttrDescription      ((__bridge id) kSecAttrDescription)
-#define b_kSecAttrGeneric          ((__bridge id) kSecAttrGeneric)
-#define b_kSecAttrLabel            ((__bridge id) kSecAttrLabel)
-#define b_kSecClass                ((__bridge id) kSecClass)
-#define b_kSecClassGenericPassword ((__bridge id) kSecClassGenericPassword)
-#define b_kSecMatchLimit           ((__bridge id) kSecMatchLimit)
-#define b_kSecMatchLimitOne        ((__bridge id) kSecMatchLimitOne)
-#define b_kSecReturnAttributes     ((__bridge id) kSecReturnAttributes)
-#define b_kSecReturnData           ((__bridge id) kSecReturnData)
-#define b_kSecValueData            ((__bridge id) kSecValueData)
+static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 30000 && TARGET_IPHONE_SIMULATOR
 
-@interface KeychainItemWrapper (PrivateMethods)
-/*
- The decision behind the following two methods (secItemFormatToDictionary and dictionaryToSecItemFormat) was
- to encapsulate the transition between what the detail view controller was expecting (NSString *) and what the
- Keychain API expects as a validly constructed container class.
- */
-- (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert;
-- (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert;
-
-// Updates the item in the keychain, or adds it if it doesn't exist.
-- (void)writeToKeychain;
-
+@interface SFHFKeychainUtils (PrivateMethods)
+(SecKeychainItemRef) getKeychainItemReferenceForUsername: (NSString *) username andServiceName: (NSString *) serviceName error: (NSError **) error;
 @end
 
-
-@implementation KeychainItemWrapper
-
-- (id)initWithIdentifier: (NSString *)identifier accessGroup:(NSString *) accessGroup;
-{
-    if (self = [super init])
-    {
-        // Begin Keychain search setup. The genericPasswordQuery leverages the special user
-        // defined attribute kSecAttrGeneric to distinguish itself between other generic Keychain
-        // items which may be included by the same application.
-        self.genericPasswordQuery = [[NSMutableDictionary alloc] init];
-        
-        _genericPasswordQuery[b_kSecClass] = b_kSecClassGenericPassword;
-        _genericPasswordQuery[b_kSecAttrGeneric] = identifier;
-        
-        // The keychain access group attribute determines if this item can be shared
-        // amongst multiple apps whose code signing entitlements contain the same keychain access group.
-        if (accessGroup != nil)
-        {
-#if TARGET_IPHONE_SIMULATOR
-            // Ignore the access group if running on the iPhone simulator.
-            //
-            // Apps that are built for the simulator aren't signed, so there's no keychain access group
-            // for the simulator to check. This means that all apps can see all keychain items when run
-            // on the simulator.
-            //
-            // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the
-            // simulator will return -25243 (errSecNoAccessForItem).
-#else
-            _genericPasswordQuery[b_kSecAttrAccessGroup] = accessGroup;
 #endif
+
+@implementation SFHFKeychainUtils
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 30000 && TARGET_IPHONE_SIMULATOR
+
++(NSString *) getPasswordForUsername: (NSString *) username andServiceName: (NSString *) serviceName error: (NSError **) error {
+    if (!username || !serviceName) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -2000 userInfo: nil];
+        return nil;
+    }
+    
+    SecKeychainItemRef item = [SFHFKeychainUtils getKeychainItemReferenceForUsername: username andServiceName: serviceName error: error];
+    if (*error || !item) {
+        return nil;
+    }
+    
+    // from Advanced Mac OS X Programming, ch. 16
+    UInt32 length;
+    char *password;
+    SecKeychainAttribute attributes[8];
+    SecKeychainAttributeList list;
+    attributes[0].tag = kSecAccountItemAttr;
+    attributes[1].tag = kSecDescriptionItemAttr;
+    attributes[2].tag = kSecLabelItemAttr;
+    attributes[3].tag = kSecModDateItemAttr;
+    list.count = 4;
+    list.attr = attributes;
+    OSStatus status = SecKeychainItemCopyContent(item, NULL, &list, &length, (void **)&password);
+    if (status != noErr) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+        return nil;
+    }
+    NSString *passwordString = nil;
+    if (password != NULL) {
+        char passwordBuffer[1024];
+        if (length > 1023) {
+            length = 1023;
         }
+        strncpy(passwordBuffer, password, length);
+        passwordBuffer[length] = '\0';
+        passwordString = [NSString stringWithCString:passwordBuffer];
+    }
+    SecKeychainItemFreeContent(&list, password);
+    CFRelease(item);
+    return passwordString;
+}
+
++ (void) storeUsername: (NSString *) username andPassword: (NSString *) password forServiceName: (NSString *) serviceName updateExisting: (BOOL) updateExisting error: (NSError **) error {
+    
+    if (!username || !password || !serviceName) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -2000 userInfo: nil];
+        return;
+    }
+    OSStatus status = noErr;
+    SecKeychainItemRef item = [SFHFKeychainUtils getKeychainItemReferenceForUsername: username andServiceName: serviceName error: error];
+    if (*error && [*error code] != noErr) {
+        return;
+    }
+    *error = nil;
+    
+    if (item) {
+        status = SecKeychainItemModifyAttributesAndData(item,NULL,strlen([password UTF8String]),[password UTF8String]);
+        CFRelease(item);
+    }
+    else {
+        status = SecKeychainAddGenericPassword(NULL,strlen([serviceName UTF8String]),[serviceName UTF8String],strlen([username UTF8String]),[username UTF8String],strlen([password UTF8String]),[password UTF8String],NULL);
         
-        // Use the proper search constants, return only the attributes of the first match.
-        _genericPasswordQuery[b_kSecMatchLimit] = b_kSecMatchLimitOne;
-        _genericPasswordQuery[b_kSecReturnAttributes] = (__bridge id)kCFBooleanTrue;
-        
-        NSDictionary *tempQuery = [NSDictionary dictionaryWithDictionary:_genericPasswordQuery];
-        
-        CFMutableDictionaryRef outDictionary = nil;
-        
-        if (! SecItemCopyMatching((__bridge CFDictionaryRef)tempQuery, (CFTypeRef *)&outDictionary) == noErr)
-        {
-            // Stick these default values into keychain item if nothing found.
-            [self resetKeychainItem];
-            
-            // Add the generic attribute and the keychain access group.
-            _keychainItemData[b_kSecAttrGeneric] = identifier;
-            if (accessGroup != nil)
-            {
-#if TARGET_IPHONE_SIMULATOR
-                // Ignore the access group if running on the iPhone simulator.
-                //
-                // Apps that are built for the simulator aren't signed, so there's no keychain access group
-                // for the simulator to check. This means that all apps can see all keychain items when run
-                // on the simulator.
-                //
-                // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the
-                // simulator will return -25243 (errSecNoAccessForItem).
+    }
+    if (status != noErr) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+    }
+}
+
++ (void) deleteItemForUsername: (NSString *) username andServiceName: (NSString *) serviceName error: (NSError **) error {
+    if (!username || !serviceName) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: 2000 userInfo: nil];
+        return;
+    }
+    
+    *error = nil;
+    
+    SecKeychainItemRef item = [SFHFKeychainUtils getKeychainItemReferenceForUsername: username andServiceName: serviceName error: error];
+    if (*error && [*error code] != noErr) {
+        return;
+    }
+    
+    OSStatus status;
+    if (item) {
+        status = SecKeychainItemDelete(item);
+        CFRelease(item);
+    }
+    
+    if (status != noErr) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+    }
+}
+
++ (SecKeychainItemRef) getKeychainItemReferenceForUsername: (NSString *) username andServiceName: (NSString *) serviceName error: (NSError **) error {
+    if (!username || !serviceName) {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -2000 userInfo: nil];
+        return nil;
+    }
+    
+    *error = nil;
+    SecKeychainItemRef item;
+    OSStatus status = SecKeychainFindGenericPassword(NULL,strlen([serviceName UTF8String]),[serviceName UTF8String],strlen([username UTF8String]),[username UTF8String], NULL,NULL,&item);
+    
+    if (status != noErr) {
+        if (status != errSecItemNotFound) {
+            *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+        }
+        return nil;
+    }
+    return item;
+}
+
 #else
-                _keychainItemData[b_kSecAttrAccessGroup] = accessGroup;
-#endif
+
++ (NSString *) getPasswordForUsername: (NSString *) username andServiceName: (NSString *) serviceName error: (NSError **) error {
+    
+    if (!username || !serviceName) {
+        if (error != nil) {
+            *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -2000 userInfo: nil];
+        }
+        return nil;
+    }
+    
+    if (error != nil) {
+        *error = nil;
+    }
+    // Set up a query dictionary with the base query attributes: item type (generic), username, and service
+    NSArray *keys = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClass, kSecAttrAccount, kSecAttrService, nil];
+    NSArray *objects = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClassGenericPassword, username, serviceName, nil];
+    NSMutableDictionary *query = [[NSMutableDictionary alloc] initWithObjects: objects forKeys: keys];
+    // First do a query for attributes, in case we already have a Keychain item with no password data set.
+    // One likely way such an incorrect item could have come about is due to the previous (incorrect)
+    // version of this code (which set the password as a generic attribute instead of password data).
+    NSMutableDictionary *attributeQuery = [query mutableCopy];
+    [attributeQuery setObject: (id) kCFBooleanTrue forKey:(__bridge_transfer id) kSecReturnAttributes];
+    CFTypeRef attrResult = NULL;
+    OSStatus status = SecItemCopyMatching((__bridge_retained CFDictionaryRef) attributeQuery, &attrResult);
+    //NSDictionary *attributeResult = (__bridge_transfer NSDictionary *)attrResult;
+    if (status != noErr) {
+        // No existing item found--simply return nil for the password
+        if (error != nil && status != errSecItemNotFound) {
+            //Only return an error if a real exception happened--not simply for "not found."
+            *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+        }
+        return nil;
+    }
+    
+    // We have an existing item, now query for the password data associated with it.
+    NSMutableDictionary *passwordQuery = [query mutableCopy];
+    [passwordQuery setObject: (id) kCFBooleanTrue forKey: (__bridge_transfer id) kSecReturnData];
+    CFTypeRef resData = NULL;
+    status = SecItemCopyMatching((__bridge_retained CFDictionaryRef) passwordQuery, (CFTypeRef *) &resData);
+    NSData *resultData = (__bridge_transfer NSData *)resData;
+    if (status != noErr) {
+        if (status == errSecItemNotFound) {
+            // We found attributes for the item previously, but no password now, so return a special error.
+            // Users of this API will probably want to detect this error and prompt the user to
+            // re-enter their credentials.  When you attempt to store the re-entered credentials
+            // using storeUsername:andPassword:forServiceName:updateExisting:error
+            // the old, incorrect entry will be deleted and a new one with a properly encrypted
+            // password will be added.
+            
+            if (error != nil) {
+                *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -1999 userInfo: nil];
             }
         }
-        else
-        {
-            // load the saved data from Keychain.
-            self.keychainItemData = [self secItemFormatToDictionary:(__bridge NSDictionary *)outDictionary];
+        else {
+            // Something else went wrong. Simply return the normal Keychain API error code.
+            if (error != nil) {
+                *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+            }
         }
+        return nil;
+    }
+    NSString *password = nil;
+    if (resultData) {
+        password = [[NSString alloc] initWithData: resultData encoding: NSUTF8StringEncoding];
+    }
+    else {
+        // There is an existing item, but we weren't able to get password data for it for some reason,
+        // Possibly as a result of an item being incorrectly entered by the previous code.
+        // Set the -1999 error so the code above us can prompt the user again.
         
-        if (outDictionary)
-        {
-            CFRelease(outDictionary);
+        if (error != nil) {
+            *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -1999 userInfo: nil];
         }
+    }
+    return password;
+}
+
++ (BOOL) storeUsername: (NSString *) username andPassword: (NSString *) password forServiceName: (NSString *) serviceName updateExisting: (BOOL) updateExisting error: (NSError **) error
+
+{
+    if (!username || !password || !serviceName)
+        
+    {
+        if (error != nil)
+        {
+            *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -2000 userInfo: nil];
+        }
+        return NO;
     }
     
-    return self;
-}
-
-
-- (void)setObject:(id)inObject forKey:(id)key
-{
-    if (inObject == nil) return;
-    id currentObject = [_keychainItemData objectForKey:key];
-    if (![currentObject isEqual:inObject])
+    // See if we already have a password entered for these credentials.
+    
+    NSError *getError = nil;
+    NSString *existingPassword = [SFHFKeychainUtils getPasswordForUsername: username andServiceName: serviceName error:&getError];
+    
+    if ([getError code] == -1999)
     {
-        _keychainItemData[key] = inObject;
-        [self writeToKeychain];
+        // There is an existing entry without a password properly stored (possibly as a result of the previous incorrect version of this code.
+        
+        // Delete the existing item before moving on entering a correct one.
+        getError = nil;
+        
+        [self deleteItemForUsername: username andServiceName: serviceName error: &getError];
+        
+        if ([getError code] != noErr)
+        {
+            if (error != nil)
+            {
+                *error = getError;
+            }
+            return NO;
+        }
     }
-}
-
-- (id)objectForKey:(id)key
-{
-    return [_keychainItemData objectForKey:key];
-}
-
-- (void)resetKeychainItem
-{
-    OSStatus junk = noErr;
-    if (!_keychainItemData)
+    else if ([getError code] != noErr)
     {
-        self.keychainItemData = [[NSMutableDictionary alloc] init];
+        if (error != nil)
+        {
+            *error = getError;
+        }
+        return NO;
+    }
+    if (error != nil)
+    {
+        *error = nil;
+    }
+    
+    OSStatus status = noErr;
+    
+    if (existingPassword)
+    {
+        
+        // We have an existing, properly entered item with a password.
+        // Update the existing item.
+        
+        if (![existingPassword isEqualToString:password] && updateExisting)
+        {
+            //Only update if we're allowed to update existing.  If not, simply do nothing.
+            
+            NSArray *keys = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClass,kSecAttrService,kSecAttrLabel,kSecAttrAccount,nil];
+            
+            NSArray *objects = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClassGenericPassword,serviceName,serviceName,username,nil];
+            
+            NSDictionary *query = [[NSDictionary alloc] initWithObjects: objects forKeys: keys];
+            
+            status = SecItemUpdate((__bridge_retained CFDictionaryRef) query, (__bridge_retained CFDictionaryRef) [NSDictionary dictionaryWithObject: [password dataUsingEncoding: NSUTF8StringEncoding] forKey: (__bridge_transfer NSString *) kSecValueData]);
+        }
     }
     else
     {
-        NSMutableDictionary *tempDictionary = [self dictionaryToSecItemFormat:_keychainItemData];
-        junk = SecItemDelete((__bridge CFDictionaryRef)tempDictionary);
-        NSAssert( junk == noErr || junk == errSecItemNotFound, @"Problem deleting current dictionary." );
+        // No existing entry (or an existing, improperly entered, and therefore now
+        
+        // deleted, entry).  Create a new entry.
+        
+        
+        NSArray *keys = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClass,kSecAttrService,kSecAttrLabel,kSecAttrAccount,kSecValueData,nil];
+        
+        NSArray *objects = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClassGenericPassword,serviceName,serviceName,username,[password dataUsingEncoding: NSUTF8StringEncoding],nil];
+        
+        NSDictionary *query = [[NSDictionary alloc] initWithObjects: objects forKeys: keys];
+        
+        status = SecItemAdd((__bridge_retained CFDictionaryRef) query, NULL);
     }
-    
-    // Default attributes for keychain item.
-    _keychainItemData[b_kSecAttrAccount] = @"";
-    _keychainItemData[b_kSecAttrLabel] = @"";
-    _keychainItemData[b_kSecAttrDescription] = @"";
-    
-    // Default data for keychain item.
-    _keychainItemData[b_kSecValueData] = @"";
+    if (error != nil && status != noErr)
+    {
+        // Something went wrong with adding the new item. Return the Keychain error code.
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+        return NO;
+    }
+    return YES;
 }
 
-- (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert
++ (BOOL) deleteItemForUsername: (NSString *) username andServiceName: (NSString *) serviceName error: (NSError **) error
 {
-    // The assumption is that this method will be called with a properly populated dictionary
-    // containing all the right key/value pairs for a SecItem.
+    if (!username || !serviceName)
+    {
+        if (error != nil)
+        {
+            *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: -2000 userInfo: nil];
+        }
+        return NO;
+    }
+    if (error != nil)
+    {
+        *error = nil;
+    }
+    NSArray *keys = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClass, kSecAttrAccount, kSecAttrService, kSecReturnAttributes, nil];
+    NSArray *objects = [[NSArray alloc] initWithObjects: (__bridge_transfer NSString *) kSecClassGenericPassword, username, serviceName, kCFBooleanTrue, nil];
+    NSDictionary *query = [[NSDictionary alloc] initWithObjects: objects forKeys: keys];
+    OSStatus status = SecItemDelete((__bridge_retained CFDictionaryRef) query);
     
-    // Create a dictionary to return populated with the attributes and data.
-    NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
-    
-    // Add the Generic Password keychain item class attribute.
-    returnDictionary[b_kSecClass] = b_kSecClassGenericPassword;
-    
-    // Convert the NSString to NSData to meet the requirements for the value type kSecValueData.
-    // This is where to store sensitive data that should be encrypted.
-    NSString *passwordString = [dictionaryToConvert objectForKey:b_kSecValueData];
-    returnDictionary[b_kSecValueData] = [passwordString dataUsingEncoding:NSUTF8StringEncoding];
-    
-    return returnDictionary;
+    if (error != nil && status != noErr)
+    {
+        *error = [NSError errorWithDomain: SFHFKeychainUtilsErrorDomain code: status userInfo: nil];
+        return NO;
+    }
+    return YES;
 }
-
-- (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert
-{
-    // The assumption is that this method will be called with a properly populated dictionary
-    // containing all the right key/value pairs for the UI element.
-    
-    // Create a dictionary to return populated with the attributes and data.
-    NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
-    
-    // Add the proper search key and class attribute.
-    returnDictionary[b_kSecReturnData] = (id)kCFBooleanTrue;
-    returnDictionary[b_kSecClass] = b_kSecClassGenericPassword;
-    
-    // Acquire the password data from the attributes.
-    CFDataRef passwordData = NULL;
-    if (SecItemCopyMatching((__bridge CFDictionaryRef)returnDictionary, (CFTypeRef *)&passwordData) == noErr)
-    {
-        // Remove the search, class, and identifier key/value, we don't need them anymore.
-        [returnDictionary removeObjectForKey:b_kSecReturnData];
-        
-        // Add the password to the dictionary, converting from NSData to NSString.
-        NSString *password = [[NSString alloc] initWithBytes:[(__bridge NSData *)passwordData bytes]
-                                                      length:[(__bridge NSData *)passwordData length]
-                                                    encoding:NSUTF8StringEncoding];
-        returnDictionary[b_kSecValueData] = password;
-    }
-    else
-    {
-        // Don't do anything if nothing is found.
-        NSAssert(NO, @"Serious error, no matching item found in the keychain.\n");
-    }
-    
-    if (passwordData)
-    {
-        CFRelease(passwordData);
-    }
-    
-    return returnDictionary;
-}
-
-- (void)writeToKeychain
-{
-    CFDictionaryRef attributes = NULL;
-    NSMutableDictionary *updateItem = NULL;
-    OSStatus result;
-    
-    if (SecItemCopyMatching((__bridge CFDictionaryRef)_genericPasswordQuery, (CFTypeRef *)&attributes) == noErr)
-    {
-        // First we need the attributes from the Keychain.
-        updateItem = [NSMutableDictionary dictionaryWithDictionary:(__bridge NSDictionary *)(attributes)];
-        // Second we need to add the appropriate search key/values.
-        updateItem[b_kSecClass] = [_genericPasswordQuery objectForKey:b_kSecClass];
-        
-        // Lastly, we need to set up the updated attribute list being careful to remove the class.
-        NSMutableDictionary *tempCheck = [self dictionaryToSecItemFormat:_keychainItemData];
-        [tempCheck removeObjectForKey:b_kSecClass];
-        
-#if TARGET_IPHONE_SIMULATOR
-        // Remove the access group if running on the iPhone simulator.
-        //
-        // Apps that are built for the simulator aren't signed, so there's no keychain access group
-        // for the simulator to check. This means that all apps can see all keychain items when run
-        // on the simulator.
-        //
-        // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the
-        // simulator will return -25243 (errSecNoAccessForItem).
-        //
-        // The access group attribute will be included in items returned by SecItemCopyMatching,
-        // which is why we need to remove it before updating the item.
-        [tempCheck removeObjectForKey:b_kSecAttrAccessGroup];
 #endif
-        
-        // An implicit assumption is that you can only update a single item at a time.
-        
-        result = SecItemUpdate((__bridge CFDictionaryRef)updateItem, (__bridge CFDictionaryRef)tempCheck);
-        NSAssert( result == noErr, @"Couldn't update the Keychain Item." );
-    }
-    else
-    {
-        // No previous item found; add the new one.
-        result = SecItemAdd((__bridge CFDictionaryRef)[self dictionaryToSecItemFormat:_keychainItemData], NULL);
-        NSAssert( result == noErr, @"Couldn't add the Keychain Item." );
-    }
-}
-
 @end

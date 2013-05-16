@@ -28,7 +28,7 @@
     [self reloadList];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"nextList"]) {
         CalendarListTableViewController* nextViewController = [segue destinationViewController];
@@ -38,12 +38,6 @@
             nextViewController.dataParam = [self.calendarData objectAtIndex:indexPath.row];
         }
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)refreshButtonPressed:(id)sender
@@ -106,13 +100,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(self.calendarData)
     {
@@ -121,10 +115,10 @@
     return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     // Default-- Should be overwritten
-    static NSString *CellIdentifier = @"ItemCell";
+    static NSString* CellIdentifier = @"ItemCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     return cell;

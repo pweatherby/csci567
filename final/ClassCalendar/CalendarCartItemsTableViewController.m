@@ -10,12 +10,15 @@
 
 @interface CalendarCartItemsTableViewController ()
 
+@property (strong, nonatomic) ShopCartManager* cart;
+
 @end
 
 @implementation CalendarCartItemsTableViewController
 
-- (UINavigationItem *)navigationItem{
-    UINavigationItem *item = [super navigationItem];
+
+- (UINavigationItem*)navigationItem{
+    UINavigationItem* item = [super navigationItem];
     if (item != nil && item.backBarButtonItem == nil)
     {
         item.backBarButtonItem = [[UIBarButtonItem alloc] init];
@@ -28,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.cart = [[ShopCartManager alloc] initWithDevice:[UserProfile GetDeviceID]
+                                                withKey:[UserProfile GetValetKey]];
     if(self.refreshControl)
     {
         [self.refreshControl addTarget:self
@@ -45,7 +50,7 @@
     self.tableView.backgroundView = view;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"nextList"]) {
         CalendarCartItemsTableViewController* nextViewController = [segue destinationViewController];
@@ -57,12 +62,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)refreshButtonPressed:(id)sender
 {
     [self reloadList];
@@ -72,7 +71,7 @@
 
 - (void) getCartData
 {
-    self.cartData = nil;
+    self.cartData = [self.cart currentCart];
 }
 
 - (void) reloadList
@@ -101,7 +100,7 @@
         else
         {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSString* message = @"A network connection cannot be detected. Please confirm that you have an active network connection and try again.";
+                NSString* message = @"Unable to retrieve Enrollment Cart. Check Network Connection or Request New Access in Profile Page.";
                 // update the table view's Model to the new data, reloadData if necessary
                 UIAlertView* uav = [[UIAlertView alloc] initWithTitle:@"Network Error"
                                                               message:message
@@ -123,13 +122,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(self.cartData)
     {
@@ -138,12 +137,60 @@
     return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    // Default-- Should be overwritten
-    static NSString *CellIdentifier = @"ItemCell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    static NSString* CellIdentifier = @"ItemCell";
+    ShopCartItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if(cell)
+    {
+        // Configure the cell...
+        [cell.classStatusLabel setTransform: CGAffineTransformMakeRotation (-3.14/2)];
+        if(indexPath.item < [[self cartData] count])
+        {
+            ShopCartItem* t = [[self cartData] objectAtIndex:indexPath.item];
+            if(t)
+            {
+                cell.termLabel.text = [t.term longDesc];
+                cell.sessionGroupLabel.text = [t.sessionGroup longDesc];
+                cell.titleLabel.text = [t.number courseTitleSDesc];
+                cell.keyLabel.text = [[[[[t.subject subjectCode] stringByAppendingString:@" "]
+                                                                 stringByAppendingString:[t.number classNumber]]
+                                                                 stringByAppendingString:@"-"]
+                                                                 stringByAppendingString:[t.section classSection]];
+                if( [t.section.classType isEqualToString:@"E"])
+                {
+                    cell.regNbrLabel.text = [@"Reg Nbr: " stringByAppendingString:t.section.registrationNbr];
+                }
+                else
+                {
+                    cell.regNbrLabel.text = [@"Assc Section: " stringByAppendingString:t.section.associatedClass];
+                }
+                cell.compLabel.text = t.section.componentLDesc;
+                if ( [t.section.classStatus isEqualToString:@"A"])
+                {
+                    if([t.section.enrlStatus isEqualToString:@"O"])
+                    {
+                        cell.classStatusLabel.text = [t.section.enrlStatusLDesc uppercaseString];
+                    }
+                    else if( t.section.waitCapacity > t.section.waitTotal)
+                    {
+                        cell.classStatusLabel.text = @"WAITLIST";
+                    }
+                    else
+                    {
+                        cell.classStatusLabel.text = @"FULL";
+                    }
+                }
+                else
+                {
+                    cell.classStatusLabel.text = [t.section.classStatusLDesc uppercaseString];
+                }
+                cell.enrlLabel.text = [[t.section.enrlTotal stringByAppendingString:@" out of "] stringByAppendingString: t.section.enrlCapacity];
+                cell.waitLabel.text = [[t.section.waitTotal stringByAppendingString:@" out of "] stringByAppendingString: t.section.waitCapacity];
+            }
+        }
+    }
     return cell;
 }
 

@@ -23,6 +23,10 @@
 		FD08CBB917446F9B00919E2B /* CalendarKeyRequestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD08CBB817446F9B00919E2B /* CalendarKeyRequestWebViewController.m */; };
 		FD08CBBC1744855600919E2B /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD08CBBB1744855600919E2B /* KeychainItemWrapper.m */; };
 		FD08CBBF1744889400919E2B /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = FD08CBBE1744889400919E2B /* UserProfile.m */; };
+		FD4255E117454D1A0066BF0B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4255E017454D1A0066BF0B /* Security.framework */; };
+		FD4255E4174559AB0066BF0B /* ShopCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4255E3174559AB0066BF0B /* ShopCartItem.m */; };
+		FD4255E717455D160066BF0B /* ShopCartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4255E617455D160066BF0B /* ShopCartManager.m */; };
+		FD4255EA174565F50066BF0B /* ShopCartItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4255E9174565F50066BF0B /* ShopCartItemTableViewCell.m */; };
 		FD66BA2F1742F99F005C1DAC /* CalendarNumbersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA2E1742F99F005C1DAC /* CalendarNumbersTableViewController.m */; };
 		FD66BA321742F9EC005C1DAC /* CalendarNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA311742F9EC005C1DAC /* CalendarNumber.m */; };
 		FD66BA351742FDAC005C1DAC /* CalendarNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD66BA341742FDAC005C1DAC /* CalendarNumberTableViewCell.m */; };
@@ -85,6 +89,13 @@
 		FD08CBBB1744855600919E2B /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		FD08CBBD1744889400919E2B /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
 		FD08CBBE1744889400919E2B /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		FD4255E017454D1A0066BF0B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FD4255E2174559AB0066BF0B /* ShopCartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartItem.h; sourceTree = "<group>"; };
+		FD4255E3174559AB0066BF0B /* ShopCartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartItem.m; sourceTree = "<group>"; };
+		FD4255E517455D160066BF0B /* ShopCartManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartManager.h; sourceTree = "<group>"; };
+		FD4255E617455D160066BF0B /* ShopCartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartManager.m; sourceTree = "<group>"; };
+		FD4255E8174565F50066BF0B /* ShopCartItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartItemTableViewCell.h; sourceTree = "<group>"; };
+		FD4255E9174565F50066BF0B /* ShopCartItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartItemTableViewCell.m; sourceTree = "<group>"; };
 		FD66BA2D1742F99F005C1DAC /* CalendarNumbersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNumbersTableViewController.h; sourceTree = "<group>"; };
 		FD66BA2E1742F99F005C1DAC /* CalendarNumbersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNumbersTableViewController.m; sourceTree = "<group>"; };
 		FD66BA301742F9EC005C1DAC /* CalendarNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNumber.h; sourceTree = "<group>"; };
@@ -143,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4255E117454D1A0066BF0B /* Security.framework in Frameworks */,
 				FDA4BCE0172A165200BAAB26 /* UIKit.framework in Frameworks */,
 				FDA4BCE2172A165200BAAB26 /* Foundation.framework in Frameworks */,
 				FDA4BCE4172A165200BAAB26 /* CoreGraphics.framework in Frameworks */,
@@ -155,6 +167,7 @@
 		FDA4BCD3172A165200BAAB26 = {
 			isa = PBXGroup;
 			children = (
+				FD4255E017454D1A0066BF0B /* Security.framework */,
 				FD032A311741965C009C3FC2 /* calendar_iconx114.png */,
 				FD032A2D174195CC009C3FC2 /* calendar_iconx57.png */,
 				FDA4BCE5172A165200BAAB26 /* ClassCalendar */,
@@ -241,6 +254,10 @@
 				FD66BA43174317BE005C1DAC /* CalendarInstructor.m */,
 				FD08CBBD1744889400919E2B /* UserProfile.h */,
 				FD08CBBE1744889400919E2B /* UserProfile.m */,
+				FD4255E2174559AB0066BF0B /* ShopCartItem.h */,
+				FD4255E3174559AB0066BF0B /* ShopCartItem.m */,
+				FD4255E517455D160066BF0B /* ShopCartManager.h */,
+				FD4255E617455D160066BF0B /* ShopCartManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -273,6 +290,8 @@
 				FD66BA3A17430D8F005C1DAC /* CalendarSectionTableViewCell.m */,
 				3FE4B7ED174445270055D375 /* CalendarMeetingPatternTableViewCell.h */,
 				3FE4B7EE174445270055D375 /* CalendarMeetingPatternTableViewCell.m */,
+				FD4255E8174565F50066BF0B /* ShopCartItemTableViewCell.h */,
+				FD4255E9174565F50066BF0B /* ShopCartItemTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -422,6 +441,9 @@
 				FD08CBB917446F9B00919E2B /* CalendarKeyRequestWebViewController.m in Sources */,
 				FD08CBBC1744855600919E2B /* KeychainItemWrapper.m in Sources */,
 				FD08CBBF1744889400919E2B /* UserProfile.m in Sources */,
+				FD4255E4174559AB0066BF0B /* ShopCartItem.m in Sources */,
+				FD4255E717455D160066BF0B /* ShopCartManager.m in Sources */,
+				FD4255EA174565F50066BF0B /* ShopCartItemTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

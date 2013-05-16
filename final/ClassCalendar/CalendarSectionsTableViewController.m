@@ -45,7 +45,7 @@
             CalendarSection* t = [[self calendarData] objectAtIndex:indexPath.item];
             if(t)
             {
-                patController.dataParam = nil;
+                patController.dataParam = t;
             }
         }
     }else{
@@ -74,10 +74,10 @@
                                                   CrsOfr:reqCrsOfr];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    static NSString *CellIdentifier = @"ItemCell";
-    CalendarSectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString* CellIdentifier = @"ItemCell";
+    CalendarSectionTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     [cell.classStatusLabel setTransform: CGAffineTransformMakeRotation (-3.14/2)];

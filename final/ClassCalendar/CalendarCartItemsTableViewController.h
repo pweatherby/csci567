@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShopCartManager.h"
+#import "UserProfile.h"
+#import "ShopCartItemTableViewCell.h"
 
 @interface CalendarCartItemsTableViewController : UITableViewController
-@property (nonatomic, strong) NSArray*  cartData;
-@property (nonatomic, strong) id dataParam;
+
+    @property (nonatomic, strong) NSArray* cartData;
+    @property (nonatomic, strong) id dataParam;
+
 @end

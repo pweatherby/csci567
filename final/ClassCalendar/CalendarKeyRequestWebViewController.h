@@ -11,6 +11,7 @@
 #import "UserProfile.h"
 
 @interface CalendarKeyRequestWebViewController : UIViewController <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webBrowser;
+
+    @property (weak, nonatomic) IBOutlet UIWebView* webBrowser;
 
 @end

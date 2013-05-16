@@ -10,7 +10,8 @@
 
 @interface CalendarNumberTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel* numberLabel;
-@property (weak, nonatomic) IBOutlet UILabel* unitsLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* numberLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* unitsLabel;
+
 @end

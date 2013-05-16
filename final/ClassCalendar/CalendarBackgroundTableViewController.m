@@ -10,9 +10,9 @@
 
 @implementation CalendarBackgroundTableViewController
 
-- (UINavigationItem *)navigationItem{
-    UINavigationItem *item = [super navigationItem];
-    if (item != nil && item.backBarButtonItem == nil)
+- (UINavigationItem*)navigationItem{
+    UINavigationItem* item = [super navigationItem];
+    if (item && !item.backBarButtonItem)
     {
         item.backBarButtonItem = [[UIBarButtonItem alloc] init];
         item.backBarButtonItem.title = [self title];

@@ -11,4 +11,7 @@
 
 @interface CalendarProfileTableViewController : CalendarBackgroundTableViewController
 
+    @property (weak, nonatomic) IBOutlet UILabel* dIDLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* vKeyLabel;
+
 @end

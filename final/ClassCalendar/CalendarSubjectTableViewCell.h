@@ -10,7 +10,7 @@
 
 @interface CalendarSubjectTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel* formalDescLabel;
-@property (weak, nonatomic) IBOutlet UILabel* shortDescLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* formalDescLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* shortDescLabel;
 
 @end

@@ -21,10 +21,10 @@
     self.calendarData = [CalendarSessionGroup currentSessionGroups:reqTerm];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ItemCell";
-    CalendarSessionGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString* CellIdentifier = @"ItemCell";
+    CalendarSessionGroupTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     if(indexPath.item < [[super calendarData] count])

@@ -10,6 +10,6 @@
 
 @interface CalendarTermTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel* longDescLabel;
+    @property (weak, nonatomic) IBOutlet UILabel* longDescLabel;
 
 @end
