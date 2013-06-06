@@ -1,0 +1,5 @@
+I removed the web.config files from all the repo history because they contained encrypted passwords.
+Even though encrypted, i dont want them out available if no longer needed.
+removed using:
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch */web.config' --prune-empty --tag-name-filter cat -- --all
+git push origin master --force
